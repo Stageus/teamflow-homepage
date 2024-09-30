@@ -1,4 +1,6 @@
+import { RouterProvider } from "react-router-dom";
 import './global.css';
+import { Router } from "./Router";
 import { DarkThemeProvider } from "@shared/store/darkTheme";
 
 function App() {
@@ -6,7 +8,7 @@ function App() {
   return (
     <>
     <DarkThemeProvider>
-      <div>children</div>
+      <RouterProvider router={Router}/>
     </DarkThemeProvider>
     </>
   )

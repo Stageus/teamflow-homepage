@@ -3,6 +3,6 @@ export const PATHS = {
     signup: "signup",
     teamspaceList: "teamspace-list",
     teamspace: "teamspace",
-    teamspacePublic: "teamspace-public",
-    teamspacePrivate: "teamspace-private",
+    public: "public",
+    private: "private",
 }
