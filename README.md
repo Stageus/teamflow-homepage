@@ -1,53 +1,46 @@
-[마크다운]
-1. https://gist.github.com/ihoneymon/652be052a0727ad59601
-2. https://www.heropy.dev/p/B74sNE
+Package Link
+=============
+[마크다운 참조:GitHub](https://www.heropy.dev/p/B74sNE)
 
-[React]
-1. https://react.dev/
+[마크다운 참조:블로그](https://gist.github.com/ihoneymon/652be052a0727ad59601)
 
-[React-router-dom]
-1. https://reactrouter.com/en/main
+[React 공식문서](https://react.dev/)
 
-[React-query]
-1. https://tanstack.com/query/latest/docs/framework/react/guides/migrating-to-react-query-4#react-query-is-now-tanstackreact-query
-2. https://kyounghwan01.github.io/blog/React/react-query/basic/
+[React-router-dom 공식문서](https://reactrouter.com/en/main)
 
-[React-cookie]
-1. https://www.npmjs.com/package/react-cookie
+[React-query 공식문서](https://tanstack.com/query/latest/docs/framework/react/guides/migrating-to-react-query-4#react-query-is-now-tanstackreact-query)
 
-[react-icons]
-1. https://react-icons.github.io/react-icons/
+[React-query 참조문서](https://kyounghwan01.github.io/blog/React/react-query/basic/)
 
-[TypeScript]
-1. https://www.typescriptlang.org/docs/
+[React-cookie Npm](https://www.npmjs.com/package/react-cookie)
 
-[tsconfig]
-1. https://www.typescriptlang.org/tsconfig/#moduleResolution
+[React-icons 공식문서](https://react-icons.github.io/react-icons/)
 
-[ESLint]
-1. https://eslint.org/docs/latest/use/getting-started
+[TypeScript 공식문서](https://www.typescriptlang.org/docs/)
 
-[Postcss]
-1. https://postcss.org/docs/
+[TypeScript Config 공식문서](https://www.typescriptlang.org/tsconfig/#moduleResolution)
 
-[Taillwind]
-1. https://tailwindcss.com/docs/installation
+[ESLint 공식문서](https://eslint.org/docs/latest/use/getting-started)
 
-[Vite]
-1. https://ko.vitejs.dev/guide/
+[PostCss 공식문서](https://postcss.org/docs/)
 
-[immer]
-1. https://immerjs.github.io/immer/
+[Taillwind 공식문서](https://tailwindcss.com/docs/installation)
 
-[socket.io-client]
-1. https://socket.io/docs/v4/client-api/
+[Vite 공식문서](https://ko.vitejs.dev/guide/)
+
+[immer 공식문서](https://immerjs.github.io/immer/)
+
+[socket.io-client 공식문서](https://socket.io/docs/v4/client-api/)
 
 
 
+
+
+------------
 TeamFlow 구조
 =============
 
->| Layer | Slice | description |
+>| Layer | Slice | Description |
 >|---|:---|:---:|
 >| `app` | `App.tsx` | 프로젝트의<br> 진입점 |
 >| `app` | `global.css` | 프로젝트의 css |
@@ -79,3 +72,30 @@ TeamFlow 구조
 >| `shared` | `/ui/defaultBtn` | 기본버튼 |
 >| `shared` | `/ui/profile` | 프로필이미지 컴포넌트 |
 >| `shared` | `/ui/fullScreenModal` | 전체화면 모달 |
+
+------------
+Git Commit Convention
+=============
+>| Name(scope) | Description | Example |
+>|:---|:---|:---|
+>| `Feat` | `새로운 기능 추가` | `Feat(Header): 내용` |
+>| `Fix` | `버그수정` | `Fix(Header): 내용` |
+>| `Docs` | `문서수정` | `Docs(Package): 내용` |
+>| `Design` | `Css관련 수정` | `Design(Header): 내용` |
+>| `Refactor` | `코드 리팩토링 관련` | `Refactor(Header): 내용` |
+>| `Rename` | `파일 및 폴더명 변경` | `Rename(Header): 내용` |
+>| `Remove` | `파일 및 폴더 삭제` | `Remove: 내용` |
+
+------------
+Code Convention
+=============
+>| Type | Description | Example |
+>|:---|:---:|:---:|
+>| `dir` | `-` | `channel-public` |
+>| `CompFile` | `PascalCase` | `TeamSpace.확장자` |
+>| `funFile` | `camelCase` | `teamSpace.확장자` |
+>| `hookFile` | `camelCase` | `useTeamSpace.확장자` |
+>| `변수` | `명사 + 명사(camelCase)` | `useTeamSpace.확장자` |
+>| `function` | `동사 + 명사(camelCase)` | `useTeamSpace.확장자` |
+
+
