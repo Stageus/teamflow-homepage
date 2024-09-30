@@ -1,0 +1,29 @@
+{
+  // 컴파일할 파일을 명시적으로 지정하는 속성(지정된 파일만 컴파일한다)
+  "files": [],
+  // 특정 경로나 패턴을 기준으로 파일들을 포함하여 컴파일한다(디렉토리 단위로 컴파일할 파일을 지정할때 사용)
+  "include": [],
+  // 컴파일러 옵션
+  "compilerOptions": {
+    // "target": "", // JS코드의 버전 
+    // "lib": [], // 타입 정의 라이브러리 (JS환경에서 사용할수 있는 내장 객체 및 메서드의 타입정의를 제공)
+    "module": "ESNext", // 모듈시스템을 지정
+    "skipLibCheck": true,//.d.ts의 타입검사를 생략
+    // "moduleResolution": "bundler", // 모듈 해석 방식을 지정 (Vite, Webpack 같은 번들러와 함께 사용할때 번들러에 맞는 규칙을 따름) 
+    "allowImportingTsExtensions": true, // .ts파일을 가져올때 파일확장자를 포함할수 있도록 허용함 ( 기본적으로 생략해도 가져와진다)
+    "noEmit": true, //컴파일후 결과물을 생성하지 않도록 설정 (컴파일된 JS파일을 생성하지않음)
+    "isolatedModules": true, // 각파일을 독립적인 모듈로 취급 (번들러와 통합된 환경에서 주로 사용)
+    "moduleDetection":"force", // 모듈로 인식할 파일을 강제로 지정 (force는 모든파일)
+    "strict": true, // TS의 엄격한 타입 검사를 활성화함 (여러가지 규칙등이 활성화됨)
+    "noUnusedLocals": true, //사용되지 않는 지역 변수가 있을경우 오류를 발생시킴 (선언하고 사용하지 않는 변수)
+    "noUnusedParameters": true, //사용되지 않는 함수 파라미터가 있을경우 오류를 발생시킴
+    "noFallthroughCasesInSwitch": true, // switch문에서 case에 break가 없이 다음으로 넘어가는 경우를 방지
+    // "useDefineForClassFields": true, // TS가 클래스 필드 선언을 ECMA 표준 방식으로 컴파일하지를 결정함
+    // "jsx": "react-jsx", // TS에서 React JSX 구문을 컴파일할 방식을 지정 (react-jsx는 React 17이상 사용가능하며, 버전에따라 설정이 틀림)
+  },
+  // 각환경에 맞게 설정한 파일을 참고하는 속성
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+}
