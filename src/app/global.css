@@ -1,0 +1,38 @@
+/* @tailwind: Tailwind의 기본, 컴포넌트, 유틸리티 클래스를 불러옴.
+@layer: 기본 스타일, 컴포넌트 스타일, 유틸리티 클래스를 추가.
+@apply: 여러 Tailwind 유틸리티 클래스를 하나의 CSS 클래스에 적용.
+@variants: 새로운 변형을 정의.
+@responsive: 반응형 스타일을 지정.
+@screen: 특정 미디어 쿼리에서만 적용되는 스타일을 지정.
+@theme: Tailwind 테마 설정 값을 CSS에서 사용할 때.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 재사용 가능한 컴포넌트 스타일 */
+@layer components{};
+/* 기존 Tailwindutilties class 확장  - 원자적 클래스*/
+@layer utilities{};
+/* 기본 전역 스타일 */
+@layer base {
+    html, body {
+        @apply font-service;
+    }
+    h1 {
+        @apply text-primary-title text-primary-black dark:text-primary-white;
+    }
+    h2 {
+        @apply text-secondary-title text-primary-gray;
+    }
+    p {
+        @apply text-size-body text-primary-black;
+    }
+    span {
+        @apply text-size-body text-primary-black;
+    }   
+    button {
+        @apply text-size-body text-primary-black;
+    }
+}
