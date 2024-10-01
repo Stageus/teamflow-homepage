@@ -21,18 +21,23 @@
         @apply font-service;
     }
     h1 {
-        @apply text-primary-title text-primary-black dark:text-primary-white;
+        @apply desktop:text-primary-title tablet:text-secondary-title mobile:text-size-xl;
+        @apply text-primary-black dark:text-primary-white;
     }
     h2 {
-        @apply text-secondary-title text-primary-gray;
+        @apply desktop:text-secondary-title tablet:text-size-xl mobile:text-size-lg;
+        @apply text-primary-gray;
     }
     p {
-        @apply text-size-body text-primary-black;
+        @apply text-size-body max-mobile:text-size-sm;
+        @apply text-primary-black dark:text-primary-white;
     }
     span {
-        @apply text-size-body text-primary-black;
+        @apply text-size-body max-mobile:text-size-sm;
+        @apply text-primary-black dark:text-primary-white;
     }   
     button {
-        @apply text-size-body text-primary-black;
+        @apply text-size-body max-mobile:text-size-sm;
+        @apply text-primary-black dark:text-primary-white;
     }
 }
