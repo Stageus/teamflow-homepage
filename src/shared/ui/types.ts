@@ -1,4 +1,4 @@
-type DefaultButtonType = 'active' | 'disabled' | 'danger' | "default";
+type DefaultButtonType = 'active' | 'disabled' | 'danger' | "notSelected";
 
 export interface DefaultButtonProps {
    type?: DefaultButtonType;
