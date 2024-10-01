@@ -51,6 +51,9 @@ export default {
         'size-body': ['14px', { lineHeight: '22px', fontWeight: 'normal' }],
         'size-sm': ['12px', { lineHeight: '20px', fontWeight: 'normal' }],
         'size-xs': ['10px', { lineHeight: '18px', fontWeight: 'normal' }],
+      },
+      boxShadow: {
+        button: '0 4px 4px #9d9dae80'
       }
 
     },

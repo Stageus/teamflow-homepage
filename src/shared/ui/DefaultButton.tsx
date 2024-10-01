@@ -13,7 +13,7 @@ export const DefaultButton = (props: DefaultButtonProps) => {
    return (
       <>
          <button
-            className={`w-full px-4 py-2 rounded-lg shadow whitespace-nowrap ${typeStyles[type]}`}
+            className={`w-full px-4 py-2 rounded-lg shadow-button whitespace-nowrap ${typeStyles[type]}`}
             onClick={type !== 'disabled' ? onClick : null}>
             {text}
          </button>
