@@ -11,7 +11,7 @@ export const DefaultButton = (props: DefaultButtonProps) => {
    return (
       <>
          <button 
-         className={`${type ? styles[type] : "text-primary-black bg-primary-white"} w-full px-4 py-2 rounded-lg shadow whitespace-nowrap hover:bg-hover-color hover:text-primary-white`}
+         className={`${type ? styles[type] : "text-primary-black bg-primary-white"} w-full px-4 py-2 rounded-lg shadow whitespace-nowrap hover:bg-secondary-color hover:text-primary-white`}
          onClick={ type !== "disabled" ? onClick : null}
          >{text}</button>
       </>
