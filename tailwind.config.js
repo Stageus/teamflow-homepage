@@ -14,9 +14,9 @@ export default {
       // 정해진 화면 크기에 따라 css 설정을 변경
       // ex) mobile: text 크기 변경 등등
       // fid: 일관된 네이밍과 추가적인 브레이크 포인트를 고려해보자
-      mobile: "767px",
-      tablet: "1023px",
-      desktop: "1024px" 
+      mobile: "640px",
+      tablet: "641px",
+      desktop: "1025px" 
     },
     // 색상
     colors:{
