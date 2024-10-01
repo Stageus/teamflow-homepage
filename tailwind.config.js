@@ -21,12 +21,12 @@ export default {
     // 색상
     colors:{
       'primary-color': '#3578FF',
+      'secondary-color': '#5B9DFF',
       'primary-white': '#FAFAFA',
       'primary-gray': '#9D9DAE',
       'primary-black': '#08080C',
       'success-color': '#0ADD66',
       'danger-color': '#F72111',
-      'hover-color': '#5B9DFF',
       'light-bg1':"#FAFAFA",
       'light-bg2':"#E3E3E8",
       'light-bg3':"#9D9DAE",
