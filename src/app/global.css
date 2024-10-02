@@ -27,11 +27,10 @@
     }
     p {
         @apply text-size-body max-mobile:text-size-sm;
-        @apply text-primary-black dark:text-primary-white;
     }
     span {
         @apply text-size-body max-mobile:text-size-sm;
-        @apply text-primary-black dark:text-primary-white;
+
     }   
     button {
         @apply text-size-body max-mobile:text-size-sm;

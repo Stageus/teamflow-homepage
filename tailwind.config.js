@@ -29,7 +29,7 @@ export default {
       'danger-color': '#F72111',
       'light-bg1':"#FAFAFA",
       'light-bg2':"#E3E3E8",
-      'light-bg3':"#9D9DAE",
+      'light-bg3':"#9d9dae42",
       'dark-bg1':"#0F0F12",
       'dark-bg2':"#17171C",
       'dark-bg3':"#26262C",
