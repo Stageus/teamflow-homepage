@@ -1,8 +1,8 @@
 export const PATHS = {
     login: "login",
     signup: "signup",
-    teamspaceList: "teamspace-list",
-    teamspace: "teamspace",
+    teamspaceList: "team-space_list",
+    teamspace: "team-space",
     public: "public",
     private: "private",
 }
