@@ -1,13 +1,14 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import { Layout } from "./Layout";
 import { Test } from "@pages/Test";
+import { Login } from "@pages/login";
 import { PATHS } from "@shared/consts/paths";
 
 export const Router = createBrowserRouter(createRoutesFromElements(
     <>
         <Route path="/" element={<Layout/>}>
             <Route path="test" element={<Test/>}/>
-            <Route path={PATHS.login} element={<div>로그인</div>}/>
+            <Route path={PATHS.login} element={<Login/>}/>
             <Route path={PATHS.signup} element={<div>회원가입</div>}/>
             <Route path={PATHS.teamspaceList} element={<div>TeamSpace 선택페이지</div>}/>
             <Route path={PATHS.teamspace}>
