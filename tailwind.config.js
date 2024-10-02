@@ -44,7 +44,7 @@ export default {
 
       // font의 묶음 처리
       fontSize: {
-        'primary-title': ['32px', { lineHeight: '40px', fontWeight: 'bold', fontStyle: 'italic' }],
+        'primary-title': ['32px', { lineHeight: '40px', fontWeight: 'bold'}],
         'secondary-title': ['24px', { lineHeight: '32px', fontWeight: 'bold' }],
         'size-xl': ['18px', { lineHeight: '26px', fontWeight: 'normal' }],
         'size-lg': ['16px', { lineHeight: '24px', fontWeight: 'normal' }],
