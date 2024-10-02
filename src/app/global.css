@@ -18,11 +18,11 @@
         @apply font-service;
     }
     h1 {
-        @apply desktop:text-primary-title tablet:text-secondary-title mobile:text-size-xl;
+        @apply desktop:text-primary-title tablet:text-secondary-title max-mobile:text-secondary-title;
         @apply text-primary-black dark:text-primary-white;
     }
     h2 {
-        @apply desktop:text-secondary-title tablet:text-size-xl mobile:text-size-lg;
+        @apply desktop:text-secondary-title tablet:text-size-xl max-mobile:text-size-xl;
         @apply text-primary-gray;
     }
     p {
@@ -39,9 +39,12 @@
 
 /* 기존 Tailwindutilties class 확장  - 원자적 클래스*/
 @layer utilities {
-    /* .box {
-        background-color: aqua;
-    } */
+    .gradient-dark{
+        background: linear-gradient(160.4065214033883deg, rgba(91, 157, 255,1) 2.441656942823804%,rgba(56, 94, 152,1) 20.771100739012056%,rgba(8, 8, 12,1) 46.432322053675605%);
+    }
+    .gradient-light{
+        background: linear-gradient(160.4065214033883deg, rgba(91, 157, 255,1) 2.441656942823804%,rgba(157, 196, 252,1) 20.771100739012056%,rgba(250, 250, 250,1) 46.432322053675605%);
+    }
 }
 
 /* 재사용 가능한 컴포넌트 스타일 */
