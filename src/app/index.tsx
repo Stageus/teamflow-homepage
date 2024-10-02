@@ -4,7 +4,6 @@ import { Router } from "./Router";
 import { DarkThemeProvider } from "@shared/store/darkTheme";
 
 function App() {
-
   return (
     <>
     <DarkThemeProvider>

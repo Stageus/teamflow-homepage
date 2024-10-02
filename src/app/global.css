@@ -11,10 +11,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 재사용 가능한 컴포넌트 스타일 */
-@layer components{};
-/* 기존 Tailwindutilties class 확장  - 원자적 클래스*/
-@layer utilities{};
+
 /* 기본 전역 스타일 */
 @layer base {
     html, body {
@@ -30,13 +27,26 @@
     }
     p {
         @apply text-size-body max-mobile:text-size-sm;
-        @apply text-primary-black dark:text-primary-white;
     }
     span {
         @apply text-size-body max-mobile:text-size-sm;
-        @apply text-primary-black dark:text-primary-white;
+
     }   
     button {
         @apply text-size-body max-mobile:text-size-sm;
     }
 }
+
+/* 기존 Tailwindutilties class 확장  - 원자적 클래스*/
+@layer utilities {
+    /* .box {
+        background-color: aqua;
+    } */
+}
+
+/* 재사용 가능한 컴포넌트 스타일 */
+@layer components {
+    /* .card {
+      background-color: aqua;
+    } */
+  }
