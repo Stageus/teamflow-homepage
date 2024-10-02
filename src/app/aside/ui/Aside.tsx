@@ -1,4 +1,4 @@
-import { BsArrowDownCircle } from "react-icons/bs";
+import { BsArrowDownCircle, BsFillPlusCircleFill } from "react-icons/bs";
 import { DefaultButton } from '@shared/ui';
 
 export const Aside = () => {
@@ -21,7 +21,7 @@ export const Aside = () => {
                 </div>
                 <div className='flex items-center justify-between cursor-pointer text-primary-gray hover:bg-primary-gray hover:text-primary-color rounded-lg p-2'>
                     <span className="flex items-center gap-2">비공개 채널 <BsArrowDownCircle/></span>
-                    <span className='text-primary-color text-secondary-title hover:text-success-color'>{"+"}</span>
+                    <span className='text-primary-color text-secondary-title hover:text-success-color'><BsFillPlusCircleFill /></span>
                 </div>
             </div>
          </section>
