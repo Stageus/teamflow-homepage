@@ -53,7 +53,7 @@ export default {
         'size-xs': ['10px', { lineHeight: '18px', fontWeight: 'normal' }],
       },
       boxShadow: {
-        button: '0 4px 4px #9d9dae80'
+        button: '0 4px 4px #00000080'
       }
 
     },
