@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction, ReactNode } from "react";
+import { ReactNode } from "react";
 
 export interface DarkModeContextType {
     theme: boolean;
-    changeTheme: Dispatch<SetStateAction<boolean>>;
+    changeTheme: ()=>void;
 }
 export interface DarkModeProviderProps {
     children: ReactNode;
