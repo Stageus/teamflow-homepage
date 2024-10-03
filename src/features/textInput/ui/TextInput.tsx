@@ -7,7 +7,7 @@ export const TextInput: TextInputComponent = props => {
    const { inputRef, checkInput, nameValidation } = useValidation(regex);
    
    return (
-      <div className="flex flex-col items-center gap-4">
+      <div className="w-full flex flex-col items-center gap-4">
          <h2>{title}</h2>
          <div className="w-full flex flex-col gap-2">
             <input
