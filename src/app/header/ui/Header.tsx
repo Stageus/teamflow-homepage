@@ -12,6 +12,9 @@ export const Header = () => {
             <DefaultButton type="notSelected" text="테마" onClick={() => console.log('테마변경')} />
          </div>
          <div>
+            <DefaultButton type="notSelected" text="로그인" onClick={() => console.log('로그아웃 모달창')} />
+         </div>
+         <div>
             <DefaultButton type="notSelected" text="로그아웃" onClick={() => console.log('로그아웃 모달창')} />
          </div>
       </div>
