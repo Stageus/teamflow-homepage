@@ -3,7 +3,7 @@ import { DarkModeContextType } from "./types";
 
 export const DarkThemeContext = createContext<DarkModeContextType>({
     theme: false,
-    setTheme: () => {}
+    changeTheme: () => {}
 })
 
 export const useDarkTheme = () => useContext(DarkThemeContext);
