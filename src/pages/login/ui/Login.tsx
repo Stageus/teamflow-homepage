@@ -6,7 +6,7 @@ export const Login = () => {
 
    return (
       <div className="h-full flex justify-center items-center gradient-light dark:gradient-dark">
-         <div className="flex flex-col items-center gap-5 px-10 py-5 bg-transparent rounded-lg shadow-xl">
+         <div className="flex flex-col justify-center items-center gap-5 px-10 py-5 bg-transparent rounded-lg shadow-xl min-w-[400px] min-h-[300px]">
             <div>
                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="100" height="100" rx="50" transform="matrix(-1 0 0 1 100 0)" fill="#3578FF" />
