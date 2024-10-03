@@ -85,6 +85,8 @@ Git Commit Convention
 >| `Refactor` | `코드 리팩토링 관련` | `Refactor(Header): 내용` |
 >| `Rename` | `파일 및 폴더명 변경` | `Rename(Header): 내용` |
 >| `Remove` | `파일 및 폴더 삭제` | `Remove: 내용` |
+>| `file` | `파일관련` | `move: 내용` |
+>| `dir` | `폴더관련` | `dir: 내용` |
 
 ------------
 Code Convention

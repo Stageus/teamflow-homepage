@@ -1,6 +1,6 @@
-import { DefaultButtonProps } from './types';
+import { DefaultButtonComponent } from '../types';
 
-export const DefaultButton = (props: DefaultButtonProps) => {
+export const DefaultButton:DefaultButtonComponent = (props) => {
    const { type, onClick, text, item } = props;
    const typeStyles = {
       default: 'text-primary-black bg-primary-white hover:bg-secondary-color hover:text-primary-white',

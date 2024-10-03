@@ -15,7 +15,7 @@ export const SignUp = () => {
       const target = nickNameInput.target.value;
       const isNickName = regex.test(target);
 
-      if ( isNickName ) setCheckNickName(true);
+      if ( isNickName) setCheckNickName(true);
       if ( !isNickName ) setCheckNickName(false);
    };
 
