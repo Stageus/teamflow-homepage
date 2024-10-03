@@ -11,7 +11,7 @@ export const TextInput: TextInputComponent = props => {
          <h2>{title}</h2>
          <div className="w-full flex flex-col gap-2">
             <input
-               className={`bg-transparent border-b-2 text-size-body outline-none 
+               className={`bg-transparent border-b-2 text-size-body outline-none text-primary-black dark:text-primary-white
                     ${checkInput !== null && (checkInput ? 'border-success-color' : 'border-danger-color')}`}
                placeholder={placeholder}
                type="text"
