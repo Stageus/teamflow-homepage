@@ -3,6 +3,7 @@ import './global.css';
 import { Header } from './header';
 import { Aside } from './aside';
 import { PATHS } from '@shared/consts/paths';
+import { UrlTrackingProvider } from '@shared/store/urlTracking';
 
 export const Layout = () => {
    const location = useLocation();
@@ -10,18 +11,24 @@ export const Layout = () => {
    const layoutNone = !authPath.includes(location.pathname.toLocaleLowerCase());
 
    return (
-      <div className="flex h-screen bg-primary-white dark:bg-primary-black">
-         {layoutNone && <aside className="h-full min-w-aside"><Aside/></aside>}
-         <div className="flex flex-col grow">
+      <UrlTrackingProvider>
+         <div className="flex h-screen bg-primary-white dark:bg-primary-black">
             {layoutNone && (
-               <header className="w-full min-h-header">
-                  <Header />
-               </header>
+               <aside className="h-full min-w-aside">
+                  <Aside />
+               </aside>
             )}
-            <main className="grow">
-               <Outlet />
-            </main>
+            <div className="flex flex-col grow">
+               {layoutNone && (
+                  <header className="w-full min-h-header">
+                     <Header />
+                  </header>
+               )}
+               <main className="grow">
+                  <Outlet />
+               </main>
+            </div>
          </div>
-      </div>
+      </UrlTrackingProvider>
    );
 };
