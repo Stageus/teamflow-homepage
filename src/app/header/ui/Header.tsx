@@ -6,7 +6,7 @@ import { DefaultButton } from '@shared/ui';
 import { PATHS } from "@shared/consts/paths";
 
 export const Header = () => {
-   const { changeTheme } = useDarkTheme();
+   const { theme, changeTheme } = useDarkTheme();
    const { loginRoute, teamspaceListRoute } = useRoute();
    const { getCurrentPathName } = useUrlTracking();
 
@@ -19,7 +19,7 @@ export const Header = () => {
             <Alarm/>
          </div>
          <div>
-            <DefaultButton type="notSelected" text="테마" onClick={changeTheme} />
+            <DefaultButton type="notSelected" text={theme ? "라이트모드" : "다크모드"} onClick={changeTheme} />
          </div>
          <div>
             <DefaultButton type="notSelected" text="로그인" onClick={loginRoute} />
