@@ -7,7 +7,7 @@ export const DarkThemeProvider = ( props : DarkModeProviderProps) => {
    const { isDark, changeTheme } = useToggleTheme();
 
    return (
-      <DarkThemeContext.Provider value={{changeTheme}}>
+      <DarkThemeContext.Provider value={{theme:isDark, changeTheme}}>
          <div className={isDark ? 'dark' : ''}>{children}</div>
       </DarkThemeContext.Provider>
    );
