@@ -1,3 +1,4 @@
+import { Alarm } from "./alarm";
 import { useRoute } from "@shared/hooks";
 import { useDarkTheme } from "@shared/store/darkTheme";
 import { useUrlTracking } from "@shared/store/urlTracking";
@@ -15,7 +16,7 @@ export const Header = () => {
             <DefaultButton type={getCurrentPathName(PATHS.teamspaceList) ? "active" : "notSelected"} text="TeamSpace" onClick={teamspaceListRoute} />
          </div>
          <div>
-            <DefaultButton type="notSelected" text="알림" onClick={() => console.log('알림 모달창')} />
+            <Alarm/>
          </div>
          <div>
             <DefaultButton type="notSelected" text="테마" onClick={changeTheme} />
