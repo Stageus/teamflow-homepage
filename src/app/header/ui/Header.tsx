@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { useRoute } from "@shared/hooks";
 import { useDarkTheme } from "@shared/store/darkTheme";
 import { useUrlTracking } from "@shared/store/urlTracking";
