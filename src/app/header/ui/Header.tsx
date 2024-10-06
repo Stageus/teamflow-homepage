@@ -1,17 +1,23 @@
+import { useState } from "react";
+
 import { AlarmModal } from "./alarmModal";
+import { LogoutModal } from "./logoutModal";
+import { useLogout } from "../model/useLogout";
+
 import { useRoute } from "@shared/hooks";
 import { useDarkTheme } from "@shared/store/darkTheme";
 import { useUrlTracking } from "@shared/store/urlTracking";
-import { DefaultButton } from '@shared/ui';
+import { DefaultButton, FullScreenModal } from '@shared/ui';
 import { PATHS } from "@shared/consts/paths";
 import { useModalEventDetect } from "@shared/hooks/useModalEventDetect";
+
 
 export const Header = () => {
    const { theme, changeTheme } = useDarkTheme();
    const { loginRoute, teamspaceListRoute } = useRoute();
    const { getCurrentPathName } = useUrlTracking();
    const { modalRef, isModalDetect, onClickOpenModal } = useModalEventDetect();
-
+   const { isLogout, onClickOpenLogoutModal} = useLogout();   
    return (
       <div className="flex gap-3 px-4 py-2 justify-start">
          <div>
@@ -28,8 +34,9 @@ export const Header = () => {
             <DefaultButton type="notSelected" text="로그인" onClick={loginRoute} />
          </div>
          <div>
-            <DefaultButton type="notSelected" text="로그아웃" onClick={() => console.log('로그아웃 모달창')} />
-         </div>         
+            <DefaultButton type="notSelected" text="로그아웃" onClick={onClickOpenLogoutModal} />
+            <FullScreenModal close={onClickOpenLogoutModal} title="Logout">{isLogout ? <LogoutModal cancell={onClickOpenLogoutModal}/> : null}</FullScreenModal>
+         </div>
       </div>
    );
 };
