@@ -1,8 +1,14 @@
+import { useState } from "react";
+import { DefaultButton } from "@shared/ui";
 import { TextInput } from '@features/textInput';
 import { useRoute } from '@shared/hooks';
+import { FullScreenModal } from '@shared/ui';
 
 export const Test = () => {
    const { loginRoute, teamspaceListRoute } = useRoute();
+   const [open, setOpen] = useState(false);
+
+   const onClickModal = () => setOpen(!open);
 
    return (
       <>
@@ -13,7 +19,14 @@ export const Test = () => {
          {/* <DefaultButton type="active" onClick={() => console.log('실행')} text="테스트" /> */}
          {/* <DefaultButton type="disabled" onClick={() => console.log('실행')} text="테스트" /> */}
          {/* <DefaultButton type="danger" onClick={() => console.log('실행')} text="테스트" /> */}
-         <div className="w-aside">
+
+         <DefaultButton
+         text="모달창 오픈"
+         type="active"
+         onClick={onClickModal}
+         />
+         <FullScreenModal title="TeamSpace 생성">{open ? <div>content</div> : null}</FullScreenModal>
+         {/* <div className="w-aside">
             <TextInput
                title="useEmail@gmail.com"
                regex={/^[가-힣a-zA-Z0-9]{3,10}$/}
@@ -24,7 +37,7 @@ export const Test = () => {
                cancellName='뒤로가기'
                cancellCallback={loginRoute}
                ></TextInput>
-         </div>
+         </div> */}
       </>
    );
 };
