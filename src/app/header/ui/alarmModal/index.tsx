@@ -1,16 +1,10 @@
-import { useState } from 'react';
 import { DefaultButton } from '@shared/ui';
 
-export const Alarm = () => {
-   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-   const onClickOpen = () => setIsOpen(!isOpen);
+export const AlarmModal = () => {
 
    return (
-      <>
-         <DefaultButton type={ isOpen ? "active" : "notSelected"} text="알림" onClick={onClickOpen} />
-         {isOpen ? (
-            <div className="w-[400px] h-[425px] flex flex-col justify-between bg-light-bg2 text-primary-black dark:bg-dark-bg2 dark:text-primary-white absolute rounded-lg translate-y-7">
+       <div className="w-[400px] h-[425px] flex flex-col justify-between bg-light-bg2 text-primary-black dark:bg-dark-bg2 dark:text-primary-white absolute rounded-lg translate-y-7">
                <ul className="flex flex-col gap-4 px-4 overflow-y-scroll">
                   <li className="flex flex-col gap-4 py-4 border-b-2 border-primary-gray">
                      <div>
@@ -65,7 +59,5 @@ export const Alarm = () => {
                   <div><DefaultButton type="default" text="더보기" onClick={() => console.log('더보기동작')} /></div>
                </div>
             </div>
-         ) : null}
-      </>
    );
 };
