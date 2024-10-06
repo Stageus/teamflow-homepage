@@ -1,5 +1,5 @@
 import { useValidation } from "../model/useValidation";
-import { TextInputComponent } from '@shared/types';
+import { TextInputComponent } from "../types";
 import { DefaultButton } from '@shared/ui';
 
 export const TextInput: TextInputComponent = props => {

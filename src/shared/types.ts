@@ -11,17 +11,4 @@ type DefaultButtonProps = {
 export type DefaultButtonComponent = (props: DefaultButtonProps) => JSX.Element;
 
 
-// TextInput
-type Props = {
-   title: string,
-   errorText: string,
-   regex: RegExp,
-   placeholder: string,
-   nextName: string,
-   nextCallback: () => void,
-   cancellName: string,
-   cancellCallback: () => void,
-}
-export type TextInputComponent = ( props: Props ) => JSX.Element;
-
 
