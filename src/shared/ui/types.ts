@@ -12,6 +12,7 @@ export type DefaultButtonProps = {
 // FullScreenModal
 export type FullScreenModalProps = {
    children: ReactNode;
+   title: string;
 }
 
 
