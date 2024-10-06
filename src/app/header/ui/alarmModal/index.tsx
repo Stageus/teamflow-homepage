@@ -1,7 +1,7 @@
 import { DefaultButton } from '@shared/ui';
 
 
-export const Alarm = () => {
+export const AlarmModal = () => {
 
    return (
        <div className="w-[400px] h-[425px] flex flex-col justify-between bg-light-bg2 text-primary-black dark:bg-dark-bg2 dark:text-primary-white absolute rounded-lg translate-y-7">
