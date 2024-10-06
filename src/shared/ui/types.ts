@@ -2,13 +2,17 @@ import { ReactNode } from 'react';
 
 // DefaultButton
 type DefaultButtonType = 'default' | 'active' | 'disabled' | 'danger' | 'notSelected';
-type DefaultButtonProps = {
+export type DefaultButtonProps = {
    type?: DefaultButtonType;
    text: string;
    item?: ReactNode;
    onClick: () => void;
 };
-export type DefaultButtonComponent = (props: DefaultButtonProps) => JSX.Element;
+
+// FullScreenModal
+export type FullScreenModalProps = {
+   children: ReactNode;
+}
 
 
 

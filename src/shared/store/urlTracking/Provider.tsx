@@ -1,8 +1,8 @@
-import { UrlTrackingProviderProps } from "./types";
+import { ProviderProps } from "../types";
 import { UrlTrackingContext } from "./context";
 import { useCurrentUrlInfo } from "./useCurrentUrlInfo";
 
-export const UrlTrackingProvider = ( props: UrlTrackingProviderProps ) => {
+export const UrlTrackingProvider = ( props: ProviderProps ) => {
     const { children } = props;
     const { getCurrentPathName } = useCurrentUrlInfo();
     

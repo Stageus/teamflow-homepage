@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { DarkModeContextType } from "./types";
+import { DarkModeContextType } from "../types";
 
 export const DarkThemeContext = createContext<DarkModeContextType>({
     theme: false,

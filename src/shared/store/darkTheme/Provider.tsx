@@ -1,8 +1,8 @@
-import { DarkModeProviderProps } from './types';
+import { ProviderProps } from "../types";
 import { DarkThemeContext } from './context';
 import { useToggleTheme } from './useToggleTheme';
 
-export const DarkThemeProvider = ( props : DarkModeProviderProps) => {
+export const DarkThemeProvider = ( props : ProviderProps) => {
    const { children } = props;
    const { isDark, changeTheme } = useToggleTheme();
 
