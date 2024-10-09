@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { DefaultButton } from "@shared/ui";
+import { useState } from 'react';
+import { DefaultButton } from '@shared/ui';
 import { TextInput } from '@features/textInput';
 import { useRoute } from '@shared/hooks';
 import { FullScreenModal } from '@shared/ui';
@@ -20,11 +20,7 @@ export const Test = () => {
          {/* <DefaultButton type="disabled" onClick={() => console.log('실행')} text="테스트" /> */}
          {/* <DefaultButton type="danger" onClick={() => console.log('실행')} text="테스트" /> */}
 
-         <DefaultButton
-         text="모달창 오픈"
-         type="active"
-         onClick={onClickModal}
-         />
+         <DefaultButton text="모달창 오픈" type="active" onClick={onClickModal} />
          <FullScreenModal title="TeamSpace 생성">{open ? <div>content</div> : null}</FullScreenModal>
          {/* <div className="w-aside">
             <TextInput
@@ -38,6 +34,27 @@ export const Test = () => {
                cancellCallback={loginRoute}
                ></TextInput>
          </div> */}
+         <div className="w-full">
+            <h1>
+            Hey everyone! It's almost 2022 and we still don't know if there is aliens living among us, or do we?
+            Maybe the person writing this is an alien. You will never know.
+            </h1>
+            <h2>
+            Hey everyone! It's almost 2022 and we still don't know if there is aliens living among us, or do we?
+            Maybe the person writing this is an alien. You will never know.
+            </h2>
+            <p>
+            Hey everyone! It's almost 2022 and we still don't know if there is aliens living among us, or do we?
+            Maybe the person writing this is an alien. You will never know.
+            </p>
+            <span>
+            Hey everyone! It's almost 2022 and we still don't know if there is aliens living among us, or do we?
+            Maybe the person writing this is an alien. You will never know.
+            </span>
+            <button>
+            버튼
+            </button>
+         </div>              
       </>
    );
 };

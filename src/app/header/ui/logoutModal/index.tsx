@@ -1,5 +1,4 @@
 import { LogoutModalProps } from "../../types";
-import { DefaultButton } from '@shared/ui';
 import { useRoute } from "@shared/hooks";
 
 export const LogoutModal = ( props: LogoutModalProps ) => {
@@ -9,8 +8,8 @@ export const LogoutModal = ( props: LogoutModalProps ) => {
       <div>
          <h2 className='p-5'>로그아웃 하시겠습니까?</h2>
          <div className='flex gap-5'>
-            <DefaultButton text="로그아웃" type="danger" onClick={loginRoute} />
-            <DefaultButton text="취소" type="default" onClick={cancell} />
+            <button className="button-layout button-type-danger" onClick={loginRoute}>로그아웃</button>
+            <button className="button-layout button-type-default" onClick={cancell}>되돌아가기</button>
          </div>
       </div>
    );

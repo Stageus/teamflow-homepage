@@ -21,25 +21,23 @@ CSSname
 @layer base {
    html,
    body {
-      @apply font-service;
+      @apply font-service; 
    }
 
    h1 {
-      @apply desktop:text-primary-title tablet:text-secondary-title max-mobile:text-secondary-title;
-      @apply text-primary-black dark:text-primary-white;
+      @apply text-primary-title text-primary-black dark:text-primary-white;
    }
    h2 {
-      @apply desktop:text-secondary-title tablet:text-size-xl max-mobile:text-size-xl;
-      @apply text-primary-gray;
+      @apply text-secondary-title text-primary-gray;
    }
    p {
-      @apply text-size-body max-mobile:text-size-sm;
+      @apply text-size-lg text-primary-black dark:text-primary-white;
    }
    span {
-      @apply text-size-body max-mobile:text-size-sm;
+      @apply text-size-base;
    }
    button {
-      @apply text-size-body max-mobile:text-size-sm;
+      @apply text-size-base;
    }
 }
 
@@ -101,7 +99,24 @@ CSSname
 
 /* 재사용 가능한 컴포넌트 스타일 */
 @layer components {
-   /* .card {
-      background-color: aqua;
-    } */
+   .button-layout {
+      @apply flex justify-center items-center gap-3 w-full px-4 py-2 text-size-sm rounded-lg whitespace-nowrap;
+      @apply mobile:px-2 mobile:py-1;
+      box-shadow: 1px 2px 3px theme('colors.primary-gray');
+   }
+   .button-type-default {
+      @apply text-primary-black bg-primary-white hover:bg-secondary-color hover:text-primary-white;
+   }
+   .button-type-not {
+      @apply text-primary-white bg-primary-gray hover:bg-secondary-color;
+   }
+   .button-type-active {
+      @apply bg-primary-color text-primary-white hover:bg-secondary-color hover:text-primary-white;
+   }
+   .button-type-disabled {
+      @apply bg-primary-gray text-primary-white cursor-not-allowed;
+   }
+   .button-type-danger {
+      @apply bg-danger-color text-primary-white hover:bg-secondary-color;
+   }
 }

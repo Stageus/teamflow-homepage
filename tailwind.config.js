@@ -1,5 +1,7 @@
 // https://tailwindcss.com/docs/configuration
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require('tailwindcss/plugin')
 export default {
    // taillwind가 필요한 곳을 지정함
    content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -11,7 +13,7 @@ export default {
          // 정해진 화면 크기에 따라 css 설정을 변경
          // ex) mobile: text 크기 변경 등등
          // fid: 일관된 네이밍과 추가적인 브레이크 포인트를 고려해보자
-         mobile: '640px',
+         mobile: {max: '640px'},
          tablet: '641px',
          desktop: '1025px',
       },
@@ -37,16 +39,13 @@ export default {
          spacing: {},
          // font의 묶음 처리
          fontSize: {
-            'primary-title': ['32px', { lineHeight: '40px', fontWeight: 'bold' }],
-            'secondary-title': ['24px', { lineHeight: '32px', fontWeight: 'bold' }],
-            'size-xl': ['18px', { lineHeight: '26px', fontWeight: 'normal' }],
-            'size-lg': ['16px', { lineHeight: '24px', fontWeight: 'normal' }],
-            'size-body': ['14px', { lineHeight: '22px', fontWeight: 'normal' }],
-            'size-sm': ['12px', { lineHeight: '20px', fontWeight: 'normal' }],
-            'size-xs': ['10px', { lineHeight: '18px', fontWeight: 'normal' }],
-         },
-         boxShadow: {
-            button: '0 4px 4px #00000080',
+            'primary-title': ['clamp(28px, 2vw, 32px)', { lineHeight: '1.2', fontWeight: 'bold' }],
+            'secondary-title': ['clamp(20px, 2vw, 24px)', { lineHeight: '1.2', fontWeight: 'bold' }],
+            'size-xl': ['clamp(18px, 2vw, 20px)', { lineHeight: '1.2', fontWeight: 'normal' }],
+            'size-lg': ['clamp(16px, 2vw, 18px)', { lineHeight: '1.2', fontWeight: 'normal' }],
+            'size-base': ['clamp(14px, 2vw, 16px)', { lineHeight: '1.2', fontWeight: 'normal' }],
+            'size-sm': ['clamp(12px, 2vw, 14px)', { lineHeight: '1.2', fontWeight: 'normal' }],
+            'size-xs': ['clamp(10px, 2vw, 12px)', { lineHeight: '1.2', fontWeight: 'normal' }],
          },
       },
       // 폰트
@@ -55,5 +54,31 @@ export default {
       },
    },
    // 좋은 플러그인도 많으니 찾아보자 ( Typography, Forms 등 )
-   plugins: [],
+   plugins: [ 
+   //    plugin(function({ addComponents }) {
+   //    const buttons = {
+   //      '.btn': {
+   //        padding: '.5rem 1rem',
+   //        borderRadius: '.25rem',
+   //        fontWeight: '600',
+   //      },
+   //      '.btn-primary': {
+   //        backgroundColor: '#3490dc',
+   //        color: '#fff',
+   //        '&:hover': {
+   //          backgroundColor: '#2779bd',
+   //        },
+   //      },
+   //      '.btn-secondary': {
+   //        backgroundColor: '#ffed4a',
+   //        color: '#000',
+   //        '&:hover': {
+   //          backgroundColor: '#f9ca24',
+   //        },
+   //      },
+   //    }
+
+   //    addComponents(buttons)
+   //  }),
+   ],
 };
