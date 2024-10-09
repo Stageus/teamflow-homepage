@@ -34,11 +34,7 @@ export default {
             'dark-bg3': '#26262C',
          },
          // 지원하는 크기가 없을경우 추가하여 사용가능
-         spacing: {
-            aside: '400px',
-            header: '70px',
-         },
-
+         spacing: {},
          // font의 묶음 처리
          fontSize: {
             'primary-title': ['32px', { lineHeight: '40px', fontWeight: 'bold' }],
