@@ -11,12 +11,6 @@ export type DefaultButtonProps = {
    onClick: () => void;
 };
 
-// FullScreenModal
-export type FullScreenModalProps = {
-   children: ReactNode;
-   title: string;
-   close: () => void;
-}
 
 
 
