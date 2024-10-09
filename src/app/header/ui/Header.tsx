@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { AlarmModal } from "./alarmModal";
 import { LogoutModal } from "./logoutModal";
 import { useLogout } from "../model/useLogout";
@@ -27,7 +25,7 @@ export const Header = () => {
             <DefaultButton type={ isModalDetect ? "active" : "notSelected"} text="알림" onClick={onClickOpenModal} />
             {isModalDetect ? <AlarmModal/> : null}
          </div>
-         <div>
+         <div className="desktop:text-size-xs">
             <DefaultButton type="notSelected" text={theme ? "라이트모드" : "다크모드"} onClick={changeTheme} />
          </div>
          <div>
