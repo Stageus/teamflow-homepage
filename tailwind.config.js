@@ -37,13 +37,13 @@ export default {
          spacing: {},
          // font의 묶음 처리
          fontSize: {
-            'primary-title': ['32px', { lineHeight: '40px', fontWeight: 'bold' }],
-            'secondary-title': ['24px', { lineHeight: '32px', fontWeight: 'bold' }],
-            'size-xl': ['18px', { lineHeight: '26px', fontWeight: 'normal' }],
-            'size-lg': ['16px', { lineHeight: '24px', fontWeight: 'normal' }],
-            'size-body': ['14px', { lineHeight: '22px', fontWeight: 'normal' }],
-            'size-sm': ['12px', { lineHeight: '20px', fontWeight: 'normal' }],
-            'size-xs': ['10px', { lineHeight: '18px', fontWeight: 'normal' }],
+            'primary-title': ['clamp(28px, 2vw, 32px)', { lineHeight: '1.2', fontWeight: 'bold' }],
+            'secondary-title': ['clamp(20px, 2vw, 24px)', { lineHeight: '1.2', fontWeight: 'bold' }],
+            'size-xl': ['clamp(18px, 2vw, 20px)', { lineHeight: '1.2', fontWeight: 'normal' }],
+            'size-lg': ['clamp(16px, 2vw, 18px)', { lineHeight: '1.2', fontWeight: 'normal' }],
+            'size-base': ['clamp(14px, 2vw, 16px)', { lineHeight: '1.2', fontWeight: 'normal' }],
+            'size-sm': ['clamp(12px, 2vw, 14px)', { lineHeight: '1.2', fontWeight: 'normal' }],
+            'size-xs': ['clamp(10px, 2vw, 12px)', { lineHeight: '1.2', fontWeight: 'normal' }],
          },
          boxShadow: {
             button: '0 4px 4px #00000080',
