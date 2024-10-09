@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { DefaultButton } from '@shared/ui';
 import { TextInput } from '@features/textInput';
 import { useRoute } from '@shared/hooks';
-import { FullScreenModal } from '@shared/ui';
+
 
 export const Test = () => {
    const { loginRoute, teamspaceListRoute } = useRoute();
@@ -21,7 +21,7 @@ export const Test = () => {
          {/* <DefaultButton type="danger" onClick={() => console.log('실행')} text="테스트" /> */}
 
          <DefaultButton text="모달창 오픈" type="active" onClick={onClickModal} />
-         <FullScreenModal title="TeamSpace 생성">{open ? <div>content</div> : null}</FullScreenModal>
+         
          {/* <div className="w-aside">
             <TextInput
                title="useEmail@gmail.com"
