@@ -8,7 +8,7 @@ export const TextInput: TextInputComponent = props => {
    
    return (
       <div className="w-full flex flex-col items-center gap-4">
-         <h2>{title}</h2>
+         {title && <h2>{title}</h2>}
          <div className="w-full flex flex-col gap-2">
             <input
                className={`bg-transparent border-b-2 text-size-body outline-none text-primary-black dark:text-primary-white
@@ -18,7 +18,7 @@ export const TextInput: TextInputComponent = props => {
                ref={inputRef}
                onChange={nameValidation}
             />
-            <span className={`${checkInput ? 'text-success-color' : 'text-danger-color'}`}>
+            <span className={`${checkInput ? 'text-success-color' : 'text-danger-color'} h-4`}>
                {checkInput !== null && (checkInput ? '사용가능합니다' : errorText)}
             </span>
          </div>
