@@ -21,25 +21,23 @@ CSSname
 @layer base {
    html,
    body {
-      @apply font-service;
+      @apply font-service; 
    }
 
    h1 {
-      @apply desktop:text-primary-title tablet:text-secondary-title max-mobile:text-secondary-title;
-      @apply text-primary-black dark:text-primary-white;
+      @apply text-primary-title text-primary-black dark:text-primary-white;
    }
    h2 {
-      @apply desktop:text-secondary-title tablet:text-size-xl max-mobile:text-size-xl;
-      @apply text-primary-gray;
+      @apply text-secondary-title text-primary-gray;
    }
    p {
-      @apply text-size-body max-mobile:text-size-sm;
+      @apply text-size-lg text-primary-black dark:text-primary-white;
    }
    span {
-      @apply text-size-body max-mobile:text-size-sm;
+      @apply text-size-base;
    }
    button {
-      @apply text-size-body max-mobile:text-size-sm;
+      @apply text-size-base;
    }
 }
 
