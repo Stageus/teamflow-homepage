@@ -5,7 +5,7 @@ import { useLogout } from "../model/useLogout";
 import { useRoute } from "@shared/hooks";
 import { useDarkTheme } from "@shared/store/darkTheme";
 import { useUrlTracking } from "@shared/store/urlTracking";
-import { DefaultButton, FullScreenModal } from '@shared/ui';
+import { FullScreenModal } from '@shared/ui';
 import { PATHS } from "@shared/consts/paths";
 import { useModalEventDetect } from "@shared/hooks/useModalEventDetect";
 
