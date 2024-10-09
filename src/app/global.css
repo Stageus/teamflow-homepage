@@ -119,4 +119,9 @@ CSSname
    .button-type-danger {
       @apply bg-danger-color text-primary-white hover:bg-secondary-color;
    }
+
+   .input-text {
+      @apply border-b-2 bg-transparent text-primary-black outline-none dark:text-primary-white;
+   }
+
 }
