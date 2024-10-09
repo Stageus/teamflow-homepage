@@ -19,20 +19,20 @@ export const Header = () => {
    return (
       <div className="flex gap-3 px-4 py-2 justify-start">
          <div>
-            <DefaultButton type={getCurrentPathName(PATHS.teamspaceList) ? "active" : "notSelected"} text="TeamSpace" onClick={teamspaceListRoute} />
+            <button className={`button-layout ${getCurrentPathName(PATHS.teamspaceList) ? "button-type-active" : "button-type-not"}`} onClick={teamspaceListRoute}>TeamSpace</button>
          </div>
          <div ref={modalRef}>
-            <DefaultButton type={ isModalDetect ? "active" : "notSelected"} text="알림" onClick={onClickOpenModal} />
+            <button className={`button-layout ${isModalDetect ? "button-type-active" : "button-type-not"}`} onClick={onClickOpenModal}>알람</button>
             {isModalDetect ? <AlarmModal/> : null}
          </div>
-         <div className="desktop:text-size-xs">
-            <DefaultButton type="notSelected" text={theme ? "라이트모드" : "다크모드"} onClick={changeTheme} />
+         <div>
+            <button className='button-layout button-type-not' onClick={changeTheme}>{theme ? "라이트모드" : "다크모드"}</button>
          </div>
          <div>
-            <DefaultButton type="notSelected" text="로그인" onClick={loginRoute} />
+            <button className='button-layout button-type-not' onClick={loginRoute}>로그인</button>
          </div>
          <div>
-            <DefaultButton type="notSelected" text="로그아웃" onClick={onClickOpenLogoutModal} />
+         <button className='button-layout button-type-not' onClick={onClickOpenLogoutModal}>로그아웃</button>
             <FullScreenModal close={onClickOpenLogoutModal} title="Logout">{isLogout ? <LogoutModal cancell={onClickOpenLogoutModal}/> : null}</FullScreenModal>
          </div>
       </div>
