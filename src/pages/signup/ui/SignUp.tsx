@@ -34,7 +34,7 @@ export const SignUp = () => {
                </div>
                <div className="flex justify-center gap-5">
                   <button className={`button-layout ${checkInput ? "button-type-active" : "button-type-disabled"}`} onClick={ checkInput ? teamspaceListRoute : null}>가입하기</button>
-                  <button className='button-layout default' onClick={loginRoute}>뒤로가기</button>
+                  <button className='button-layout button-type-default' onClick={loginRoute}>뒤로가기</button>
                </div>
             </div>
          </div>
