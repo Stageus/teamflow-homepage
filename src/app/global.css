@@ -99,7 +99,24 @@ CSSname
 
 /* 재사용 가능한 컴포넌트 스타일 */
 @layer components {
-   /* .card {
-      background-color: aqua;
-    } */
+   .button-layout {
+      @apply flex justify-center items-center gap-3 w-full px-4 py-2 text-size-sm rounded-lg whitespace-nowrap;
+      @apply mobile:px-2 mobile:py-1;
+      box-shadow: 1px 2px 3px theme('colors.primary-gray');
+   }
+   .button-type-default {
+      @apply text-primary-black bg-primary-white hover:bg-secondary-color hover:text-primary-white;
+   }
+   .button-type-not {
+      @apply text-primary-white bg-primary-gray hover:bg-secondary-color;
+   }
+   .button-type-active {
+      @apply bg-primary-color text-primary-white hover:bg-secondary-color hover:text-primary-white;
+   }
+   .button-type-disabled {
+      @apply bg-primary-gray text-primary-white cursor-not-allowed;
+   }
+   .button-type-danger {
+      @apply bg-danger-color text-primary-white hover:bg-secondary-color;
+   }
 }
