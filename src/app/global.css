@@ -124,4 +124,14 @@ CSSname
       @apply border-b-2 bg-transparent text-primary-black outline-none dark:text-primary-white;
    }
 
+   .full-screen-modal {
+      @apply flex fixed inset-0 modal-gradient-light dark:modal-gradient-dark transition-transform;
+   }
+
+   .full-screen-modal-show{
+      @apply translate-x-0 opacity-100 visible;
+   }
+   .full-screen-modal-hidden{
+      @apply -translate-x-full opacity-0 invisible;
+   }
 }
