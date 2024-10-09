@@ -4,9 +4,9 @@ import { DefaultButton } from '@shared/ui';
 
 export const Aside = () => {
    return (
-      <div className="bg-light-bg2 h-full dark:bg-dark-bg2 flex flex-col gap-3 p-2">
+      <div className="bg-light-bg2 h-full dark:bg-dark-bg2 flex flex-col gap-2">
          <section><Profile/></section>
-         <section className="flex gap-2 h-full">
+         <section className="flex gap-2 h-full p-2">
             <div className="flex flex-col gap-3">
                <DefaultButton text="TeamSpace1" type="notSelected" onClick={() => console.log('특정TeamSpace 이동')} />
                <DefaultButton text="TeamSpace1" type="notSelected" onClick={() => console.log('특정TeamSpace 이동')} />
