@@ -85,7 +85,7 @@ CSSname
    }
 
    .aside-container {
-      @apply h-full min-w-[300px] max-w-[500px] grow;
+      @apply h-full min-w-[300px] max-w-[450px] w-full;
    }
 
    .header-container {
@@ -102,7 +102,7 @@ CSSname
    .button-layout {
       @apply flex justify-center items-center gap-3 w-full px-4 py-2 text-size-sm rounded-lg whitespace-nowrap;
       @apply mobile:px-2 mobile:py-1;
-      box-shadow: 1px 2px 3px theme('colors.primary-gray');
+      box-shadow: 1px 2px 3px #08080ca1;
    }
    .button-type-default {
       @apply text-primary-black bg-primary-white hover:bg-secondary-color hover:text-primary-white;
