@@ -19,7 +19,7 @@ export const SignUp = () => {
             </div>
             <h1>닉네임 생성</h1>
             <div className="flex w-full flex-col items-center gap-4">
-               <h2>{"useEmail@gmail.com"}</h2>
+               <h2 className="text-primary-gray">{"useEmail@gmail.com"}</h2>
                <div className="flex w-full flex-col gap-2">
                   <input
                      className='text-size-sm input-text'
