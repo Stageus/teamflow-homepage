@@ -3,6 +3,7 @@ import { Layout } from './Layout';
 import { Test } from '@pages/Test';
 import { Login } from '@pages/login';
 import { SignUp } from '@pages/signup';
+import { TeamSpaceList } from '@pages/teamspaceList';
 import { PATHS } from '@shared/consts/paths';
 
 export const Router = createBrowserRouter(
@@ -12,7 +13,7 @@ export const Router = createBrowserRouter(
             <Route path="test" element={<Test />} />
             <Route path={PATHS.login} element={<Login />} />
             <Route path={PATHS.signup} element={<SignUp/>} />
-            <Route path={PATHS.teamspaceList} element={<div>TeamSpace 선택페이지</div>} />
+            <Route path={PATHS.teamspaceList} element={<TeamSpaceList/>} />
             <Route path={`${PATHS.teamspace}/:team-space_name`}>
                <Route index element={<div>특정 TeamSpace 공지 채널페이지</div>} />
                <Route path={PATHS.public} element={<div>특정 TeamSpace 공개 채널페이지</div>} />
