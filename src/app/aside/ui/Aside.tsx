@@ -1,6 +1,5 @@
 import { BsArrowDownCircle, BsFillPlusCircleFill } from 'react-icons/bs';
 import { Profile } from './profile';
-import { DefaultButton } from '@shared/ui';
 
 export const Aside = () => {
    return (
@@ -8,10 +7,11 @@ export const Aside = () => {
          <section><Profile/></section>
          <section className="flex gap-2 h-full p-2">
             <div className="flex flex-col gap-3">
-               <DefaultButton text="TeamSpace1" type="notSelected" onClick={() => console.log('특정TeamSpace 이동')} />
-               <DefaultButton text="TeamSpace1" type="notSelected" onClick={() => console.log('특정TeamSpace 이동')} />
-               <DefaultButton text="TeamSpace1" type="notSelected" onClick={() => console.log('특정TeamSpace 이동')} />
-               <DefaultButton text="TeamSpace1" type="notSelected" onClick={() => console.log('특정TeamSpace 이동')} />
+               <button className='button-layout button-type-not'>TeamSpaceName</button>
+               <button className='button-layout button-type-not'>TeamSpaceName</button>
+               <button className='button-layout button-type-not'>TeamSpaceName</button>
+               <button className='button-layout button-type-not'>TeamSpaceName</button>
+               <button className='button-layout button-type-not'>TeamSpaceName</button>
             </div>
             <div className="p-1 flex flex-col gap-3 bg-light-bg3 dark:bg-dark-bg3 rounded-lg grow">
                <div className="cursor-pointer text-primary-gray hover:bg-primary-gray hover:text-primary-color rounded-lg p-2">
