@@ -28,7 +28,7 @@ export const SignUp = () => {
                      ref={inputRef}
                      onChange={nameValidation}
                   />
-                  <span className={`${checkInput ? 'text-success-color' : 'text-danger-color'} h-4`}>
+                  <span className={`${checkInput ? 'text-success-color' : 'text-danger-color'} h-4 text-size-sm`}>
                   {checkInput !== null && (checkInput ? '사용가능합니다' : '3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다')}
                   </span>
                </div>
