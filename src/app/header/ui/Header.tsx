@@ -16,7 +16,7 @@ export const Header = () => {
    const { isLogout, onClickOpenLogoutModal } = useLogout();
 
    return (
-      <div className="flex justify-start gap-3 px-4 py-2">
+      <div className="flex justify-start gap-3 px-4 py-2 whitespace-nowrap">
          {/* Button list in header */}
          <div>
             <button
