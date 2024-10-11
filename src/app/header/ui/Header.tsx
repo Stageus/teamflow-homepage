@@ -20,31 +20,31 @@ export const Header = () => {
       <div className="flex justify-start gap-3 px-4 py-2">
          <div>
             <button
-               className={`button-layout ${getCurrentPathName(PATHS.teamspaceList) ? 'button-type-active' : 'button-type-not'}`}
+               className={`button-layout ${getCurrentPathName(PATHS.teamspaceList) ? '_active' : '_not-select'}`}
                onClick={teamspaceListRoute}>
                TeamSpace
             </button>
          </div>
          <div ref={modalRef}>
             <button
-               className={`button-layout ${isModalDetect ? 'button-type-active' : 'button-type-not'}`}
+               className={`button-layout ${isModalDetect ? '_active' : '_not-select'}`}
                onClick={onClickOpenModal}>
                알람
             </button>
             {isModalDetect ? <AlarmModal /> : null}
          </div>
          <div>
-            <button className="button-layout button-type-not" onClick={changeTheme}>
+            <button className="button-layout _not-select" onClick={changeTheme}>
                {theme ? '라이트모드' : '다크모드'}
             </button>
          </div>
          <div>
-            <button className="button-layout button-type-not" onClick={loginRoute}>
+            <button className="button-layout _not-select" onClick={loginRoute}>
                로그인
             </button>
          </div>
          <div>
-            <button className="button-layout button-type-not" onClick={onClickOpenLogoutModal}>
+            <button className="button-layout _not-select" onClick={onClickOpenLogoutModal}>
                로그아웃
             </button>
             <div className={`full-screen-modal ${isLogout ? 'full-screen-modal-show' : 'full-screen-modal-hidden'}`}>
