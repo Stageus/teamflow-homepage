@@ -6,6 +6,15 @@ export const useToggleTheme = () => {
 
    const changeTheme = () => setIsDark(!isDark);
    useEffect(() => {
+      const htmlElement = document.documentElement;
+
+      if(isDark){
+         htmlElement.classList.add('dark');
+      }else{
+         htmlElement.classList.remove('dark');
+      }
+      
+
       localStorage.setItem('theme', isDark ? 'dark' : '');
    }, [isDark]);
 

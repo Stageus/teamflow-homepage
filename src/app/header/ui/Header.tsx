@@ -15,6 +15,7 @@ export const Header = () => {
    const { getCurrentPathName } = useUrlTracking();
    const { modalRef, isModalDetect, onClickOpenModal } = useModalEventDetect();
    const { isLogout, onClickOpenLogoutModal } = useLogout();
+
    return (
       <div className="flex justify-start gap-3 px-4 py-2">
          <div>
