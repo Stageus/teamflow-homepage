@@ -44,14 +44,14 @@ CSSname
 
    html,
    body {
-      @apply h-screen font-service bg-shade_1;
+      @apply bg-shade_1 h-screen font-service;
    }
 
    h1 {
       @apply text-title text-black dark:text-white;
    }
    h2 {
-      @apply text-title_sub
+      @apply text-title_sub;
    }
    p {
       @apply text-base text-black dark:text-white;
@@ -107,7 +107,7 @@ CSSname
    }
 
    .layout-container {
-      @apply flex bg-shade_1;
+      @apply bg-shade_1 flex;
    }
 
    .divide-container {
@@ -119,7 +119,7 @@ CSSname
    }
 
    .header-container {
-      @apply bg-transparent sticky top-0;
+      @apply sticky top-0 bg-transparent;
    }
 
    .main-container {
@@ -133,19 +133,19 @@ CSSname
       @apply flex w-full items-center justify-center gap-3 rounded-lg px-4 py-2 text-sm text-black dark:text-white;
       box-shadow: 1px 2px 4px theme('colors.shade_5');
 
-      &._active{
+      &._active {
          @apply bg-primary hover:bg-secondary text-white;
       }
-      &._default{
+      &._default {
          @apply bg-shade_1 hover:bg-secondary hover:text-white;
       }
-      &._not-select{
+      &._not-select {
          @apply bg-shade_4 hover:bg-secondary text-white;
       }
-      &._disabled{
-         @apply cursor-not-allowed bg-shade_5 text-white;
+      &._disabled {
+         @apply bg-shade_5 cursor-not-allowed text-white;
       }
-      &._danger{
+      &._danger {
          @apply bg-error hover:bg-secondary;
       }
    }
@@ -154,23 +154,30 @@ CSSname
       @apply flex w-full flex-col gap-2;
 
       .form_input {
-         @apply border-b-2 bg-transparent text-black dark:text-white outline-none text-sm;
+         @apply border-b-2 bg-transparent text-sm text-black outline-none dark:text-white;
       }
 
       .form_text {
          @apply text-xs;
       }
-
    }
 
    .full-screen-modal {
       @apply modal-gradient-light dark:modal-gradient-dark fixed inset-0 flex transition-transform;
-   }
 
-   .full-screen-modal-show {
-      @apply visible translate-x-0 opacity-100;
-   }
-   .full-screen-modal-hidden {
-      @apply invisible -translate-x-full opacity-0;
+      .title {
+         @apply text-secondary flex justify-center py-5 text-[50px] italic;
+         width: 200px;
+         text-shadow: -15px 20px theme('colors.shade_5');
+      }
+      .title_sub {
+         @apply p-5 italic text-white dark:text-black;
+      }
+      &._show {
+         @apply visible translate-x-0 opacity-100;
+      }
+      &._hidden {
+         @apply invisible -translate-x-full opacity-0;
+      }
    }
 }
