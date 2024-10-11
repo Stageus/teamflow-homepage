@@ -1,40 +1,8 @@
-import { useState } from 'react';
-import { DefaultButton } from '@shared/ui';
-import { TextInput } from '@features/textInput';
-import { useRoute } from '@shared/hooks';
-
-
 export const Test = () => {
-   const { loginRoute, teamspaceListRoute } = useRoute();
-   const [open, setOpen] = useState(false);
-
-   const onClickModal = () => setOpen(!open);
 
    return (
-      <>
-         {/* <div>test페이지</div> */}
-         {/* <h1>반응형 테스트</h1> */}
-         {/* <DefaultButton type="default" onClick={() => console.log('실행')} text="테스트" /> */}
-         {/* <DefaultButton type="notSelected" onClick={() => console.log('실행')} text="테스트" /> */}
-         {/* <DefaultButton type="active" onClick={() => console.log('실행')} text="테스트" /> */}
-         {/* <DefaultButton type="disabled" onClick={() => console.log('실행')} text="테스트" /> */}
-         {/* <DefaultButton type="danger" onClick={() => console.log('실행')} text="테스트" /> */}
-
-         <DefaultButton text="모달창 오픈" type="active" onClick={onClickModal} />
-         
-         {/* <div className="w-aside">
-            <TextInput
-               title="useEmail@gmail.com"
-               regex={/^[가-힣a-zA-Z0-9]{3,10}$/}
-               errorText="3글자 이상 ~ 10글자 이하 (한글/영어/숫자)"
-               placeholder="3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다"
-               nextName="가입하기"
-               nextCallback={teamspaceListRoute}
-               cancellName='뒤로가기'
-               cancellCallback={loginRoute}
-               ></TextInput>
-         </div> */}
-         <div className="w-full">
+      <div className='h-full bg-slate-400'>
+          <div className="w-full">
             <h1>
             Hey everyone! It's almost 2022 and we still don't know if there is aliens living among us, or do we?
             Maybe the person writing this is an alien. You will never know.
@@ -54,7 +22,29 @@ export const Test = () => {
             <button>
             버튼
             </button>
-         </div>              
-      </>
+
+            <div className='w-full bg-white'>white</div>
+            <div className='w-full bg-gray-50'>50</div>
+            <div className='w-full bg-gray-100'>100</div>
+            <div className='w-full bg-gray-200'>200</div>
+            <div className='w-full bg-gray-300'>300</div>
+            <div className='w-full bg-gray-400'>400</div>
+
+            <div className='w-full bg-gray-600 text-white'>600</div>
+            <div className='w-full bg-gray-700 text-white'>700</div>
+            <div className='w-full bg-gray-800 text-white'>800</div>
+            <div className='w-full bg-gray-900 text-white'>900</div>
+            <div className='w-full bg-gray-950 text-white'>950</div>
+            <div className='w-full bg-black text-white'>black</div>
+
+            <div className='flex items-center justify-center w-20 h-20 shadow-sm'>shadow-sm</div>
+            <div className='flex items-center justify-center w-20 h-20 shadow'>shadow</div>
+            <div className='flex items-center justify-center w-20 h-20 shadow-md'>shadow-md</div>
+            <div className='flex items-center justify-center w-20 h-20 shadow-lg'>shadow-lg</div>
+            <div className='flex items-center justify-center w-20 h-20 shadow-xl'>shadow-xl</div>
+            <div className='flex items-center justify-center w-20 h-20 shadow-2xl'>shadow-2xl</div>
+            <div className='flex items-center justify-center w-20 h-20 shadow-inner'>shadow-inner</div>
+         </div>     
+      </div>
    );
 };
