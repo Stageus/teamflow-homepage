@@ -4,7 +4,7 @@ export const Login = () => {
    const { signupRoute } = useRoute();
 
    return (
-      <div className="h-full flex justify-center items-center gradient-light dark:gradient-dark">
+      <div className="h-screen flex justify-center items-center gradient-light dark:gradient-dark">
          <div className="flex flex-col justify-center items-center gap-5 px-10 py-5 bg-transparent rounded-lg shadow-xl min-w-[400px] min-h-[300px]">
             <div>
                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,8 +16,8 @@ export const Login = () => {
                </svg>
             </div>
             <h1 className="italic">TeamFlow</h1>
-            <h2 className="text-primary-gray">TeamFlow에 오신것을 환영합니다!</h2>
-            <button className='button-layout button-type-active' onClick={signupRoute}>
+            <h2 className="text-shade_5">TeamFlow에 오신것을 환영합니다!</h2>
+            <button className='button-layout _active' onClick={signupRoute}>
                <svg width="25px" height="25px" viewBox="0 0 753 768" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M752.64 392.727C752.64 365.498 750.196 339.316 745.658 314.182H384V462.895H590.662C581.585 510.72 554.356 551.215 513.513 578.444V675.142H638.138C710.749 608.116 752.64 509.673 752.64 392.727Z" fill="#4285F4"/>
                   <path d="M384 768C487.68 768 574.604 733.789 638.138 675.142L513.513 578.444C479.302 601.484 435.665 615.447 384 615.447C284.16 615.447 199.331 548.073 168.96 457.309H41.1927V556.451C104.378 681.775 233.891 768 384 768Z" fill="#34A853"/>
