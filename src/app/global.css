@@ -19,25 +19,48 @@ CSSname
 
 /* 기본 전역 스타일 */
 @layer base {
+   :root {
+      --color-primary: rgb(53, 120, 255);
+      --color-secondary: rgb(91, 157, 255);
+      --color-white: rgb(255 255 255);
+      --color-black: rgb(0, 0, 0);
+      --color-success: rgb(10, 221, 102);
+      --color-error: rgb(249, 58, 55);
+
+      --color-shade_1: rgb(249 250 251);
+      --color-shade_2: rgb(243 244 246);
+      --color-shade_3: rgb(229 231 235);
+      --color-shade_4: rgb(209 213 219);
+      --color-shade_5: rgb(156 163 175);
+   }
+
+   html.dark {
+      --color-shade_1: rgb(3 7 18);
+      --color-shade_2: rgb(17 24 39);
+      --color-shade_3: rgb(31 41 55);
+      --color-shade_4: rgb(55 65 81);
+      --color-shade_5: rgb(75 85 99);
+   }
+
    html,
    body {
-      @apply font-service; 
+      @apply h-screen font-service;
    }
 
    h1 {
-      @apply text-primary-title text-primary-black dark:text-primary-white;
+      @apply text-title text-black dark:text-white;
    }
    h2 {
-      @apply text-secondary-title;
+      @apply text-title_sub
    }
    p {
-      @apply text-size-lg text-primary-black dark:text-primary-white;
+      @apply text-base text-black dark:text-white;
    }
    span {
-      @apply text-size-base;
+      @apply text-base;
    }
    button {
-      @apply text-size-base;
+      @apply text-base;
    }
 }
 
@@ -77,36 +100,22 @@ CSSname
    }
 
    .card-gradient-dark {
-      background: linear-gradient(
-         140deg,
-         #26262C 7%,
-         #3578ff5e 7%,
-         #3578ff5e 20%,
-         #26262C 20%,
-         #26262C 100%
-       );
+      background: linear-gradient(140deg, #26262c 7%, #3578ff5e 7%, #3578ff5e 20%, #26262c 20%, #26262c 100%);
    }
    .card-gradient-light {
-      background: linear-gradient(
-         130deg,
-         #9d9dae42 7%,
-         #3578ff5e 7%,
-         #3578ff5e 20%,
-         #9d9dae42 20%,
-         #9d9dae42 100%
-       );
+      background: linear-gradient(130deg, #9d9dae42 7%, #3578ff5e 7%, #3578ff5e 20%, #9d9dae42 20%, #9d9dae42 100%);
    }
 
    .layout-container {
-      @apply flex h-screen bg-primary-white dark:bg-primary-black;
+      @apply flex h-full bg-shade_1;
    }
 
    .divide-container {
-      @apply flex flex-col grow;
+      @apply flex grow flex-col;
    }
 
    .aside-container {
-      @apply h-full min-w-[300px] max-w-[450px] w-full;
+      @apply relative w-full min-w-[300px] max-w-[450px];
    }
 
    .header-container {
@@ -121,38 +130,36 @@ CSSname
 /* 재사용 가능한 컴포넌트 스타일 */
 @layer components {
    .button-layout {
-      @apply flex justify-center items-center gap-3 w-full px-4 py-2 text-size-sm rounded-lg whitespace-nowrap;
-      @apply mobile:px-2 mobile:py-1;
-      box-shadow: 1px 2px 3px #08080ca1;
+      @apply flex w-full items-center justify-center gap-3 whitespace-nowrap rounded-lg px-4 py-2 text-sm;
    }
    .button-type-default {
-      @apply text-primary-black bg-primary-white hover:bg-secondary-color hover:text-primary-white;
+      @apply bg-primary hover:bg-secondary text-black hover:text-white;
    }
    .button-type-not {
-      @apply text-primary-white bg-primary-gray hover:bg-secondary-color;
+      @apply bg-shade_4 hover:bg-secondary text-white;
    }
    .button-type-active {
-      @apply bg-primary-color text-primary-white hover:bg-secondary-color hover:text-primary-white;
+      @apply bg-primary hover:bg-secondary text-white;
    }
    .button-type-disabled {
-      @apply bg-primary-gray text-primary-white cursor-not-allowed;
+      @apply cursor-not-allowed bg-shade_5 text-white;
    }
    .button-type-danger {
-      @apply bg-danger-color text-primary-white hover:bg-secondary-color;
+      @apply bg-error hover:bg-secondary text-white;
    }
 
    .input-text {
-      @apply border-b-2 bg-transparent text-primary-black outline-none dark:text-primary-white;
+      @apply border-b-2 bg-transparent text-black outline-none dark:text-white;
    }
 
    .full-screen-modal {
-      @apply flex fixed inset-0 modal-gradient-light dark:modal-gradient-dark transition-transform;
+      @apply modal-gradient-light dark:modal-gradient-dark fixed inset-0 flex transition-transform;
    }
 
-   .full-screen-modal-show{
-      @apply translate-x-0 opacity-100 visible;
+   .full-screen-modal-show {
+      @apply visible translate-x-0 opacity-100;
    }
-   .full-screen-modal-hidden{
-      @apply -translate-x-full opacity-0 invisible;
+   .full-screen-modal-hidden {
+      @apply invisible -translate-x-full opacity-0;
    }
 }
