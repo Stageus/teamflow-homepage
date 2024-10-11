@@ -119,7 +119,7 @@ CSSname
    }
 
    .header-container {
-      @apply flex flex-col;
+      @apply bg-transparent sticky top-0;
    }
 
    .main-container {
@@ -140,7 +140,7 @@ CSSname
          @apply bg-shade_1 hover:bg-secondary hover:text-white;
       }
       &._not-select{
-         @apply bg-shade_4 hover:bg-secondary;
+         @apply bg-shade_4 hover:bg-secondary text-white;
       }
       &._disabled{
          @apply cursor-not-allowed bg-shade_5 text-white;
