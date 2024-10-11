@@ -8,7 +8,7 @@ export const DarkThemeProvider = ( props : ProviderProps) => {
 
    return (
       <DarkThemeContext.Provider value={{theme:isDark, changeTheme}}>
-         <div className={isDark ? 'dark' : ''}>{children}</div>
+         {children}
       </DarkThemeContext.Provider>
    );
 };
