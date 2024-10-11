@@ -44,7 +44,7 @@ CSSname
 
    html,
    body {
-      @apply h-screen font-service;
+      @apply h-screen font-service bg-shade_1;
    }
 
    h1 {
@@ -107,7 +107,7 @@ CSSname
    }
 
    .layout-container {
-      @apply flex h-full bg-shade_1;
+      @apply flex bg-shade_1;
    }
 
    .divide-container {
@@ -130,22 +130,23 @@ CSSname
 /* 재사용 가능한 컴포넌트 스타일 */
 @layer components {
    .button-layout {
-      @apply flex w-full items-center justify-center gap-3 whitespace-nowrap rounded-lg px-4 py-2 text-sm;
-   }
-   .button-type-default {
-      @apply bg-primary hover:bg-secondary text-black hover:text-white;
-   }
-   .button-type-not {
-      @apply bg-shade_4 hover:bg-secondary text-white;
-   }
-   .button-type-active {
-      @apply bg-primary hover:bg-secondary text-white;
-   }
-   .button-type-disabled {
-      @apply cursor-not-allowed bg-shade_5 text-white;
-   }
-   .button-type-danger {
-      @apply bg-error hover:bg-secondary text-white;
+      @apply flex w-full items-center justify-center gap-3 rounded-lg px-4 py-2 text-base;
+
+      &._active{
+         @apply bg-primary hover:bg-secondary text-white;
+      }
+      &._default{
+         @apply bg-primary hover:bg-secondary text-black hover:text-white;
+      }
+      &._not-select{
+         @apply bg-shade_4 hover:bg-secondary text-white;
+      }
+      &._disabled{
+         @apply cursor-not-allowed bg-shade_5 text-white;
+      }
+      &._danger{
+         @apply bg-error hover:bg-secondary text-white;
+      }
    }
 
    .input-text {
