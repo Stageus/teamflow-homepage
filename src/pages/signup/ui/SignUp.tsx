@@ -1,12 +1,12 @@
-import { useValidation } from "../model/useValidation";
+import { useValidation } from '../model/useValidation';
 import { useRoute } from '@shared/hooks';
 
 export const SignUp = () => {
-   const {loginRoute, teamspaceListRoute} = useRoute();
+   const { loginRoute, teamspaceListRoute } = useRoute();
    const { inputRef, checkInput, nameValidation } = useValidation();
-   
+
    return (
-      <div className="gradient-light dark:gradient-dark flex h-full items-center justify-center">
+      <div className="gradient-light dark:gradient-dark flex h-screen items-center justify-center">
          <div className="flex min-h-[300px] min-w-[400px] flex-col items-center justify-center gap-5 rounded-lg bg-transparent px-10 py-5 shadow-xl">
             <div>
                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,22 +19,30 @@ export const SignUp = () => {
             </div>
             <h1>닉네임 생성</h1>
             <div className="flex w-full flex-col items-center gap-4">
-               <h2 className="text-primary-gray">{"useEmail@gmail.com"}</h2>
-               <div className="flex w-full flex-col gap-2">
+               {/* need a response data */}
+               <h2 className="text-shade_5">{'useEmail@gmail.com'}</h2>
+               <div className="input-form">
                   <input
-                     className='text-size-sm input-text'
-                     placeholder='3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다'
+                     className="form_input"
+                     placeholder="3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다"
                      type="text"
                      ref={inputRef}
                      onChange={nameValidation}
                   />
-                  <span className={`${checkInput ? 'text-success-color' : 'text-danger-color'} h-4 text-size-sm`}>
-                  {checkInput !== null && (checkInput ? '사용가능합니다' : '3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다')}
+                  <span className={`${checkInput ? 'text-success' : 'text-error'} form_text`}>
+                     {checkInput !== null &&
+                        (checkInput ? '사용가능합니다' : '3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다')}
                   </span>
                </div>
                <div className="flex justify-center gap-5">
-                  <button className={`button-layout ${checkInput ? "button-type-active" : "button-type-disabled"}`} onClick={ checkInput ? teamspaceListRoute : null}>가입하기</button>
-                  <button className='button-layout button-type-default' onClick={loginRoute}>뒤로가기</button>
+                  <button
+                     className={`button-layout ${checkInput ? '_active' : '_disabled'}`}
+                     onClick={checkInput ? teamspaceListRoute : null}>
+                     가입하기
+                  </button>
+                  <button className="button-layout _default" onClick={loginRoute}>
+                     뒤로가기
+                  </button>
                </div>
             </div>
          </div>

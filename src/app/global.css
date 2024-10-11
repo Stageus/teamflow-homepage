@@ -130,27 +130,37 @@ CSSname
 /* 재사용 가능한 컴포넌트 스타일 */
 @layer components {
    .button-layout {
-      @apply flex w-full items-center justify-center gap-3 rounded-lg px-4 py-2 text-base;
+      @apply flex w-full items-center justify-center gap-3 rounded-lg px-4 py-2 text-sm text-black dark:text-white;
+      box-shadow: 1px 2px 4px theme('colors.shade_5');
 
       &._active{
          @apply bg-primary hover:bg-secondary text-white;
       }
       &._default{
-         @apply bg-primary hover:bg-secondary text-black hover:text-white;
+         @apply bg-shade_1 hover:bg-secondary hover:text-white;
       }
       &._not-select{
-         @apply bg-shade_4 hover:bg-secondary text-white;
+         @apply bg-shade_4 hover:bg-secondary;
       }
       &._disabled{
          @apply cursor-not-allowed bg-shade_5 text-white;
       }
       &._danger{
-         @apply bg-error hover:bg-secondary text-white;
+         @apply bg-error hover:bg-secondary;
       }
    }
 
-   .input-text {
-      @apply border-b-2 bg-transparent text-black outline-none dark:text-white;
+   .input-form {
+      @apply flex w-full flex-col gap-2;
+
+      .form_input {
+         @apply border-b-2 bg-transparent text-black dark:text-white outline-none text-sm;
+      }
+
+      .form_text {
+         @apply text-xs;
+      }
+
    }
 
    .full-screen-modal {
