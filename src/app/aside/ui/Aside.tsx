@@ -1,15 +1,14 @@
-import { BsArrowDownCircle, BsFillPlusCircleFill } from 'react-icons/bs';
 import { Profile } from './profile';
 import { TeamSpcaeChannel } from './teamSpaceChannel';
 
 export const Aside = () => {
    return (
-      <div className="sticky top-0 flex h-screen flex-col gap-2 bg-light-bg2 dark:bg-dark-bg2">
+      <div className="flex flex-col gap-2 bg-shade_1 h-full">
          <section>
-            <Profile />
+            <Profile/>
          </section>
-         <section className="flex h-full gap-2 p-2">
-            <TeamSpcaeChannel />
+         <section className="grow flex gap-2 p-1 overflow-hidden">
+            <TeamSpcaeChannel/>
          </section>
       </div>
    );
