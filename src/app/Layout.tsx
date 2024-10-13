@@ -14,11 +14,11 @@ export const Layout = () => {
       <UrlTrackingProvider>
          <div className="bg-shade_1 flex">
             {layoutNone && (
-               <aside className="relative w-full h-screen min-w-[300px] max-w-[450px]">
+               <aside className="relative w-full max-w-[400px] h-screen">
                   <Aside />
                </aside>
             )}
-            <div className="flex grow flex-col">
+            <div className="flex grow flex-col min-w-[500px]">
                {layoutNone && (
                   <header className="sticky top-0 bg-transparent">
                      <Header />
