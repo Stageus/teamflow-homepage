@@ -137,7 +137,7 @@ CSSname
          @apply bg-primary hover:bg-secondary text-white;
       }
       &._default {
-         @apply bg-shade_1 hover:bg-secondary hover:text-white;
+         @apply bg-white text-black hover:bg-secondary hover:text-white;
       }
       &._not-select {
          @apply bg-shade_4 hover:bg-secondary text-white;
