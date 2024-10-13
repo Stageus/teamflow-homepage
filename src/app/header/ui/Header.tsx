@@ -20,29 +20,29 @@ export const Header = () => {
          {/* Button list in header */}
          <div>
             <button
-               className={`button-layout ${getCurrentPathName(PATHS.teamspaceList) ? '_active' : '_not-select'}`}
+               className={`button-layout ${getCurrentPathName(PATHS.teamspaceList) ? '_active' : '_not-select'} sm:px-2 sm:py-2 sm:text-xs`}
                onClick={teamspaceListRoute}>
                TeamSpace
             </button>
          </div>
          <div ref={modalRef} className='relative'>
-            <button className={`button-layout ${isModalDetect ? '_active' : '_not-select'}`} onClick={onClickOpenModal}>
+            <button className={`button-layout ${isModalDetect ? '_active' : '_not-select'} sm:px-2 sm:py-2 sm:text-xs`} onClick={onClickOpenModal}>
                알람
             </button>
             {isModalDetect ? <AlarmModal /> : null}
          </div>
          <div>
-            <button className="button-layout _not-select" onClick={changeTheme}>
+            <button className="button-layout _not-select sm:px-2 sm:py-2 sm:text-xs" onClick={changeTheme}>
                {theme ? '라이트모드' : '다크모드'}
             </button>
          </div>
          <div>
-            <button className="button-layout _not-select" onClick={loginRoute}>
+            <button className="button-layout _not-select sm:px-2 sm:py-2 sm:text-xs" onClick={loginRoute}>
                로그인
             </button>
          </div>
          <div>
-            <button className="button-layout _not-select" onClick={onClickOpenLogoutModal}>
+            <button className="button-layout _not-select sm:px-2 sm:py-2 sm:text-xs" onClick={onClickOpenLogoutModal}>
                로그아웃
             </button>
             {/* Logout modal */}
