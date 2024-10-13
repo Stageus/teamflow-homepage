@@ -15,7 +15,7 @@ export default {
          // fid: 일관된 네이밍과 추가적인 브레이크 포인트를 고려해보자
          // 기본적은 min-width가 적용된다
          // max를 적용하게 된다면 { max: 1px} 형식을 사용함
-         sm: '640px',
+         sm: {max: "767px"},
          md: '768px',
          lg: '1024px',
          xl: '1280px',
