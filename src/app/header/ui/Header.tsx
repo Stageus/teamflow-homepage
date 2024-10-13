@@ -1,6 +1,5 @@
 import { BsXLg } from 'react-icons/bs';
 import { AlarmModal } from './alarmModal';
-import { LogoutModal } from './logoutModal';
 import { useLogout } from '../model/useLogout';
 
 import { useRoute } from '@shared/hooks';
@@ -17,45 +16,57 @@ export const Header = () => {
    const { isLogout, onClickOpenLogoutModal } = useLogout();
 
    return (
-      <div className="flex justify-start gap-3 px-4 py-2">
+      <div className="flex justify-start gap-3 px-4 py-2 whitespace-nowrap">
+         {/* Button list in header */}
          <div>
             <button
-               className={`button-layout ${getCurrentPathName(PATHS.teamspaceList) ? 'button-type-active' : 'button-type-not'}`}
+               className={`button-layout ${getCurrentPathName(PATHS.teamspaceList) ? '_active' : '_not-select'}`}
                onClick={teamspaceListRoute}>
                TeamSpace
             </button>
          </div>
-         <div ref={modalRef}>
-            <button
-               className={`button-layout ${isModalDetect ? 'button-type-active' : 'button-type-not'}`}
-               onClick={onClickOpenModal}>
+         <div ref={modalRef} className='relative'>
+            <button className={`button-layout ${isModalDetect ? '_active' : '_not-select'}`} onClick={onClickOpenModal}>
                알람
             </button>
             {isModalDetect ? <AlarmModal /> : null}
          </div>
          <div>
-            <button className="button-layout button-type-not" onClick={changeTheme}>
+            <button className="button-layout _not-select" onClick={changeTheme}>
                {theme ? '라이트모드' : '다크모드'}
             </button>
          </div>
          <div>
-            <button className="button-layout button-type-not" onClick={loginRoute}>
+            <button className="button-layout _not-select" onClick={loginRoute}>
                로그인
             </button>
          </div>
          <div>
-            <button className="button-layout button-type-not" onClick={onClickOpenLogoutModal}>
+            <button className="button-layout _not-select" onClick={onClickOpenLogoutModal}>
                로그아웃
             </button>
-            <div className={`full-screen-modal ${isLogout ? 'full-screen-modal-show' : 'full-screen-modal-hidden'}`}>
+            {/* Logout modal */}
+            <div className={`full-screen-modal ${isLogout ? '_show' : '_hidden'}`}>
+               <h1 className='title'>Logout</h1>
                <div
                   onClick={onClickOpenLogoutModal}
-                  className="absolute right-5 top-5 flex h-[50px] w-[50px] cursor-pointer items-center justify-end text-primary-black dark:text-primary-white">
-                  <BsXLg size={'30'} />
+                  className="absolute right-5 top-5 flex h-[25px] w-[25px] cursor-pointer items-center justify-end text-white hover:text-secondary">
+                  <BsXLg size={'100%'} />
                </div>
-               <h1 className="flex items-center justify-center px-5">Logout</h1>
                <div className="flex grow items-center justify-center">
-                  {isLogout ? <LogoutModal cancell={onClickOpenLogoutModal} /> : null}
+                  {isLogout ? (
+                     <div>
+                        <h2 className="title_sub">로그아웃 하시겠습니까?</h2>
+                        <div className="flex gap-5">
+                           <button className="button-layout _danger" onClick={loginRoute}>
+                              로그아웃
+                           </button>
+                           <button className="button-layout _default" onClick={onClickOpenLogoutModal}>
+                              되돌아가기
+                           </button>
+                        </div>
+                     </div>
+                  ) : null}
                </div>
             </div>
          </div>
