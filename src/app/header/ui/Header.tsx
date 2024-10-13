@@ -25,7 +25,7 @@ export const Header = () => {
                TeamSpace
             </button>
          </div>
-         <div ref={modalRef}>
+         <div ref={modalRef} className='relative'>
             <button className={`button-layout ${isModalDetect ? '_active' : '_not-select'}`} onClick={onClickOpenModal}>
                알람
             </button>
