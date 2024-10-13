@@ -1,6 +1,6 @@
 export const AlarmModal = () => {
    return (
-      <div className="absolute flex h-[425px] w-[400px] translate-y-7 flex-col justify-between rounded-lg bg-shade_1 text-black dark:text-white">
+      <div className="absolute w-[300px] md:w-[400px] min-h-[400px] flex left-0 -bottom-2 translate-y-full -translate-x-1/4 flex-col justify-between rounded-lg bg-shade_1 text-black dark:text-white border-shade_5 border">
          <ul className="flex flex-col gap-4 overflow-y-scroll px-4">
             <li className="flex flex-col gap-4 border-b-2 border-shade_5 py-4">
                <div>
