@@ -14,7 +14,7 @@ export const Layout = () => {
       <UrlTrackingProvider>
          <div className="bg-shade_1 flex">
             {layoutNone && (
-               <aside className="relative w-full max-w-[400px] h-screen">
+               <aside className="w-full min-w-[250px] max-w-[400px] h-screen">
                   <Aside />
                </aside>
             )}
