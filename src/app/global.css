@@ -82,48 +82,13 @@ CSSname
          rgba(250, 250, 250, 1) 46.432322053675605%
       );
    }
-   .modal-gradient-light {
+   .modal-gradient {
       background: linear-gradient(
          87.56681431265758deg,
          rgba(157, 157, 174, 1) 3.4884724289021163%,
          rgba(156, 156, 173, 1) 3.4884724289021163%,
          rgba(8, 8, 12, 0.7) 36.17386429398148%
       );
-   }
-   .modal-gradient-dark {
-      background: linear-gradient(
-         87.56681431265758deg,
-         rgba(157, 157, 174, 1) 3.4884724289021163%,
-         rgba(156, 156, 173, 1) 3.4884724289021163%,
-         rgba(250, 250, 250, 0.7) 36.17386429398148%
-      );
-   }
-
-   .card-gradient-dark {
-      background: linear-gradient(140deg, #26262c 7%, #3578ff5e 7%, #3578ff5e 20%, #26262c 20%, #26262c 100%);
-   }
-   .card-gradient-light {
-      background: linear-gradient(130deg, #9d9dae42 7%, #3578ff5e 7%, #3578ff5e 20%, #9d9dae42 20%, #9d9dae42 100%);
-   }
-
-   .layout-container {
-      @apply bg-shade_1 flex;
-   }
-
-   .divide-container {
-      @apply flex grow flex-col;
-   }
-
-   .aside-container {
-      @apply relative w-full min-w-[300px] max-w-[450px];
-   }
-
-   .header-container {
-      @apply sticky top-0 bg-transparent;
-   }
-
-   .main-container {
-      @apply grow;
    }
 }
 
@@ -137,7 +102,7 @@ CSSname
          @apply bg-primary hover:bg-secondary text-white;
       }
       &._default {
-         @apply bg-white text-black hover:bg-secondary hover:text-white;
+         @apply hover:bg-secondary bg-white text-black hover:text-white;
       }
       &._not-select {
          @apply bg-shade_4 hover:bg-secondary text-white;
@@ -163,21 +128,37 @@ CSSname
    }
 
    .full-screen-modal {
-      @apply modal-gradient-light dark:modal-gradient-dark fixed inset-0 flex transition-transform;
+      @apply modal-gradient fixed inset-0 flex transition-transform z-50;
 
       .title {
-         @apply text-secondary flex justify-center py-5 text-[50px] italic;
+         @apply text-primary flex justify-center py-5 text-[30px] italic;
          width: 200px;
-         text-shadow: -15px 20px theme('colors.shade_5');
+         text-shadow: -2px 2px theme('colors.shade_5');
       }
       .title_sub {
-         @apply p-5 italic text-white dark:text-black;
+         @apply p-5 italic text-shade_5;
       }
       &._show {
          @apply visible translate-x-0 opacity-100;
       }
       &._hidden {
          @apply invisible -translate-x-full opacity-0;
+      }
+   }
+
+   /* tooltip 임시보류 */
+   .message {
+      position: relative;
+      &:hover::after {
+         content: attr(data-message);
+         position: absolute;
+         white-space: nowrap;
+         border-radius: 8px;
+         font-size: 12px;
+         padding: 4px 8px;
+         color: theme("colors.white");
+         background-color: theme("colors.shade_5");
+         transform: translate(-50%, -200%);
       }
    }
 }

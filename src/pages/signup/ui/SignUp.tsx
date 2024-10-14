@@ -1,9 +1,10 @@
-import { useValidation } from '../model/useValidation';
+import { useNameValidation } from "@shared/hooks/useNameVaildation";
+
 import { useRoute } from '@shared/hooks';
 
 export const SignUp = () => {
    const { loginRoute, teamspaceListRoute } = useRoute();
-   const { inputRef, checkInput, nameValidation } = useValidation();
+   const { inputRef, isValid, handlerValidation } = useNameValidation();
 
    return (
       <div className="gradient-light dark:gradient-dark flex h-screen items-center justify-center">
@@ -27,17 +28,17 @@ export const SignUp = () => {
                      placeholder="3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다"
                      type="text"
                      ref={inputRef}
-                     onChange={nameValidation}
+                     onChange={handlerValidation}
                   />
-                  <span className={`${checkInput ? 'text-success' : 'text-error'} form_text`}>
-                     {checkInput !== null &&
-                        (checkInput ? '사용가능합니다' : '3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다')}
+                  <span className={`${isValid ? 'text-success' : 'text-error'} form_text`}>
+                     {isValid !== null &&
+                        (isValid ? '사용가능합니다' : '3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다')}
                   </span>
                </div>
                <div className="flex justify-center gap-5">
                   <button
-                     className={`button-layout ${checkInput ? '_active' : '_disabled'}`}
-                     onClick={checkInput ? teamspaceListRoute : null}>
+                     className={`button-layout ${isValid ? '_active' : '_disabled'}`}
+                     onClick={isValid ? teamspaceListRoute : null}>
                      가입하기
                   </button>
                   <button className="button-layout _default" onClick={loginRoute}>

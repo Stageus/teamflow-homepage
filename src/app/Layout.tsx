@@ -12,19 +12,19 @@ export const Layout = () => {
 
    return (
       <UrlTrackingProvider>
-         <div className="layout-container">
+         <div className="bg-shade_1 flex">
             {layoutNone && (
-               <aside className="aside-container">
+               <aside className="w-full min-w-[250px] max-w-[400px] h-screen">
                   <Aside />
                </aside>
             )}
-            <div className="divide-container">
+            <div className="flex grow flex-col min-w-[500px]">
                {layoutNone && (
-                  <header className="header-container">
+                  <header className="sticky top-0 bg-transparent">
                      <Header />
                   </header>
                )}
-               <main className="main-container">
+               <main className="grow">
                   <Outlet />
                </main>
             </div>

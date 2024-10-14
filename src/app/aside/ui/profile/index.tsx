@@ -26,23 +26,23 @@ export const Profile = () => {
          <div className="flex flex-col p-3">
             <div className="flex gap-2">
                {/* profile img */}
-               <div className="flex h-12 w-12 items-center justify-center text-primary-gray">
+               <div className="flex h-12 w-12 items-center justify-center">
                   <img src={testImg} className="h-full w-full rounded-full"></img>
                </div>
                {/* profile content */}
                <div className="flex grow flex-col justify-between gap-2">
-                  <span className="text-primary-gray">userEmail@gmail.com</span>
+                  <span className="text-shade_5">userEmail@gmail.com</span>
                   <div className={`${isChangeTag && isMoreProfile ? nameInputStyle.show : nameInputStyle.hidden}`}>
                      {isChangeTag && isMoreProfile ? (
-                        <div className="flex flex-col gap-3">
+                        <div className="input-form">
                            <input
-                              className="input-text text-size-sm"
+                              className="form_input"
                               placeholder="이전닉네임"
                               type="text"
                               ref={inputRef}
                               onChange={handlerValidation}
                            />
-                           <span className={`${isValid ? 'text-success-color' : 'text-danger-color'} text-size-xs`}>
+                           <span className={`${isValid ? 'text-success' : 'text-error'} form_text`}>
                               {isValid !== null &&
                                  (isValid ? '사용가능합니다' : '3글자 이상 ~ 10글자 이하 (한글,영어,숫자)')}
                            </span>
@@ -50,17 +50,17 @@ export const Profile = () => {
                            <div className="flex justify-center gap-5">
                               <button
                                  onClick={() => console.log('저장시 동작')}
-                                 className={`button-layout ${isValid ? 'button-type-active' : 'button-type-disabled'}`}>
+                                 className={`button-layout ${isValid ? '_active' : '_disabled'}`}>
                                  저장
                               </button>
-                              <button onClick={changeTag} className="button-layout button-type-default">
+                              <button onClick={changeTag} className="button-layout _default">
                                  취소
                               </button>
                            </div>
                         </div>
                      ) : (
                         <span
-                           className={`${isChangeTag && isMoreProfile ? moreStyle.hidden : moreStyle.show} text-primary-color transition-all`}>
+                           className={`${isChangeTag && isMoreProfile ? moreStyle.hidden : moreStyle.show} text-primary transition-all`}>
                            테스트유저 닉네임
                         </span>
                      )}
@@ -69,13 +69,13 @@ export const Profile = () => {
                      className={`${isMoreProfile && !isChangeTag ? moreStyle.show : moreStyle.hidden} flex gap-2 transition-all`}>
                      <div>
                         <button
-                           className="button-layout button-type-active px-2 py-1 text-size-xs"
+                           className="button-layout _active px-2 py-1 text-xs"
                            onClick={onClickFile}>
                            이미지 변경
                         </button>
                      </div>
                      <div>
-                        <button className="button-layout button-type-active px-2 py-1 text-size-xs" onClick={changeTag}>
+                        <button className="button-layout _active px-2 py-1 text-xs" onClick={changeTag}>
                            닉네임 변경
                         </button>
                      </div>
@@ -84,19 +84,19 @@ export const Profile = () => {
                </div>
                <div
                   onClick={onClickOpenMoreProfile}
-                  className="flex h-12 w-12 cursor-pointer items-center justify-end text-primary-black dark:text-primary-white">
-                  {isMoreProfile ? <BsXLg size={'20'} /> : <BsGearFill size={'20'} />}
+                  className="flex h-5 w-5 cursor-pointer items-center justify-end text-black dark:text-white">
+                  {isMoreProfile ? <BsXLg size={'100%'} /> : <BsGearFill size={'100%'} />}
                </div>
             </div>
             {/* TeamSpace count info */}
             <div className={`${isMoreProfile ? moreStyle.show : moreStyle.hidden} flex gap-3 transition-all`}>
-               <div className="flex grow flex-col gap-3 rounded-lg bg-light-bg1 p-1 dark:bg-dark-bg1">
-                  <span className="text-primary-color">나의 TeamSpace</span>
-                  <span className="text-primary-black dark:text-primary-white">{'250'}</span>
+               <div className="flex grow flex-col gap-3 rounded-lg p-1 bg-shade_2">
+                  <span className="text-primary">나의 TeamSpace</span>
+                  <span className="text-black dark:text-white">{'250'}</span>
                </div>
-               <div className="flex grow flex-col gap-3 rounded-lg bg-light-bg1 p-1 dark:bg-dark-bg1">
-                  <span className="text-primary-color">참여중인 TeamSpace</span>
-                  <span className="text-primary-black dark:text-primary-white">{'250'}</span>
+               <div className="flex grow flex-col gap-3 rounded-lg p-1 bg-shade_2">
+                  <span className="text-primary">참여중인 TeamSpace</span>
+                  <span className="text-black dark:text-white">{'250'}</span>
                </div>
             </div>
          </div>
