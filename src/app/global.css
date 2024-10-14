@@ -117,7 +117,7 @@ CSSname
          @apply bg-primary hover:bg-secondary text-white;
       }
       &._default {
-         @apply bg-white text-black hover:bg-secondary hover:text-white;
+         @apply hover:bg-secondary bg-white text-black hover:text-white;
       }
       &._not-select {
          @apply bg-shade_4 hover:bg-secondary text-white;
@@ -158,6 +158,22 @@ CSSname
       }
       &._hidden {
          @apply invisible -translate-x-full opacity-0;
+      }
+   }
+
+   /* tooltip 임시보류 */
+   .message {
+      position: relative;
+      &:hover::after {
+         content: attr(data-message);
+         position: absolute;
+         white-space: nowrap;
+         border-radius: 8px;
+         font-size: 12px;
+         padding: 4px 8px;
+         color: theme("colors.white");
+         background-color: theme("colors.shade_5");
+         transform: translate(-50%, -200%);
       }
    }
 }
