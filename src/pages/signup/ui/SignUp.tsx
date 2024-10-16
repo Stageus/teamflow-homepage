@@ -1,10 +1,10 @@
-import { useNameValidation } from "@shared/hooks/useNameVaildation";
-
+import { useRef } from 'react';
 import { useRoute } from '@shared/hooks';
+import { TextInput } from '@features/textInput';
 
 export const SignUp = () => {
+   const inputRef = useRef(null);
    const { loginRoute, teamspaceListRoute } = useRoute();
-   const { inputRef, isValid, handlerValidation } = useNameValidation();
 
    return (
       <div className="gradient-light dark:gradient-dark flex h-screen items-center justify-center">
@@ -19,32 +19,18 @@ export const SignUp = () => {
                </svg>
             </div>
             <h1>닉네임 생성</h1>
-            <div className="flex w-full flex-col items-center gap-4">
-               {/* need a response data */}
-               <h2 className="text-shade_5">{'useEmail@gmail.com'}</h2>
-               <div className="input-form">
-                  <input
-                     className="form_input"
-                     placeholder="3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다"
-                     type="text"
-                     ref={inputRef}
-                     onChange={handlerValidation}
-                  />
-                  <span className={`${isValid ? 'text-success' : 'text-error'} form_text`}>
-                     {isValid !== null &&
-                        (isValid ? '사용가능합니다' : '3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다')}
-                  </span>
-               </div>
-               <div className="flex justify-center gap-5">
-                  <button
-                     className={`button-layout ${isValid ? '_active' : '_disabled'}`}
-                     onClick={isValid ? teamspaceListRoute : null}>
-                     가입하기
-                  </button>
-                  <button className="button-layout _default" onClick={loginRoute}>
-                     뒤로가기
-                  </button>
-               </div>
+            <h2 className="text-shade_5">{'useEmail@gmail.com'}</h2>
+            <div className='w-full'>
+               <TextInput
+                  inputRef={inputRef}
+                  placeholder="3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다"
+                  nextName="가입하기"
+                  nextCallback={teamspaceListRoute}
+                  cancellName="뒤로가기"
+                  cancellCallback={loginRoute}
+                  regex={/^[가-힣a-zA-Z0-9]{3,10}$/}
+                  regexText="3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다"
+               />
             </div>
          </div>
       </div>
