@@ -1,4 +1,3 @@
-import { BsXLg } from 'react-icons/bs';
 import { AlarmModal } from './alarmModal';
 import { useLogout } from '../model/useLogout';
 
@@ -7,6 +6,7 @@ import { useDarkTheme } from '@shared/store/darkTheme';
 import { useUrlTracking } from '@shared/store/urlTracking';
 import { PATHS } from '@shared/consts/paths';
 import { useModalEventDetect } from '@shared/hooks/useModalEventDetect';
+import { FullScreenModal } from '@shared/ui';
 
 export const Header = () => {
    const { theme, changeTheme } = useDarkTheme();
@@ -16,7 +16,7 @@ export const Header = () => {
    const { isLogout, onClickOpenLogoutModal } = useLogout();
 
    return (
-      <div className="flex justify-start gap-3 px-4 py-2 whitespace-nowrap">
+      <div className="flex justify-start gap-3 whitespace-nowrap px-4 py-2">
          {/* Button list in header */}
          <div>
             <button
@@ -25,8 +25,10 @@ export const Header = () => {
                TeamSpace
             </button>
          </div>
-         <div ref={modalRef} className='relative'>
-            <button className={`button-layout ${isModalDetect ? '_active' : '_not-select'} sm:px-2 sm:py-2 sm:text-xs`} onClick={onClickOpenModal}>
+         <div ref={modalRef} className="relative">
+            <button
+               className={`button-layout ${isModalDetect ? '_active' : '_not-select'} sm:px-2 sm:py-2 sm:text-xs`}
+               onClick={onClickOpenModal}>
                알람
             </button>
             {isModalDetect ? <AlarmModal /> : null}
@@ -45,30 +47,19 @@ export const Header = () => {
             <button className="button-layout _not-select sm:px-2 sm:py-2 sm:text-xs" onClick={onClickOpenLogoutModal}>
                로그아웃
             </button>
-            {/* Logout modal */}
-            <div className={`full-screen-modal ${isLogout ? '_show' : '_hidden'}`}>
-               <h1 className='title'>Logout</h1>
-               <div
-                  onClick={onClickOpenLogoutModal}
-                  className="absolute right-5 top-5 flex h-[25px] w-[25px] cursor-pointer items-center justify-end text-white hover:text-secondary">
-                  <BsXLg size={'100%'} />
+            <FullScreenModal title="테스트입니다" isModal={isLogout} closeModal={onClickOpenLogoutModal}>
+               <div>
+                  <h2 className="title_sub">로그아웃 하시겠습니까?</h2>
+                  <div className="flex gap-5">
+                     <button className="button-layout _danger" onClick={loginRoute}>
+                        로그아웃
+                     </button>
+                     <button className="button-layout _default" onClick={onClickOpenLogoutModal}>
+                        되돌아가기
+                     </button>
+                  </div>
                </div>
-               <div className="flex grow items-center justify-center">
-                  {isLogout ? (
-                     <div>
-                        <h2 className="title_sub">로그아웃 하시겠습니까?</h2>
-                        <div className="flex gap-5">
-                           <button className="button-layout _danger" onClick={loginRoute}>
-                              로그아웃
-                           </button>
-                           <button className="button-layout _default" onClick={onClickOpenLogoutModal}>
-                              되돌아가기
-                           </button>
-                        </div>
-                     </div>
-                  ) : null}
-               </div>
-            </div>
+            </FullScreenModal>
          </div>
       </div>
    );

@@ -90,6 +90,13 @@ CSSname
          rgba(8, 8, 12, 0.7) 36.17386429398148%
       );
    }
+
+   .card-gradient-dark {
+      background: linear-gradient(140deg, #26262c 7%, #3578ff5e 7%, #3578ff5e 20%, #26262c 20%, #26262c 100%);
+   }
+   .card-gradient-light {
+      background: linear-gradient(130deg, #9d9dae42 7%, #3578ff5e 7%, #3578ff5e 20%, #9d9dae42 20%, #9d9dae42 100%);
+   }
 }
 
 /* 재사용 가능한 컴포넌트 스타일 */
@@ -124,25 +131,6 @@ CSSname
 
       .form_text {
          @apply text-xs;
-      }
-   }
-
-   .full-screen-modal {
-      @apply modal-gradient fixed inset-0 flex transition-transform z-50;
-
-      .title {
-         @apply text-primary flex justify-center py-5 text-[30px] italic;
-         width: 200px;
-         text-shadow: -2px 2px theme('colors.shade_5');
-      }
-      .title_sub {
-         @apply p-5 italic text-shade_5;
-      }
-      &._show {
-         @apply visible translate-x-0 opacity-100;
-      }
-      &._hidden {
-         @apply invisible -translate-x-full opacity-0;
       }
    }
 
