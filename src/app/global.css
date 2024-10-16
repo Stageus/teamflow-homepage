@@ -134,25 +134,6 @@ CSSname
       }
    }
 
-   .full-screen-modal {
-      @apply modal-gradient fixed inset-0 flex transition-transform z-50;
-
-      .title {
-         @apply text-primary flex justify-center py-5 text-[30px] italic;
-         width: 200px;
-         text-shadow: -2px 2px theme('colors.shade_5');
-      }
-      .title_sub {
-         @apply p-5 italic text-shade_5;
-      }
-      &._show {
-         @apply visible translate-x-0 opacity-100;
-      }
-      &._hidden {
-         @apply invisible -translate-x-full opacity-0;
-      }
-   }
-
    /* tooltip 임시보류 */
    .message {
       position: relative;
