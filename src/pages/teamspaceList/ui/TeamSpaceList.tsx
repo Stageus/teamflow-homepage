@@ -20,11 +20,11 @@ export const TeamSpaceList = () => {
          {/* TeamSpace create modal */}
          <div className={`full-screen-modal ${isTeamSpaceModal ? '_show' : '_hidden'}`}>
             <h1 className="title">TeamSpace 생성</h1>
-            <div
+            {/* <div
                onClick={onClickOpenModal}
                className="hover:text-secondary absolute right-5 top-5 flex h-[25px] w-[25px] cursor-pointer items-center justify-end text-white">
                <BsXLg size={'100%'} />
-            </div>
+            </div> */}
          </div>
 
          <ul className="flex max-w-3xl flex-col gap-3 py-2">
