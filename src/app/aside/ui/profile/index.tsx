@@ -27,11 +27,11 @@ export const Profile = () => {
          <div className="flex flex-col p-3">
             <div className="flex gap-2">
                {/* profile img */}
-               <div className="flex h-12 w-12 items-center justify-center">
+               <div className='w-12 h-12'>
                   <img src={testImg} className="h-full w-full rounded-full"></img>
                </div>
                {/* profile content */}
-               <div className="flex grow flex-col justify-between gap-2">
+               <div className="flex flex-col justify-between gap-2">
                   <span className="text-shade_5">userEmail@gmail.com</span>
                   <div className={`${isChangeTag && isMoreProfile ? nameInputStyle.show : nameInputStyle.hidden}`}>
                      {isChangeTag && isMoreProfile ? (
@@ -43,7 +43,7 @@ export const Profile = () => {
                         cancellCallback={changeTag}
                         placeholder='이전 닉네임'
                         regex={/^[가-힣a-zA-Z0-9]{3,10}$/}
-                        regexText="3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다"
+                        regexText="3글자 이상 ~ 10글자 이하"
                         
                         />
                      ) : (
@@ -57,13 +57,13 @@ export const Profile = () => {
                      className={`${isMoreProfile && !isChangeTag ? moreStyle.show : moreStyle.hidden} flex gap-2 transition-all`}>
                      <div>
                         <button
-                           className="button-layout _active px-2 py-1 text-xs"
+                           className="button-layout _active px-2 py-1 text-xs whitespace-nowrap"
                            onClick={onClickFile}>
                            이미지 변경
                         </button>
                      </div>
                      <div>
-                        <button className="button-layout _active px-2 py-1 text-xs" onClick={changeTag}>
+                        <button className="button-layout _active px-2 py-1 text-xs whitespace-nowrap" onClick={changeTag}>
                            닉네임 변경
                         </button>
                      </div>
