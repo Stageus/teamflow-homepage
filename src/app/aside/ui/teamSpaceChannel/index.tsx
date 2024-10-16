@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import {
    BsArrowDownCircle,
    BsFillPlusCircleFill,
@@ -7,6 +7,7 @@ import {
    BsArrowUpCircle,
 } from 'react-icons/bs';
 import { useChannelList } from './model/useChannelList';
+import { useCreateChannel } from "./model/useCreateChannel";
 import { TextInput } from '@features/textInput';
 import { useRoute } from '@shared/hooks';
 import { FullScreenModal } from '@shared/ui';
@@ -14,10 +15,7 @@ import { FullScreenModal } from '@shared/ui';
 export const TeamSpcaeChannel = () => {
    const { teamspaceRoute, teamspacePublicRoute, teamspacePrivateRoute } = useRoute();
    const { channelList, onClickShowList } = useChannelList();
-   
-   const [createChannelModal, setCreateChannelModal] = useState(false);
-   const onClickIsModal = () => setCreateChannelModal(!createChannelModal);
-   const inputRef = useRef(null);
+   const { createChannelModal, onClickIsModal, inputRef } = useCreateChannel();
 
    const [outSideChannelModal, setOutSideChannelModal] = useState(false);
    const onClickIsOutside = () => setOutSideChannelModal(!outSideChannelModal);
