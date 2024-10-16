@@ -102,7 +102,7 @@ CSSname
 /* 재사용 가능한 컴포넌트 스타일 */
 @layer components {
    .button-layout {
-      @apply flex w-full items-center justify-center gap-3 rounded-lg px-4 py-2 text-sm text-black dark:text-white;
+      @apply flex w-full items-center justify-center gap-3 rounded-lg px-4 py-2 text-sm text-black dark:text-white whitespace-nowrap;
       box-shadow: 1px 2px 4px theme('colors.shade_5');
 
       &._active {
@@ -118,7 +118,7 @@ CSSname
          @apply bg-shade_5 cursor-not-allowed text-white;
       }
       &._danger {
-         @apply bg-error hover:bg-secondary;
+         @apply bg-error hover:bg-secondary text-white;
       }
    }
 
