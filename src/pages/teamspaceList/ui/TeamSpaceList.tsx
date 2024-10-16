@@ -37,8 +37,8 @@ export const TeamSpaceList = () => {
             </div>
          </FullScreenModal>
 
-         <ul className="flex max-w-3xl flex-col gap-3 py-2">
-            <li className="flex gap-2">
+         <ul className="flex max-w-6xl flex-col gap-2 py-2">
+            <li className="flex gap-2 sm:flex-col">
                <div className="button-layout _active flex cursor-pointer justify-between">
                   <span>TeamSpaceList</span>
                   <div className="text-shade_5 h-5 w-5 hover:text-white">
@@ -52,7 +52,7 @@ export const TeamSpaceList = () => {
                   </div>
                </div>
             </li>
-            <li className="flex gap-2">
+            <li className="flex gap-2 sm:flex-col">
                <div className="button-layout _active flex cursor-pointer justify-between">
                   <span>TeamSpaceList</span>
                   <div className="text-shade_5 h-5 w-5 hover:text-white">
@@ -73,8 +73,8 @@ export const TeamSpaceList = () => {
             </li>
          </ul>
          <h1 className="py-2">참여중인 TeamSpace</h1>
-         <ul className="flex max-w-3xl flex-col gap-3 py-2">
-            <li className="flex gap-2">
+         <ul className="flex max-w-5xl flex-col gap-2 py-2">
+            <li className="flex gap-2 sm:flex-col">
                <div className="button-layout _active flex cursor-pointer flex-col items-start">
                   <span>TeamSpaceList</span>
                   <span className="text-shade_5">TeamSpace만든사람 이메일</span>
@@ -84,7 +84,7 @@ export const TeamSpaceList = () => {
                   <span className="text-shade_5">TeamSpace만든사람 이메일</span>
                </div>
             </li>
-            <li className="flex gap-2">
+            <li className="flex gap-2 sm:flex-col">
                <div className="button-layout _active flex cursor-pointer flex-col items-start">
                   <span>TeamSpaceList</span>
                   <span className="text-shade_5">TeamSpace만든사람 이메일</span>
