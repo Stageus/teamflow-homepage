@@ -1,14 +1,13 @@
-import { useRef } from 'react';
 import { useState } from 'react';
 
-export const useValidation = ( regex: RegExp ) => {
-   const inputRef = useRef<null | HTMLInputElement>(null);
-   const [checkInput, setCheckInput] = useState<null | boolean>(null);
+export const useValidation = ( props: {regex: RegExp}) => {
+   const { regex } = props;
+   const [isValid, setIsValid] = useState<null | boolean>(null);
 
-   const nameValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
+   const handlerValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
       const target = event.target.value;
       const isValidation = regex.test(target);
-      setCheckInput(isValidation);
+      setIsValid(isValidation);
    };
-   return { inputRef, checkInput, nameValidation };
+   return { isValid, handlerValidation };
 };

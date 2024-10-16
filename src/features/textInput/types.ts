@@ -1,12 +1,12 @@
+import { RefObject } from 'react';
 // TextInput
-type TextInputProps = {
-    title: string,
-    errorText: string,
-    regex: RegExp,
+export type TextInputProps = {
+    inputRef: RefObject<HTMLInputElement | null>,
     placeholder: string,
     nextName: string,
     nextCallback: () => void,
     cancellName: string,
     cancellCallback: () => void,
+    regex: RegExp,
+    regexText: string,
  }
- export type TextInputComponent = ( props: TextInputProps ) => JSX.Element;
