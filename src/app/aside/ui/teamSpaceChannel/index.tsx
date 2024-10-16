@@ -54,7 +54,7 @@ export const TeamSpcaeChannel = () => {
                {/* create channel modal */}
                <FullScreenModal title="비공개 채널생성" isModal={createChannelModal} closeModal={onClickIsModal}>
                   <div className="flex w-[300px] flex-col items-center gap-6">
-                     <h2 className="text-shade_5">비공개 채널을 생성합니다.</h2>
+                     <h2 className="text-white">비공개 채널을 생성합니다.</h2>
                      <TextInput
                         inputRef={inputRef}
                         placeholder="사용할 비공개 채널이름을 입력해주세요"
@@ -88,7 +88,7 @@ export const TeamSpcaeChannel = () => {
             </ul>
             <FullScreenModal title="채널나가기" isModal={outSideChannelModal} closeModal={onClickIsOutside}>
                <div className="flex w-[300px] flex-col items-center gap-6">
-                  <h2 className="text-shade_5">{'정말 (채널이름) 을 나가겠습니까?'}</h2>
+                  <h2 className="text-white whitespace-nowrap">{'정말 (채널이름) 을 나가겠습니까?'}</h2>
                   <div className="flex gap-3">
                      <button className="button-layout _danger" onClick={() => console.log('채널나가기 동작')}>
                         나가기

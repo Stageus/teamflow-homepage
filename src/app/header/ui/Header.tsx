@@ -47,9 +47,9 @@ export const Header = () => {
             <button className="button-layout _not-select sm:px-2 sm:py-2 sm:text-xs" onClick={onClickOpenLogoutModal}>
                로그아웃
             </button>
-            <FullScreenModal title="테스트입니다" isModal={isLogout} closeModal={onClickOpenLogoutModal}>
-               <div>
-                  <h2 className="title_sub">로그아웃 하시겠습니까?</h2>
+            <FullScreenModal title="Logout" isModal={isLogout} closeModal={onClickOpenLogoutModal}>
+               <div className='flex flex-col gap-8'>
+                  <h2 className="text-white">로그아웃 하시겠습니까?</h2>
                   <div className="flex gap-5">
                      <button className="button-layout _danger" onClick={loginRoute}>
                         로그아웃
