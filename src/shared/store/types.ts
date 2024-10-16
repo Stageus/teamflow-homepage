@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 
-
 export type DarkModeContextType = {
     theme: boolean;
     changeTheme: () => void;
