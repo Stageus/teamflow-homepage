@@ -57,13 +57,13 @@ export const Profile = () => {
                      className={`${isMoreProfile && !isChangeTag ? moreStyle.show : moreStyle.hidden} flex gap-2 transition-all`}>
                      <div>
                         <button
-                           className="button-layout _active px-2 py-1 text-xs whitespace-nowrap"
+                           className="button-layout _active px-2 py-1 text-xs"
                            onClick={onClickFile}>
                            이미지 변경
                         </button>
                      </div>
                      <div>
-                        <button className="button-layout _active px-2 py-1 text-xs whitespace-nowrap" onClick={changeTag}>
+                        <button className="button-layout _active px-2 py-1 text-xs" onClick={changeTag}>
                            닉네임 변경
                         </button>
                      </div>
