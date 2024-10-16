@@ -7,7 +7,8 @@ import {
    BsArrowUpCircle,
 } from 'react-icons/bs';
 import { useChannelList } from './model/useChannelList';
-import { useCreateChannel } from "./model/useCreateChannel";
+import { useCreateChannel } from './model/useCreateChannel';
+import { useOutsideChannel } from './model/useOutsideChannel';
 import { TextInput } from '@features/textInput';
 import { useRoute } from '@shared/hooks';
 import { FullScreenModal } from '@shared/ui';
@@ -16,9 +17,7 @@ export const TeamSpcaeChannel = () => {
    const { teamspaceRoute, teamspacePublicRoute, teamspacePrivateRoute } = useRoute();
    const { channelList, onClickShowList } = useChannelList();
    const { createChannelModal, onClickIsModal, inputRef } = useCreateChannel();
-
-   const [outSideChannelModal, setOutSideChannelModal] = useState(false);
-   const onClickIsOutside = () => setOutSideChannelModal(!outSideChannelModal);
+   const { outSideChannelModal, onClickIsOutside } = useOutsideChannel();
 
    return (
       <div className="flex h-full gap-3 p-2">
