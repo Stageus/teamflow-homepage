@@ -22,8 +22,8 @@ export const TeamSpcaeChannel = () => {
 
    return (
       <div className="flex h-full gap-3 p-2">
-         <div className="flex w-full min-w-[50px] max-w-[100px] shrink grow flex-col gap-3 overflow-y-scroll">
-            <button className="bg-shade_4 hover:bg-primary min-h-[50px] w-full truncate rounded-full p-2 text-sm text-white">
+         <div className="flex items-center w-full max-w-[100px] shrink grow flex-col gap-3 overflow-y-scroll">
+            <button className="bg-shade_4 hover:bg-primary min-h-10 w-full sm:w-10 truncate rounded-full p-2 text-sm text-white">
                TeamSpace1
             </button>
          </div>
