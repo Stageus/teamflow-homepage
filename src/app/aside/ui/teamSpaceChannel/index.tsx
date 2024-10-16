@@ -6,16 +6,15 @@ import {
    BsGearFill,
    BsArrowUpCircle,
 } from 'react-icons/bs';
+import { useChannelList } from './model/useChannelList';
 import { TextInput } from '@features/textInput';
 import { useRoute } from '@shared/hooks';
 import { FullScreenModal } from '@shared/ui';
 
 export const TeamSpcaeChannel = () => {
    const { teamspaceRoute, teamspacePublicRoute, teamspacePrivateRoute } = useRoute();
-
-   const [channelList, setChannelList] = useState(false);
-   const onClickShowList = () => setChannelList(!channelList);
-
+   const { channelList, onClickShowList } = useChannelList();
+   
    const [createChannelModal, setCreateChannelModal] = useState(false);
    const onClickIsModal = () => setCreateChannelModal(!createChannelModal);
    const inputRef = useRef(null);
@@ -93,9 +92,13 @@ export const TeamSpcaeChannel = () => {
             <FullScreenModal title="채널나가기" isModal={outSideChannelModal} closeModal={onClickIsOutside}>
                <div className="flex w-[300px] flex-col items-center gap-6">
                   <h2 className="text-shade_5">{'정말 (채널이름) 을 나가겠습니까?'}</h2>
-                  <div className='flex gap-3'>
-                  <button className="button-layout _danger" onClick={()=>console.log("채널나가기 동작")}>나가기</button>
-                  <button className="button-layout _default" onClick={onClickIsOutside}>취소</button>
+                  <div className="flex gap-3">
+                     <button className="button-layout _danger" onClick={() => console.log('채널나가기 동작')}>
+                        나가기
+                     </button>
+                     <button className="button-layout _default" onClick={onClickIsOutside}>
+                        취소
+                     </button>
                   </div>
                </div>
             </FullScreenModal>
