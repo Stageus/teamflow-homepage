@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 import { BsXLg } from 'react-icons/bs';
+import { FullScreenModalProps } from "./types";
 
-export const FullScreenModal = (props: { title: string, children: ReactNode, isModal: boolean, closeModal: () => void}) => {
+export const FullScreenModal = (props: FullScreenModalProps) => {
    const { title, children, isModal, closeModal} = props;
    
    const modalStyles = {
