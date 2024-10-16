@@ -18,7 +18,7 @@ export const Layout = () => {
                   <Aside />
                </aside>
             )}
-            <div className="flex min-w-[500px] grow flex-col">
+            <div className="flex min-w-[300px] grow flex-col">
                {layoutNone && (
                   <header className="sticky top-0 bg-transparent">
                      <Header />
