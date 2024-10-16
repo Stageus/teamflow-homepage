@@ -1,15 +1,16 @@
+import { useRef } from 'react';
 import { BsGearFill, BsXLg } from 'react-icons/bs';
 import { useMoreProfile } from './model/useMoreProfile';
 import { useProfileImg } from './model/useProfileImg';
 import { useChangeTag } from './model/useChangeTag';
-import { useNameValidation } from '@shared/hooks/useNameVaildation';
-
-import testImg from '@shared/assets/고양이.jpeg';
+import { TextInput } from "@features/textInput";
+import testImg from '@shared/assets/고양이.jpeg'
+;
 export const Profile = () => {
    const { isMoreProfile, onClickOpenMoreProfile } = useMoreProfile();
    const { inputFileRef, onClickFile } = useProfileImg();
    const { isChangeTag, changeTag } = useChangeTag();
-   const { inputRef, isValid, handlerValidation } = useNameValidation();
+   const inputRef = useRef(null);
 
    const moreStyle = {
       show: 'max-h-20 opacity-100 visible duration-200 py-2',
@@ -34,30 +35,17 @@ export const Profile = () => {
                   <span className="text-shade_5">userEmail@gmail.com</span>
                   <div className={`${isChangeTag && isMoreProfile ? nameInputStyle.show : nameInputStyle.hidden}`}>
                      {isChangeTag && isMoreProfile ? (
-                        <div className="input-form">
-                           <input
-                              className="form_input"
-                              placeholder="이전닉네임"
-                              type="text"
-                              ref={inputRef}
-                              onChange={handlerValidation}
-                           />
-                           <span className={`${isValid ? 'text-success' : 'text-error'} form_text`}>
-                              {isValid !== null &&
-                                 (isValid ? '사용가능합니다' : '3글자 이상 ~ 10글자 이하 (한글,영어,숫자)')}
-                           </span>
-
-                           <div className="flex justify-center gap-5">
-                              <button
-                                 onClick={() => console.log('저장시 동작')}
-                                 className={`button-layout ${isValid ? '_active' : '_disabled'}`}>
-                                 저장
-                              </button>
-                              <button onClick={changeTag} className="button-layout _default">
-                                 취소
-                              </button>
-                           </div>
-                        </div>
+                        <TextInput
+                        inputRef={inputRef}
+                        nextName="저장"
+                        nextCallback={()=>console.log("저장시 동작")}
+                        cancellName="취소"
+                        cancellCallback={changeTag}
+                        placeholder='이전 닉네임'
+                        regex={/^[가-힣a-zA-Z0-9]{3,10}$/}
+                        regexText="3글자 이상 ~ 10글자 이하 (한글/영어/숫자)만 가능합니다"
+                        
+                        />
                      ) : (
                         <span
                            className={`${isChangeTag && isMoreProfile ? moreStyle.hidden : moreStyle.show} text-primary transition-all`}>
@@ -90,12 +78,12 @@ export const Profile = () => {
             </div>
             {/* TeamSpace count info */}
             <div className={`${isMoreProfile ? moreStyle.show : moreStyle.hidden} flex gap-3 transition-all`}>
-               <div className="flex grow flex-col gap-3 rounded-lg p-1 bg-shade_2">
-                  <span className="text-primary">나의 TeamSpace</span>
+               <div className="flex grow flex-col gap-1 rounded-lg p-2 bg-shade_2">
+                  <span className="text-primary text-sm">나의 TeamSpace</span>
                   <span className="text-black dark:text-white">{'250'}</span>
                </div>
-               <div className="flex grow flex-col gap-3 rounded-lg p-1 bg-shade_2">
-                  <span className="text-primary">참여중인 TeamSpace</span>
+               <div className="flex grow flex-col gap-1 rounded-lg p-2 bg-shade_2">
+                  <span className="text-primary text-sm">참여중인 TeamSpace</span>
                   <span className="text-black dark:text-white">{'250'}</span>
                </div>
             </div>
