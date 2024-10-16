@@ -1,13 +1,14 @@
+import { useState, useRef } from 'react';
 import {
    BsArrowDownCircle,
    BsFillPlusCircleFill,
    BsBoxArrowInRight,
    BsGearFill,
    BsArrowUpCircle,
-   BsXLg,
 } from 'react-icons/bs';
-import { useState } from 'react';
-import { useRoute, useCreateValidation } from '@shared/hooks';
+import { TextInput } from '@features/textInput';
+import { useRoute } from '@shared/hooks';
+import { FullScreenModal } from '@shared/ui';
 
 export const TeamSpcaeChannel = () => {
    const { teamspaceRoute, teamspacePublicRoute, teamspacePrivateRoute } = useRoute();
@@ -15,9 +16,9 @@ export const TeamSpcaeChannel = () => {
    const [channelList, setChannelList] = useState(false);
    const onClickShowList = () => setChannelList(!channelList);
 
-   const [createChannel, setCreateChannel] = useState(false);
-   const onClickOpenCreateModal = () => setCreateChannel(!createChannel);
-   const { inputRef, isValid, handlerValidation } = useCreateValidation();
+   const [createChannelModal, setCreateChannelModal] = useState(false);
+   const onClickIsModal = () => setCreateChannelModal(!createChannelModal);
+   const inputRef = useRef(null);
 
    return (
       <div className="flex h-full gap-3 p-2">
@@ -48,64 +49,38 @@ export const TeamSpcaeChannel = () => {
                   </span>
                </div>
                <span className="h-5 w-5"></span>
-               <span className="text-shade_5 hover:text-primary h-5 w-5" onClick={onClickOpenCreateModal}>
+               <span className="text-shade_5 hover:text-primary h-5 w-5" onClick={onClickIsModal}>
                   <BsFillPlusCircleFill size={'100%'} />
                </span>
                {/* create channel modal */}
-               <div className={`full-screen-modal ${createChannel ? '_show' : '_hidden'}`}>
-                  <h1 className="title">비공개 채널생성</h1>
-                  <div
-                     onClick={onClickOpenCreateModal}
-                     className="hover:text-secondary absolute right-5 top-5 flex h-[25px] w-[25px] cursor-pointer items-center justify-end text-white">
-                     <BsXLg size={'100%'} />
+               <FullScreenModal title="비공개 채널생성dddddddfasdfsdfdsf" isModal={createChannelModal} closeModal={onClickIsModal}>
+                  <div className='w-[300px] flex flex-col gap-6 items-center'>
+                  <h2 className="text-shade_5">비공개 채널을 생성합니다.</h2>
+                  <TextInput
+                     inputRef={inputRef}
+                     placeholder='사용할 비공개 채널이름을 입력해주세요'
+                     nextName='생성'
+                     nextCallback={()=>console.log("생성동작")}
+                     cancellName='취소'
+                     cancellCallback={onClickIsModal}
+                     regex={/^[가-힣a-zA-Z0-9]{5,20}$/}
+                     regexText="5글자 이상 ~ 20글자 이하 (한글/영어/숫자)만 가능합니다"
+                  />
                   </div>
-                  <div className="flex grow items-center justify-center">
-                     {createChannel ? (
-                        <div className="flex flex-col items-center gap-4  w-[400px]">
-                           <h2 className="text-shade_5">비공개 채널의 이름을 정해주세요</h2>
-                           <div className="input-form">
-                              <input
-                                 className="form_input"
-                                 placeholder="5글자이상 ~ 20글자 이하만 가능합니다"
-                                 type="text"
-                                 ref={inputRef}
-                                 onChange={handlerValidation}
-                              />
-                              <span className={`${isValid ? 'text-success' : 'text-error'} form_text`}>
-                                 {isValid !== null &&
-                                    (isValid
-                                       ? '사용가능합니다'
-                                       : '5글자이상 ~ 20글자 이하만 가능합니다')}
-                              </span>
-                           </div>
-                           <div className="flex justify-center gap-5">
-                              <button
-                                 className={`button-layout ${isValid ? '_active' : '_disabled'} text-xs whitespace-nowrap`}
-                                 // onClick={isValid ? console.log("생성동작") : null}
-                                 >
-                                 생성하기
-                              </button>
-                              <button className="button-layout _default" onClick={onClickOpenCreateModal}>
-                                 취소
-                              </button>
-                           </div>
-                        </div>
-                     ) : null}
-                  </div>
-               </div>
+               </FullScreenModal>
             </div>
 
             <ul className="grow px-1">
                {channelList ? (
                   <li className="text-shade_5 hover:text-primary hover:bg-shade_3 flex cursor-pointer items-center justify-between rounded-lg p-2">
-                     <div className='grow' onClick={()=>console.log("채널이동")}>
+                     <div className="grow" onClick={() => console.log('채널이동')}>
                         <span className="line-clamp-1 text-sm">비공개 채널이름1</span>
                      </div>
                      <div className="ml-3 flex gap-3 text-black dark:text-white">
-                        <div className="hover:text-primary h-4 w-4" onClick={()=>console.log("채널 나가기")}>
+                        <div className="hover:text-primary h-4 w-4" onClick={() => console.log('채널 나가기')}>
                            <BsBoxArrowInRight size={'100%'} />
                         </div>
-                        <div className="hover:text-primary h-4 w-4" onClick={()=>console.log("채널관리 모달")}>
+                        <div className="hover:text-primary h-4 w-4" onClick={() => console.log('채널관리 모달')}>
                            <BsGearFill size={'100%'} />
                         </div>
                      </div>
