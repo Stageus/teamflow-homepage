@@ -24,6 +24,7 @@ CSSname
       --color-secondary: rgb(91, 157, 255);
       --color-white: rgb(255 255 255);
       --color-black: rgb(0, 0, 0);
+      --color-gray: rgb(156, 163, 175);
       --color-success: rgb(10, 221, 102);
       --color-error: rgb(249, 58, 55);
 
@@ -54,7 +55,7 @@ CSSname
       @apply text-title_sub;
    }
    p {
-      @apply text-base text-black dark:text-white;
+      @apply text-base;
    }
    span {
       @apply text-base;
@@ -97,6 +98,26 @@ CSSname
    .card-gradient-light {
       background: linear-gradient(130deg, #9d9dae42 7%, #3578ff5e 7%, #3578ff5e 20%, #9d9dae42 20%, #9d9dae42 100%);
    }
+
+
+   .theme-text {
+      @apply text-black dark:text-white;
+   }
+
+   .theme-hover-text {
+      @apply hover:text-secondary hover:dark:text-secondary cursor-pointer;
+   }
+
+   .theme-hover-bg {
+      @apply hover:bg-secondary dark:hover:bg-secondary cursor-pointer;
+   }
+
+
+   .service-img{
+      @apply w-full h-full rounded-full;
+   }
+
+   
 }
 
 /* 재사용 가능한 컴포넌트 스타일 */
