@@ -29,6 +29,7 @@ export default {
             secondary: 'var(--color-secondary)',
             white: 'var(--color-white)',
             black: 'var(--color-black)',
+            gray: 'var(--color-gray)',
             success: 'var(--color-success)',
             error: 'var(--color-error)',
             shade_1: 'var(--color-shade_1)',
