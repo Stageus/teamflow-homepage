@@ -1,7 +1,11 @@
+import { Thread } from "@widgets/thread";
 export const Test = () => {
 
    return (
-      <div className='h-full bg-slate-400'>
+      <div className='max-h-full bg-shade_1'>
+         <div className="p-10">
+            <Thread/>
+         </div>
           <div className="w-full">
             <h1>
             Hey everyone! It's almost 2022 and we still don't know if there is aliens living among us, or do we?
@@ -45,6 +49,8 @@ export const Test = () => {
             <div className='flex items-center justify-center w-20 h-20 shadow-2xl'>shadow-2xl</div>
             <div className='flex items-center justify-center w-20 h-20 shadow-inner'>shadow-inner</div>
          </div>     
+
+         
       </div>
    );
 };
