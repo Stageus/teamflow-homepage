@@ -1,1 +1,0 @@
-export { FullScreenModal } from "./FullScreenModal"
