@@ -1,6 +1,6 @@
 import googleLogo from '../assets/google.svg';
 import serviceLogo from '@shared/assets/logo.svg';
-import { useRoute } from '@shared/hooks';
+import { useRoute } from '@shared/hooks/useRoute';
 
 export const Login = () => {
    const { signupRoute } = useRoute();
