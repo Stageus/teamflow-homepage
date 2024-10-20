@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { TextInput } from '@features/textInput';
-import { useRoute } from '@shared/hooks';
+import { useRoute } from '@shared/hooks/useRoute';
 import serviceLogo from '@shared/assets/logo.svg';
 
 export const SignUp = () => {
