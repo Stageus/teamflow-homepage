@@ -1,5 +1,5 @@
-import { Profile } from './profile';
-import { TeamSpcaeChannel } from './teamSpaceChannel';
+import { Profile } from './ui/profile';
+import { TeamSpcaeChannel } from './ui/teamSpaceChannel';
 
 export const Aside = () => {
    return (

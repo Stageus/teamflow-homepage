@@ -1,12 +1,12 @@
-import { AlarmModal } from './alarmModal';
-import { useLogout } from '../model/useLogout';
+import { AlarmModal } from './ui/alarmModal';
+import { useLogout } from './model/useLogout';
 
-import { useRoute } from '@shared/hooks';
 import { useDarkTheme } from '@shared/store/darkTheme';
 import { useUrlTracking } from '@shared/store/urlTracking';
 import { PATHS } from '@shared/consts/paths';
 import { useModalEventDetect } from '@shared/hooks/useModalEventDetect';
-import { FullScreenModal } from '@shared/ui';
+import { useRoute } from '@shared/hooks/useRoute';
+import { FullScreenModal } from '@shared/ui/FullScreenModal';
 
 export const Header = () => {
    const { theme, changeTheme } = useDarkTheme();

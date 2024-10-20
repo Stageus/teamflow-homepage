@@ -6,9 +6,9 @@ import { DarkThemeProvider } from "@shared/store/darkTheme";
 function App() {
   return (
     <>
-    <DarkThemeProvider>
+    {/* <DarkThemeProvider> */}
       <RouterProvider router={Router}/>
-    </DarkThemeProvider>
+    {/* </DarkThemeProvider> */}
     </>
   )
 }

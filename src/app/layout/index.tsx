@@ -1,7 +1,6 @@
 import { useLocation, Outlet } from 'react-router-dom';
-import './global.css';
-import { Header } from './header';
-import { Aside } from './aside';
+import { Header } from "./ui/header";
+import { Aside } from './ui/aside';
 import { PATHS } from '@shared/consts/paths';
 import { UrlTrackingProvider } from '@shared/store/urlTracking';
 
@@ -9,6 +8,8 @@ export const Layout = () => {
    const location = useLocation();
    const authPath = [`/${PATHS.login}`, `/${PATHS.signup}`];
    const layoutNone = !authPath.includes(location.pathname.toLocaleLowerCase());
+
+
 
    return (
       <UrlTrackingProvider>
