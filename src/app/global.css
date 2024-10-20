@@ -117,6 +117,11 @@ CSSname
       @apply w-full h-full rounded-full;
    }
 
+   .tooltip{
+      .item {
+         @apply bg-gray text-xs;
+      }
+   }
    
 }
 
