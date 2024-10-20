@@ -9,8 +9,8 @@ import { useChannelList } from './model/useChannelList';
 import { useCreateChannel } from './model/useCreateChannel';
 import { useOutsideChannel } from './model/useOutsideChannel';
 import { TextInput } from '@features/textInput';
-import { useRoute } from '@shared/hooks';
-import { FullScreenModal } from '@shared/ui';
+import { useRoute } from '@shared/hooks/useRoute';
+import { FullScreenModal } from '@shared/ui/FullScreenModal';
 
 export const TeamSpcaeChannel = () => {
    const { teamspaceRoute, teamspacePublicRoute, teamspacePrivateRoute } = useRoute();

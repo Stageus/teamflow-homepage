@@ -1,8 +1,8 @@
 import { BsFillPlusCircleFill, BsGearFill } from 'react-icons/bs';
 import { useCreateTeamSpace } from "../model/useCreateTeamSpace";
 import { TextInput } from '@features/textInput';
-import { FullScreenModal } from '@shared/ui';
-import { useRoute } from "@shared/hooks";
+import { FullScreenModal } from '@shared/ui/FullScreenModal';
+import { useRoute } from "@shared/hooks/useRoute";
 
 export const TeamSpaceList = () => {
    const { createTeamSpaceModal, onClickIsModal, inputRef } = useCreateTeamSpace();

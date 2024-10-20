@@ -15,11 +15,10 @@ export default {
          // fid: 일관된 네이밍과 추가적인 브레이크 포인트를 고려해보자
          // 기본적은 min-width가 적용된다
          // max를 적용하게 된다면 { max: 1px} 형식을 사용함
-         sm: {max: "767px"},
-         md: '768px',
-         lg: '1024px',
-         xl: '1280px',
-         "2xl": '1536px',
+         mobile: {max: "767px"},
+         tablet: '768px',
+         dasktop: '1024px',
+
       },
       // 기존 유틸 클래스와 사용자 지정 클랙스를 합침
       extend: {

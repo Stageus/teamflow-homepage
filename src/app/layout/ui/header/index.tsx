@@ -1,19 +1,18 @@
-import { AlarmModal } from './alarmModal';
-import { useLogout } from '../model/useLogout';
-
-import { useRoute } from '@shared/hooks';
-import { useDarkTheme } from '@shared/store/darkTheme';
+import { AlarmModal } from './ui/alarmModal';
+import { useChangeTheme } from "./model/useChangeTheme";
+import { useLogout } from './model/useLogout';
 import { useUrlTracking } from '@shared/store/urlTracking';
 import { PATHS } from '@shared/consts/paths';
 import { useModalEventDetect } from '@shared/hooks/useModalEventDetect';
-import { FullScreenModal } from '@shared/ui';
+import { useRoute } from '@shared/hooks/useRoute';
+import { FullScreenModal } from '@shared/ui/FullScreenModal';
 
 export const Header = () => {
-   const { theme, changeTheme } = useDarkTheme();
    const { loginRoute, teamspaceListRoute } = useRoute();
    const { getCurrentPathName } = useUrlTracking();
    const { modalRef, isModalDetect, onClickOpenModal } = useModalEventDetect();
    const { isLogout, onClickOpenLogoutModal } = useLogout();
+   const { theme, onClickchangeTheme } = useChangeTheme();
 
    return (
       <div className="flex justify-start gap-3 whitespace-nowrap px-4 py-2">
@@ -34,7 +33,7 @@ export const Header = () => {
             {isModalDetect ? <AlarmModal /> : null}
          </div>
          <div>
-            <button className="button-layout _not-select sm:px-2 sm:py-2 sm:text-xs" onClick={changeTheme}>
+            <button className="button-layout _not-select sm:px-2 sm:py-2 sm:text-xs" onClick={onClickchangeTheme}>
                {theme ? '라이트모드' : '다크모드'}
             </button>
          </div>
