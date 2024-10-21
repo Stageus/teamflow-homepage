@@ -31,7 +31,7 @@ export const Layout = () => {
                <>
                   <aside
                      className={`sticky top-0 translate-x-0 h-screen w-[350px] transition-all
-                        mobile:fixed mobile:${isAside ? 'translate-x-0' : '-translate-x-full'} mobile:z-50
+                        mobile:fixed ${isAside ? 'mobile:translate-x-0' : 'mobile:-translate-x-full'} mobile:z-50
                      `}>
                      <Aside />
                   </aside>
