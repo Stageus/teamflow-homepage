@@ -17,7 +17,7 @@ export const Header = () => {
    const { cookies, removeCookieName } = useCookie('token');
 
    return (
-      <div className="flex justify-start gap-3 whitespace-nowrap px-4 py-2">
+      <div className="flex gap-3 whitespace-nowrap px-4 py-2">
          {/* Button list in header */}
          <div>
             <button
