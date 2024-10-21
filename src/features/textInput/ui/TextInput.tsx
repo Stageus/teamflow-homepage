@@ -9,7 +9,7 @@ export const TextInput = (props: TextInputProps) => {
          <div className="w-full flex flex-col gap-2">
             <input
                className={`border-b-2 bg-transparent text-sm text-black outline-none dark:text-white
-                    ${isValid !== null && (isValid ? 'border-success' : 'border-error')}`}
+                    ${isValid !== null ? (isValid ? 'border-success' : 'border-error') : 'border-gray'}`}
                placeholder={placeholder}
                type="text"
                ref={inputRef}
