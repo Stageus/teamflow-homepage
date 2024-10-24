@@ -30,7 +30,7 @@ export const Layout = () => {
             {layoutNone && (
                <>
                   <aside
-                     className={`sticky top-0 translate-x-0 h-screen w-[350px] transition-all
+                     className={`sticky top-0 translate-x-0 h-screen min-w-[350px] transition-all
                         mobile:fixed ${isAside ? 'mobile:translate-x-0' : 'mobile:-translate-x-full'} mobile:z-50
                      `}>
                      <Aside />
@@ -44,7 +44,7 @@ export const Layout = () => {
             )}
             <div className="flex min-w-[300px] grow flex-col">
                {layoutNone && (
-                  <header className="sticky top-0 flex items-center justify-start bg-transparent">
+                  <header className="sticky top-0 flex items-center justify-start bg-transparent z-30">
                      <div
                         className="text-gray hover:theme-hover-text mx-3 hidden h-7 w-7 mobile:block"
                         onClick={isToggleAside}>
