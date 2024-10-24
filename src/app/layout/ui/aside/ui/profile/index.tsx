@@ -31,7 +31,7 @@ export const Profile = () => {
                   <img src={testImg} className="h-full w-full rounded-full"></img>
                </div>
                {/* profile content */}
-               <div className="flex flex-col justify-between gap-2">
+               <div className="grow flex flex-col justify-between gap-2">
                   <span className="text-shade_5">userEmail@gmail.com</span>
                   <div className={`${isChangeTag && isMoreProfile ? nameInputStyle.show : nameInputStyle.hidden}`}>
                      {isChangeTag && isMoreProfile ? (
@@ -44,7 +44,6 @@ export const Profile = () => {
                         placeholder='이전 닉네임'
                         regex={/^[가-힣a-zA-Z0-9]{3,10}$/}
                         regexText="3글자 이상 ~ 10글자 이하"
-                        
                         />
                      ) : (
                         <span
