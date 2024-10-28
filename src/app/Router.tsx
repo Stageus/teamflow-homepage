@@ -1,5 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+
 import { Layout } from './layout';
+
 import { Test } from '@pages/Test';
 import { Login } from '@pages/login';
 import { SignUp } from '@pages/signup';
@@ -14,12 +16,12 @@ export const Router = createBrowserRouter(
          <Route path="test" element={<Test />} />
             <Route path={PATHS.login} element={<Login />} />
             <Route path={PATHS.signup} element={<SignUp />} />
-            <Route path={PATHS.teamspaceList} element={<TeamSpaceList />} />
+            <Route path={PATHS.teamSpaceList} element={<TeamSpaceList />} />
 
-            <Route path={`${PATHS.teamspace}/:teamspace_name`}>
+            <Route path={`${PATHS.teamSpace}/:${PATHS.teamSpaceName}`}>
                <Route index element={<TeamSpace />} />
                <Route path={PATHS.public} element={<div>특정 TeamSpace 공개 채널페이지</div>} />
-               <Route path={`${PATHS.private}/:channel_name`} element={<div>특정 TeamSpace 비공개 채널페이지</div>} />
+               <Route path={`${PATHS.private}/:${PATHS.channelName}`} element={<div>특정 TeamSpace 비공개 채널페이지</div>} />
             </Route>
             {/* 
                현재 상대경로를 기준으로 두가지의 방법이 있다.
