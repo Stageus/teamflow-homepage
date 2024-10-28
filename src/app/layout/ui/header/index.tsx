@@ -23,7 +23,7 @@ export const Header = () => {
          {/* Button list in header */}
          <div>
             <button
-               className={`button-layout ${match.pathname.includes(PATHS.teamSpaceList) ? '_active' : '_not-select'} sm:px-2 sm:py-2 sm:text-xs`}
+               className={`button-layout ${match?.pathname.includes(PATHS.teamSpaceList) ? '_active' : '_not-select'} sm:px-2 sm:py-2 sm:text-xs`}
                onClick={teamspaceListRoute}>
                TeamSpace
             </button>
