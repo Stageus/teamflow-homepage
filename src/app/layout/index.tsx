@@ -3,9 +3,8 @@ import { useLocation, Outlet } from 'react-router-dom';
 import { BsList, BsXLg } from 'react-icons/bs';
 import { Header } from './ui/header';
 import { Aside } from './ui/aside';
-import { useResponsiveMobile } from "./model/useResponsiveMobile";
+import { useResponsiveMobile } from './model/useResponsiveMobile';
 import { PATHS } from '@shared/consts/paths';
-import { UrlTrackingProvider } from '@shared/store/urlTracking';
 import { useCookie } from '@shared/hooks/useCookie';
 
 export const Layout = () => {
@@ -25,39 +24,39 @@ export const Layout = () => {
    }, [cookies]);
 
    return (
-      <UrlTrackingProvider>
-         <div className="bg-shade_1 flex">
-            {layoutNone && (
-               <>
-                  <aside
-                     className={`sticky top-0 translate-x-0 h-screen min-w-[350px] transition-all
-                        mobile:fixed ${isAside ? 'mobile:translate-x-0' : 'mobile:-translate-x-full'} mobile:z-50
-                     `}>
-                     <Aside />
-                  </aside>
-                  {isAside ? <div className='fixed inset-0 z-40 bg-[#00000059]'>
-                     <div className='absolute top-2 right-2 text-white w-8 h-8 hover:theme-hover-text' onClick={isToggleAside}>
-                        <BsXLg size={'100%'}/>
-                     </div>
-                  </div> : null}
-               </>
-            )}
-            <div className="flex min-w-[300px] grow flex-col">
-               {layoutNone && (
-                  <header className="sticky top-0 flex items-center justify-start bg-transparent z-30">
+      <div className="flex bg-shade_1">
+         {layoutNone && (
+            <>
+               <aside
+                  className={`sticky top-0 h-screen min-w-[350px] translate-x-0 transition-all mobile:fixed ${isAside ? 'mobile:translate-x-0' : 'mobile:-translate-x-full'} mobile:z-50`}>
+                  <Aside />
+               </aside>
+               {isAside ? (
+                  <div className="fixed inset-0 z-40 bg-[#00000059]">
                      <div
-                        className="text-gray hover:theme-hover-text mx-3 hidden h-7 w-7 mobile:block"
+                        className="absolute w-8 h-8 text-white hover:theme-hover-text right-2 top-2"
                         onClick={isToggleAside}>
-                        <BsList size={'100%'} />
+                        <BsXLg size={'100%'} />
                      </div>
-                     <Header />
-                  </header>
-               )}
-               <main className="grow">
-                  <Outlet />
-               </main>
-            </div>
+                  </div>
+               ) : null}
+            </>
+         )}
+         <div className="flex min-w-[300px] grow flex-col">
+            {layoutNone && (
+               <header className="sticky top-0 z-30 flex items-center justify-start bg-transparent">
+                  <div
+                     className="hidden mx-3 hover:theme-hover-text h-7 w-7 text-gray mobile:block"
+                     onClick={isToggleAside}>
+                     <BsList size={'100%'} />
+                  </div>
+                  <Header />
+               </header>
+            )}
+            <main className="grow">
+               <Outlet />
+            </main>
          </div>
-      </UrlTrackingProvider>
+      </div>
    );
 };
