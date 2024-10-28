@@ -3,7 +3,8 @@ import { PATHS } from "../consts/paths";
 
 export const useRoute = () => {
     const navigate = useNavigate();
-    const { teamspace_name } = useParams();
+    const params = useParams();
+    const urlTeamspaceName = params[PATHS.teamSpaceName];
     
     const loginRoute = () => {
         navigate(`/${PATHS.login}`);
@@ -12,16 +13,16 @@ export const useRoute = () => {
         navigate(`/${PATHS.signup}`);
     };
     const teamspaceListRoute = ()=>{
-        navigate(`/${PATHS.teamspaceList}`);
+        navigate(`/${PATHS.teamSpaceList}`);
     };
     const teamspaceRoute = (teamspaceName: string)=>{
-        navigate(`/${PATHS.teamspace}/${teamspaceName}`);
+        navigate(`/${PATHS.teamSpace}/${teamspaceName}`);
     };
     const teamspacePublicRoute = ()=>{
-        navigate(`${PATHS.teamspace}/${teamspace_name}/public`);
+        navigate(`${PATHS.teamSpace}/${urlTeamspaceName}/public`);
     };
     const teamspacePrivateRoute = (channelName: string)=>{
-        navigate(`${PATHS.teamspace}/${teamspace_name}/${PATHS.private}/${channelName}`);
+        navigate(`${PATHS.teamSpace}/${urlTeamspaceName}/${PATHS.private}/${channelName}`);
     };
 
     return{
