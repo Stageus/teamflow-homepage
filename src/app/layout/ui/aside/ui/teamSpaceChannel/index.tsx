@@ -107,7 +107,7 @@ export const TeamSpcaeChannel = () => {
                            {channelList ? <BsArrowUpCircle size={'100%'} /> : <BsArrowDownCircle size={'100%'} />}
                         </span>
                      </div>
-                     <ToolTip toolTipContent='채널생성'>
+                     <ToolTip toolTipContent="채널 생성">
                         <div className="w-5 h-5 text-shade_5 hover:text-primary" onClick={onClickIsModal}>
                            <BsFillPlusCircleFill size={'100%'} />
                         </div>
@@ -144,14 +144,18 @@ export const TeamSpcaeChannel = () => {
                                       <p className="max-w-[178px] truncate text-sm">{item.channelName}</p>
                                    </div>
                                    <div className="flex gap-3 p-2 text-black dark:text-white">
-                                      <div className="w-4 h-4 hover:text-primary" onClick={onClickIsOutside}>
-                                         <BsBoxArrowInRight size={'100%'} />
-                                      </div>
+                                      <ToolTip toolTipContent='채널 나가기'>
+                                         <div className="w-4 h-4 hover:text-primary" onClick={onClickIsOutside}>
+                                            <BsBoxArrowInRight size={'100%'} />
+                                         </div>
+                                      </ToolTip>
+                                      <ToolTip toolTipContent='채널 설정'>
                                       <div
                                          className="w-4 h-4 hover:text-primary"
                                          onClick={() => console.log('채널관리 모달')}>
                                          <BsGearFill size={'100%'} />
                                       </div>
+                                      </ToolTip>
                                    </div>
                                 </li>
                              );
