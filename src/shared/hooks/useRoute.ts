@@ -1,8 +1,11 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { PATHS } from "../consts/paths";
 
 export const useRoute = () => {
     const navigate = useNavigate();
+    const params = useParams();
+    const urlTeamspaceName = params[PATHS.teamSpaceName];
+    
     const loginRoute = () => {
         navigate(`/${PATHS.login}`);
     };
@@ -10,16 +13,16 @@ export const useRoute = () => {
         navigate(`/${PATHS.signup}`);
     };
     const teamspaceListRoute = ()=>{
-        navigate(`/${PATHS.teamspaceList}`);
+        navigate(`/${PATHS.teamSpaceList}`);
     };
     const teamspaceRoute = (teamspaceName: string)=>{
-        navigate(`/${PATHS.teamspace}/${teamspaceName}`);
+        navigate(`/${PATHS.teamSpace}/${teamspaceName}`);
     };
-    const teamspacePublicRoute = (teamspaceName: string)=>{
-        navigate(`/${PATHS.teamspace}/${teamspaceName}/${PATHS.public}`);
+    const teamspacePublicRoute = ()=>{
+        navigate(`${PATHS.teamSpace}/${urlTeamspaceName}/public`);
     };
-    const teamspacePrivateRoute = (teamspaceName: string, channelName: string)=>{
-        navigate(`/${PATHS.teamspace}/${teamspaceName}/${PATHS.private}/${channelName}`);
+    const teamspacePrivateRoute = (channelName: string)=>{
+        navigate(`${PATHS.teamSpace}/${urlTeamspaceName}/${PATHS.private}/${channelName}`);
     };
 
     return{

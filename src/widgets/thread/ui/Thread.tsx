@@ -6,7 +6,6 @@ export const Thread = () => {
    const [textLine, setTextLine] = useState(false);
    const onClickMoreText = () => setTextLine(!textLine);
    return (
-      <>
          <div className="bg-shade_2 flex w-full gap-4 rounded-lg px-5 py-3 shadow-md">
             {/* entities area */}
             <div className="flex grow flex-col gap-3">
@@ -85,16 +84,5 @@ export const Thread = () => {
                   </div>
             </div>
          </div>
-         {/* <div className='flex flex-col gap-2 border-primary border-4 rounded-lg p-3 h-72'>
-            <div className='flex items-center gap-2'><span className='text-xs text-shade_5'>모두에게 멘션</span><input type='checkbox'/></div>
-            <textarea className='grow w-full text-left bg-transparent outline-none text-black dark:text-white border-b-2 border-shade_5 resize-none' placeholder='최대 1000자까지 입력 가능합니다'/>
-            <div className='flex items-center gap-2'>
-                <div><button className='button-layout _disabled'>작성하기</button></div>
-                <span className="h-6 w-6 cursor-pointer text-black hover:text-secondary dark:text-white dark:hover:text-secondary">
-                     <BsFileEarmarkDiff size={'100%'} />
-                </span>
-            </div>
-         </div> */}
-      </>
    );
 };

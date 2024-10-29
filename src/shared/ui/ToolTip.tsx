@@ -7,11 +7,9 @@ export const ToolTip = (props : TooTipProps) => {
    const uniqueId = useId();
 
    return (
-      <>
         <div data-tooltip-id={uniqueId} className='tooltip'>
             {children}
             <Tooltip id={uniqueId} content={toolTipContent} place={place ?? "top"} className='item'/>
         </div>
-      </>
    );
 };

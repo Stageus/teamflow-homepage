@@ -11,7 +11,8 @@ export const useCookie = (dependenciesCookie: string) => {
    };
 
    const removeCookieName = (name: string) => {
-      return removeCookie(name);
+      console.log('name:', name);
+      return removeCookie(name, { path: '/' });
    };
 
    return { cookies, setCookieName, removeCookieName };

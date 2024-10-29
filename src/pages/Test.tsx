@@ -1,9 +1,22 @@
+import { useNavigate, Outlet } from "react-router-dom";
 import { Thread } from "@widgets/thread";
 export const Test = () => {
+   const navigate = useNavigate();
 
+   
    return (
       <div className='max-h-full bg-shade_1'>
-         <div className="p-10">
+         <div className="flex gap-5">
+         <button className="button-layout _active" onClick={()=>navigate("/")}>home</button>
+         <button className="button-layout _active" onClick={()=>navigate("1")}>1</button>
+         <button className="button-layout _active" onClick={()=>navigate("2")}>2</button>
+         <button className="button-layout _active" onClick={()=>navigate("3")}>3</button>
+         <button className="button-layout _active" onClick={()=>navigate("4")}>4</button>
+         <button className="button-layout _active" onClick={()=>navigate("5")}>5</button>
+         </div>
+         
+         <Outlet/>
+         {/* <div className="p-10">
             <Thread/>
          </div>
           <div className="w-full">
@@ -34,12 +47,12 @@ export const Test = () => {
             <div className='w-full bg-gray-300'>300</div>
             <div className='w-full bg-gray-400'>400</div>
 
-            <div className='w-full bg-gray-600 text-white'>600</div>
-            <div className='w-full bg-gray-700 text-white'>700</div>
-            <div className='w-full bg-gray-800 text-white'>800</div>
-            <div className='w-full bg-gray-900 text-white'>900</div>
-            <div className='w-full bg-gray-950 text-white'>950</div>
-            <div className='w-full bg-black text-white'>black</div>
+            <div className='w-full text-white bg-gray-600'>600</div>
+            <div className='w-full text-white bg-gray-700'>700</div>
+            <div className='w-full text-white bg-gray-800'>800</div>
+            <div className='w-full text-white bg-gray-900'>900</div>
+            <div className='w-full text-white bg-gray-950'>950</div>
+            <div className='w-full text-white bg-black'>black</div>
 
             <div className='flex items-center justify-center w-20 h-20 shadow-sm'>shadow-sm</div>
             <div className='flex items-center justify-center w-20 h-20 shadow'>shadow</div>
@@ -50,7 +63,7 @@ export const Test = () => {
             <div className='flex items-center justify-center w-20 h-20 shadow-inner'>shadow-inner</div>
          </div>     
 
-         
+          */}
       </div>
    );
 };

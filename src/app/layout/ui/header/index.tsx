@@ -1,27 +1,29 @@
+import { useMatch } from "react-router-dom";
+
 import { AlarmModal } from './ui/alarmModal';
 import { useChangeTheme } from './model/useChangeTheme';
 import { useLogout } from './model/useLogout';
-import { useUrlTracking } from '@shared/store/urlTracking';
-import { PATHS } from '@shared/consts/paths';
 import { useModalEventDetect } from './model/useModalEventDetect';
+
 import { useRoute } from '@shared/hooks/useRoute';
 import { FullScreenModal } from '@shared/ui/FullScreenModal';
 import { useCookie } from '@shared/hooks/useCookie';
+import { PATHS } from "@shared/consts/paths";
 
 export const Header = () => {
    const { loginRoute, teamspaceListRoute } = useRoute();
-   const { getCurrentPathName } = useUrlTracking();
    const { modalRef, isModalDetect, onClickOpenModal } = useModalEventDetect();
    const { isLogout, onClickOpenLogoutModal } = useLogout();
    const { theme, onClickchangeTheme } = useChangeTheme();
    const { cookies, removeCookieName } = useCookie('token');
-
+   const match = useMatch(`/${PATHS.teamSpaceList}`);
+   
    return (
-      <div className="flex gap-3 whitespace-nowrap px-4 py-2">
+      <div className="flex gap-3 px-4 py-2 whitespace-nowrap">
          {/* Button list in header */}
          <div>
             <button
-               className={`button-layout ${getCurrentPathName(PATHS.teamspaceList) ? '_active' : '_not-select'} sm:px-2 sm:py-2 sm:text-xs`}
+               className={`button-layout ${match?.pathname.includes(PATHS.teamSpaceList) ? '_active' : '_not-select'} sm:px-2 sm:py-2 sm:text-xs`}
                onClick={teamspaceListRoute}>
                TeamSpace
             </button>

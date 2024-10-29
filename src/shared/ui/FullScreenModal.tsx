@@ -12,14 +12,14 @@ export const FullScreenModal = (props: FullScreenModalProps) => {
 
    return ReactDOM.createPortal(
       <div
-         className={`modal-gradient fixed inset-0 flex transition-transform ${isModal ? modalStyles.show : modalStyles.hide}`}>
+         className={`modal-gradient fixed inset-0 flex transition-transform ${isModal ? modalStyles.show : modalStyles.hide} z-50`}>
          <h1 className="absolute text-primary flex justify-center p-5 text-[30px] italic">{title}</h1>
          <div
             onClick={closeModal}
-            className="hover:text-secondary absolute right-5 top-5 flex h-6 w-6 cursor-pointer items-center justify-end text-white">
+            className="absolute flex items-center justify-end w-6 h-6 text-white cursor-pointer hover:text-secondary right-5 top-5">
             <BsXLg size={'100%'} />
          </div>
-         <div className="flex grow items-center justify-center">
+         <div className="flex items-center justify-center grow">
          {isModal ? children : null}
          </div>
       </div>,
