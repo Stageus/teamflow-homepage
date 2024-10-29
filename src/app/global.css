@@ -45,7 +45,11 @@ CSSname
 
    html,
    body {
-      @apply bg-shade_1 h-screen font-service;
+      @apply bg-shade_1 h-full font-service;
+   }
+
+   #root{
+      @apply h-full;
    }
 
    h1 {
