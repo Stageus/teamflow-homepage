@@ -4,7 +4,7 @@ import { Thread } from '@widgets/thread';
 export const TeamSpace = () => {
 
    return (
-      <div className="relative flex flex-col gap-4 p-2">
+      <div className="flex flex-col gap-4 p-2 ">
          <Thread />
          <Thread />
          <Thread />
