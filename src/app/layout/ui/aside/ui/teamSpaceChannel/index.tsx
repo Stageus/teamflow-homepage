@@ -12,9 +12,10 @@ import { useCreateChannel } from './model/useCreateChannel';
 import { useOutsideChannel } from './model/useOutsideChannel';
 
 import { TextInput } from '@features/textInput';
+import { PATHS } from "@shared/consts/paths";
 import { useRoute } from '@shared/hooks/useRoute';
 import { FullScreenModal } from '@shared/ui/FullScreenModal';
-import { PATHS } from "@shared/consts/paths";
+import { ToolTip } from "@shared/ui/ToolTip";
 
 export const TeamSpcaeChannel = () => {
    const { teamspaceRoute, teamspacePublicRoute, teamspacePrivateRoute } = useRoute();
@@ -73,12 +74,14 @@ export const TeamSpcaeChannel = () => {
          <div className="flex flex-col gap-3 p-1 overflow-y-scroll">
             {_TeamSpaceQucikList.map(item => {
                return (
+                  <ToolTip toolTipContent={item.teamSpaceName} place='right'>
                   <button
                      key={item.teamSpaceIdx}
                      className={`${match?.params.teamspace_name === item.teamSpaceName ? 'bg-primary text-white' : 'bg-shade_3 text-gray'} h-12 w-12 truncate rounded-full p-1 text-sm duration-200 hover:bg-secondary hover:text-white`}
                      onClick={() => teamspaceRoute(item.teamSpaceName)}>
                      {item.teamSpaceName}
                   </button>
+                  </ToolTip>
                );
             })}
          </div>
