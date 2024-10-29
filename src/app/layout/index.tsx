@@ -28,7 +28,7 @@ export const Layout = () => {
          {layoutNone && (
             <>
                <aside
-                  className={`sticky top-0 h-screen min-w-[350px] translate-x-0 transition-all mobile:fixed ${isAside ? 'mobile:translate-x-0' : 'mobile:-translate-x-full'} mobile:z-50`}>
+                  className={`sticky top-0 h-screen min-w-[360px] translate-x-0 transition-all mobile:fixed ${isAside ? 'mobile:translate-x-0' : 'mobile:-translate-x-full'} mobile:z-50`}>
                   <Aside />
                </aside>
                {isAside ? (
