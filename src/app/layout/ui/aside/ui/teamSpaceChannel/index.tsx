@@ -12,10 +12,10 @@ import { useCreateChannel } from './model/useCreateChannel';
 import { useOutsideChannel } from './model/useOutsideChannel';
 
 import { TextInput } from '@features/textInput';
-import { PATHS } from "@shared/consts/paths";
+import { PATHS } from '@shared/consts/paths';
 import { useRoute } from '@shared/hooks/useRoute';
 import { FullScreenModal } from '@shared/ui/FullScreenModal';
-import { ToolTip } from "@shared/ui/ToolTip";
+import { ToolTip } from '@shared/ui/ToolTip';
 
 export const TeamSpcaeChannel = () => {
    const { teamspaceRoute, teamspacePublicRoute, teamspacePrivateRoute } = useRoute();
@@ -74,13 +74,13 @@ export const TeamSpcaeChannel = () => {
          <div className="flex flex-col gap-3 p-1 overflow-y-scroll">
             {_TeamSpaceQucikList.map(item => {
                return (
-                  <ToolTip toolTipContent={item.teamSpaceName} place='right'>
-                  <button
-                     key={item.teamSpaceIdx}
-                     className={`${match?.params.teamspace_name === item.teamSpaceName ? 'bg-primary text-white' : 'bg-shade_3 text-gray'} h-12 w-12 truncate rounded-full p-1 text-sm duration-200 hover:bg-secondary hover:text-white`}
-                     onClick={() => teamspaceRoute(item.teamSpaceName)}>
-                     {item.teamSpaceName}
-                  </button>
+                  <ToolTip toolTipContent={item.teamSpaceName} place="right">
+                     <button
+                        key={item.teamSpaceIdx}
+                        className={`${match?.params.teamspace_name === item.teamSpaceName ? 'bg-primary text-white' : 'bg-shade_3 text-gray'} h-12 w-12 truncate rounded-full p-1 text-sm duration-200 hover:bg-secondary hover:text-white`}
+                        onClick={() => teamspaceRoute(item.teamSpaceName)}>
+                        {item.teamSpaceName}
+                     </button>
                   </ToolTip>
                );
             })}
@@ -107,9 +107,11 @@ export const TeamSpcaeChannel = () => {
                            {channelList ? <BsArrowUpCircle size={'100%'} /> : <BsArrowDownCircle size={'100%'} />}
                         </span>
                      </div>
-                     <span className="w-5 h-5 text-shade_5 hover:text-primary" onClick={onClickIsModal}>
-                        <BsFillPlusCircleFill size={'100%'} />
-                     </span>
+                     <ToolTip toolTipContent='채널생성'>
+                        <div className="w-5 h-5 text-shade_5 hover:text-primary" onClick={onClickIsModal}>
+                           <BsFillPlusCircleFill size={'100%'} />
+                        </div>
+                     </ToolTip>
                      {/* create channel modal */}
                      <FullScreenModal title="비공개 채널생성" isModal={createChannelModal} closeModal={onClickIsModal}>
                         <div className="flex w-[300px] flex-col items-center gap-6">
@@ -133,9 +135,13 @@ export const TeamSpcaeChannel = () => {
                      {channelList
                         ? _PrivateChannelList.map(item => {
                              return (
-                                <li key={item.channelIdx} className="flex justify-between rounded-lg cursor-pointer item s-center text-shade_5 hover:bg-shade_3">
-                                   <div className="p-2 grow hover:text-primary" onClick={() => teamspacePrivateRoute(item.channelName)}>
-                                      <p className="text-sm truncate max-w-[178px]">{item.channelName}</p>
+                                <li
+                                   key={item.channelIdx}
+                                   className="flex justify-between rounded-lg cursor-pointer item s-center text-shade_5 hover:bg-shade_3">
+                                   <div
+                                      className="p-2 grow hover:text-primary"
+                                      onClick={() => teamspacePrivateRoute(item.channelName)}>
+                                      <p className="max-w-[178px] truncate text-sm">{item.channelName}</p>
                                    </div>
                                    <div className="flex gap-3 p-2 text-black dark:text-white">
                                       <div className="w-4 h-4 hover:text-primary" onClick={onClickIsOutside}>
