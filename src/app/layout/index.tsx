@@ -23,6 +23,16 @@ export const Layout = () => {
       }
    }, [cookies]);
 
+
+   // Aside가 열릴 때 body 스크롤 차단
+   useEffect(() => {
+      if (isAside) {
+         document.body.classList.add('overflow-hidden');
+      } else {
+         document.body.classList.remove('overflow-hidden');
+      }
+   }, [isAside]);
+
    return (
       <div className="flex bg-shade_1">
          {layoutNone && (
