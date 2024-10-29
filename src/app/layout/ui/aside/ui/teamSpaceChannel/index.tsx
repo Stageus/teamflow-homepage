@@ -6,12 +6,15 @@ import {
    BsArrowUpCircle,
 } from 'react-icons/bs';
 import { useMatch } from 'react-router-dom';
+
 import { useChannelList } from './model/useChannelList';
 import { useCreateChannel } from './model/useCreateChannel';
 import { useOutsideChannel } from './model/useOutsideChannel';
+
 import { TextInput } from '@features/textInput';
 import { useRoute } from '@shared/hooks/useRoute';
 import { FullScreenModal } from '@shared/ui/FullScreenModal';
+import { PATHS } from "@shared/consts/paths";
 
 export const TeamSpcaeChannel = () => {
    const { teamspaceRoute, teamspacePublicRoute, teamspacePrivateRoute } = useRoute();
@@ -19,8 +22,8 @@ export const TeamSpcaeChannel = () => {
    const { createChannelModal, onClickIsModal, inputRef } = useCreateChannel();
    const { outSideChannelModal, onClickIsOutside } = useOutsideChannel();
    const match = useMatch({
-      path: '/team-space/:teamspace_name/:type?/:channel_name?',
-      end: true,
+      path: `/${PATHS.teamSpace}/:${PATHS.teamSpaceName}/:type?/:${PATHS.channelName}?`,
+      end: false,
    });
 
    const _TeamSpaceQucikList = [
@@ -53,15 +56,15 @@ export const TeamSpcaeChannel = () => {
    const _PrivateChannelList = [
       {
          channelIdx: 1,
-         channelName: 'team1',
+         channelName: 'ForntEnd-1Team',
       },
       {
          channelIdx: 2,
-         channelName: 'team1',
+         channelName: 'DesignTeam-1Team',
       },
       {
          channelIdx: 3,
-         channelName: 'team1',
+         channelName: 'BackEndTeam-1team--------------------',
       },
    ];
 
@@ -89,19 +92,18 @@ export const TeamSpcaeChannel = () => {
                   </div>
 
                   <div
-                     className={`${match.params.type === 'public' && 'bg-shade_3 text-primary'} flex h-10 cursor-pointer items-center rounded-lg p-2 hover:text-primary`}
+                     className={`${match.params.type === PATHS.public && 'bg-shade_3 text-primary'} flex h-10 cursor-pointer items-center rounded-lg p-2 hover:text-primary`}
                      onClick={teamspacePublicRoute}>
                      <span>공개 채널</span>
                   </div>
 
-                  <div className="flex items-center justify-between h-10 p-2 rounded-lg cursor-pointer text-shade_5 hover:text-primary">
-                     <div className="flex items-center gap-3 grow" onClick={onClickShowList}>
+                  <div className="flex items-center justify-between h-10 p-2 rounded-lg cursor-pointer text-shade_5">
+                     <div className="flex items-center gap-3 grow hover:text-primary" onClick={onClickShowList}>
                         <span>비공개 채널</span>
                         <span className="w-5 h-5">
                            {channelList ? <BsArrowUpCircle size={'100%'} /> : <BsArrowDownCircle size={'100%'} />}
                         </span>
                      </div>
-                     <span className="w-5 h-5"></span>
                      <span className="w-5 h-5 text-shade_5 hover:text-primary" onClick={onClickIsModal}>
                         <BsFillPlusCircleFill size={'100%'} />
                      </span>
@@ -124,15 +126,15 @@ export const TeamSpcaeChannel = () => {
                   </div>
 
                   {/* 비공개 채널 리스트 ui분리 */}
-                  <ul className="px-1 grow">
+                  <ul className="flex flex-col gap-1 px-1">
                      {channelList
                         ? _PrivateChannelList.map(item => {
                              return (
-                                <li key={item.channelIdx} className="flex items-center justify-between p-2 rounded-lg cursor-pointer text-shade_5 hover:bg-shade_3 hover:text-primary">
-                                   <div className="grow" onClick={() => teamspacePrivateRoute(item.channelName)}>
-                                      <span className="text-sm line-clamp-1">{item.channelName}</span>
+                                <li key={item.channelIdx} className="flex justify-between rounded-lg cursor-pointer item s-center text-shade_5 hover:bg-shade_3">
+                                   <div className="p-2 grow hover:text-primary" onClick={() => teamspacePrivateRoute(item.channelName)}>
+                                      <p className="text-sm truncate max-w-[178px]">{item.channelName}</p>
                                    </div>
-                                   <div className="flex gap-3 ml-3 text-black dark:text-white">
+                                   <div className="flex gap-3 p-2 text-black dark:text-white">
                                       <div className="w-4 h-4 hover:text-primary" onClick={onClickIsOutside}>
                                          <BsBoxArrowInRight size={'100%'} />
                                       </div>
