@@ -74,9 +74,8 @@ export const TeamSpcaeChannel = () => {
          <div className="flex flex-col gap-3 p-1 overflow-y-scroll">
             {_TeamSpaceQucikList.map(item => {
                return (
-                  <ToolTip toolTipContent={item.teamSpaceName} place="right">
+                  <ToolTip key={item.teamSpaceIdx} toolTipContent={item.teamSpaceName} place="right">
                      <button
-                        key={item.teamSpaceIdx}
                         className={`${match?.params.teamspace_name === item.teamSpaceName ? 'bg-primary text-white' : 'bg-shade_3 text-gray'} h-12 w-12 truncate rounded-full p-1 text-sm duration-200 hover:bg-secondary hover:text-white`}
                         onClick={() => teamspaceRoute(item.teamSpaceName)}>
                         {item.teamSpaceName}
