@@ -16,62 +16,47 @@ import { PATHS } from '@shared/consts/paths';
 import { useRoute } from '@shared/hooks/useRoute';
 import { FullScreenModal } from '@shared/ui/FullScreenModal';
 import { ToolTip } from '@shared/ui/ToolTip';
+import { DrawerModal } from '@shared/ui/DrawerModal';
+import { useState } from 'react';
 
 export const TeamSpcaeChannel = () => {
    const { teamspaceRoute, teamspacePublicRoute, teamspacePrivateRoute } = useRoute();
    const { channelList, onClickShowList } = useChannelList();
    const { createChannelModal, onClickIsModal, inputRef } = useCreateChannel();
    const { outSideChannelModal, onClickIsOutside } = useOutsideChannel();
+   const [isSettingModalOpen, setIsSettingModalOpen] = useState(false);
+
+   const toggleSettingModal = channelIdx => {
+      // setIsSettingModalOpen(!isSettingModalOpen);
+      // console.log(window.scrollY);
+
+      // const target = event.currentTarget;
+      // const rect = target.getBoundingClientRect();
+      setIsSettingModalOpen(!isSettingModalOpen);
+   };
+
    const match = useMatch({
       path: `/${PATHS.teamSpace}/:${PATHS.teamSpaceName}/:type?/:${PATHS.channelName}?`,
       end: false,
    });
 
-   const _TeamSpaceQucikList = [
-      {
-         teamSpaceIdx: 1,
-         teamSpaceName: '회계',
-      },
-      {
-         teamSpaceIdx: 2,
-         teamSpaceName: '자금',
-      },
-      {
-         teamSpaceIdx: 3,
-         teamSpaceName: '무역',
-      },
-      {
-         teamSpaceIdx: 4,
-         teamSpaceName: '개발팀',
-      },
-      {
-         teamSpaceIdx: 5,
-         teamSpaceName: '보안팀',
-      },
-      {
-         teamSpaceIdx: 6,
-         teamSpaceName: '인사관리팀',
-      },
-   ];
+   const _TeamSpaceQucikList = Array.from([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+   ]).map((_, idx) => ({
+      teamSpaceIdx: idx,
+      teamSpaceName: `TeamspaceName${idx}`,
+   }));
 
-   const _PrivateChannelList = [
-      {
-         channelIdx: 1,
-         channelName: 'ForntEnd-1Team',
-      },
-      {
-         channelIdx: 2,
-         channelName: 'DesignTeam-1Team',
-      },
-      {
-         channelIdx: 3,
-         channelName: 'BackEndTeam-1team--------------------',
-      },
-   ];
+   const _PrivateChannelList = Array.from([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+   ]).map((_, idx) => ({
+      channelIdx: idx,
+      channelName: `ForntEnd-${idx}Team`,
+   }));
 
    return (
       <div className="flex h-full gap-3 p-2">
-         <div className="flex flex-col gap-3 p-1 overflow-y-scroll">
+         <div className="flex flex-col h-full gap-3 p-1 overflow-y-scroll scroll">
             {_TeamSpaceQucikList.map(item => {
                return (
                   <ToolTip key={item.teamSpaceIdx} toolTipContent={item.teamSpaceName} place="right">
@@ -84,22 +69,22 @@ export const TeamSpcaeChannel = () => {
                );
             })}
          </div>
-         <div className="flex min-w-[172px] grow flex-col gap-2 overflow-y-scroll rounded-lg bg-shade_2 p-1 text-shade_5">
+         <div className="flex min-w-[172px] grow flex-col gap-2 rounded-lg bg-shade_2 p-1 text-shade_5">
             {match?.params.teamspace_name ? (
                <>
                   <div
-                     className={`${!match.params.type && 'bg-shade_3 text-primary'} flex h-10 cursor-pointer items-center rounded-lg p-2 hover:text-primary`}
+                     className={`shrink-0 ${!match.params.type && 'bg-shade_3 text-primary'} flex h-10 cursor-pointer items-center rounded-lg p-2 hover:text-primary`}
                      onClick={() => teamspaceRoute(match.params.teamspace_name)}>
                      <span>공지 채널</span>
                   </div>
 
                   <div
-                     className={`${match.params.type === PATHS.public && 'bg-shade_3 text-primary'} flex h-10 cursor-pointer items-center rounded-lg p-2 hover:text-primary`}
+                     className={`shrink-0 ${match.params.type === PATHS.public && 'bg-shade_3 text-primary'} flex h-10 cursor-pointer items-center rounded-lg p-2 hover:text-primary`}
                      onClick={teamspacePublicRoute}>
                      <span>공개 채널</span>
                   </div>
 
-                  <div className="flex items-center justify-between h-10 p-2 rounded-lg cursor-pointer text-shade_5">
+                  <div className="flex items-center justify-between h-10 p-2 rounded-lg cursor-pointer shrink-0 text-shade_5">
                      <div className="flex items-center gap-3 grow hover:text-primary" onClick={onClickShowList}>
                         <span>비공개 채널</span>
                         <span className="w-5 h-5">
@@ -130,31 +115,37 @@ export const TeamSpcaeChannel = () => {
                   </div>
 
                   {/* 비공개 채널 리스트 ui분리 */}
-                  <ul className="flex flex-col gap-1 px-1">
+                  <ul className="flex flex-col gap-3 px-1 overflow-y-scroll scroll grow">
                      {channelList
                         ? _PrivateChannelList.map(item => {
                              return (
                                 <li
                                    key={item.channelIdx}
-                                   className="flex justify-between rounded-lg cursor-pointer item s-center text-shade_5 hover:bg-shade_3">
-                                   <div
-                                      className="p-2 grow hover:text-primary"
-                                      onClick={() => teamspacePrivateRoute(item.channelName)}>
-                                      <p className="max-w-[178px] truncate text-sm">{item.channelName}</p>
-                                   </div>
-                                   <div className="flex gap-3 p-2 text-black dark:text-white">
-                                      <ToolTip toolTipContent='채널 나가기'>
-                                         <div className="w-4 h-4 hover:text-primary" onClick={onClickIsOutside}>
-                                            <BsBoxArrowInRight size={'100%'} />
-                                         </div>
-                                      </ToolTip>
-                                      <ToolTip toolTipContent='채널 설정'>
+                                   className="relative flex flex-col gap-1 p-2 rounded-lg cursor-pointer item s-center text-shade_5 hover:bg-shade_3">
+                                   <div className="flex items-start">
                                       <div
-                                         className="w-4 h-4 hover:text-primary"
-                                         onClick={() => console.log('채널관리 모달')}>
-                                         <BsGearFill size={'100%'} />
+                                         className="grow hover:text-primary"
+                                         onClick={() => teamspacePrivateRoute(item.channelName)}>
+                                         <p className="max-w-[178px] truncate text-sm">{item.channelName}</p>
                                       </div>
-                                      </ToolTip>
+                                      <div className="flex gap-3 text-black dark:text-white">
+                                         <ToolTip toolTipContent="채널 나가기">
+                                            <div className="w-4 h-4 hover:text-primary" onClick={onClickIsOutside}>
+                                               <BsBoxArrowInRight size={'100%'} />
+                                            </div>
+                                         </ToolTip>
+                                         <ToolTip toolTipContent="채널 설정">
+                                            <div className="w-4 h-4 hover:text-primary" onClick={toggleSettingModal}>
+                                               <BsGearFill size={'100%'} />
+                                            </div>
+                                         </ToolTip>
+                                      </div>
+                                   </div>
+                                   <div className={`flex justify-around ${isSettingModalOpen ? "" : ""}`}>
+                                      <span>이름변경</span>
+                                      <span>초대</span>
+                                      <span>추방</span>
+                                      <span>삭제</span>
                                    </div>
                                 </li>
                              );
