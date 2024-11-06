@@ -17,7 +17,6 @@ CSSname
 @tailwind components;
 @tailwind utilities;
 
-/* 기본 전역 스타일 */
 @layer base {
    :root {
       --color-primary: rgb(53, 120, 255);
@@ -35,6 +34,7 @@ CSSname
       --color-shade_5: rgb(156 163 175);
    }
 
+   /* dark모드시의 shade색상 변경 */
    html.dark {
       --color-shade_1: rgb(3 7 18);
       --color-shade_2: rgb(17 24 39);
@@ -69,8 +69,9 @@ CSSname
    }
 }
 
-/* 기존 Tailwindutilties class 확장  - 원자적 클래스*/
+
 @layer utilities {
+   /* login, signup 배경색  - darkMode*/
    .gradient-dark {
       background: linear-gradient(
          160.4065214033883deg,
@@ -79,6 +80,7 @@ CSSname
          rgba(8, 8, 12, 1) 46.432322053675605%
       );
    }
+   /* login, signup 배경색  - lightMode*/
    .gradient-light {
       background: linear-gradient(
          160.4065214033883deg,
@@ -87,50 +89,70 @@ CSSname
          rgba(250, 250, 250, 1) 46.432322053675605%
       );
    }
+
+   /* modal 배경색 */
    .modal-gradient {
       background: linear-gradient(
          87.56681431265758deg,
          rgba(157, 157, 174, 1) 3.4884724289021163%,
-         rgba(156, 156, 173, 1) 3.4884724289021163%,
+         rgb(4, 4, 5) 3.4884724289021163%,
          rgba(8, 8, 12, 0.7) 36.17386429398148%
       );
    }
 
+   /* cardbox 배경색 - darkMode*/
    .card-gradient-dark {
       background: linear-gradient(140deg, #26262c 7%, #3578ff5e 7%, #3578ff5e 20%, #26262c 20%, #26262c 100%);
    }
+   /* cardbox 배경색 - lightMode*/
    .card-gradient-light {
       background: linear-gradient(130deg, #9d9dae42 7%, #3578ff5e 7%, #3578ff5e 20%, #9d9dae42 20%, #9d9dae42 100%);
    }
 
 
+   /* mode text color */
    .theme-text {
       @apply text-black dark:text-white;
    }
 
+   /* mode hoverText color*/
    .theme-hover-text {
       @apply hover:text-secondary hover:dark:text-secondary cursor-pointer;
    }
 
+   /* mode hoverBackground color */
    .theme-hover-bg {
       @apply hover:bg-secondary dark:hover:bg-secondary cursor-pointer;
    }
 
-
+   /* img size */
    .service-img{
       @apply w-full h-full rounded-full;
    }
 
+   /* tooptip */
    .tooltip{
       .item {
          @apply bg-gray text-xs;
       }
    }
+
+   /* scrollbar*/
+   .scroll{
+      /* Firefox */
+      scrollbar-width: none;
+      
+   }
+
+   /* Chrome, Safari */
+   .scroll::-webkit-scrollbar {
+      display: none;
+   }
    
 }
 
-/* 재사용 가능한 컴포넌트 스타일 */
 @layer components {
+   /* 기본버튼 레이아웃 및 타입 */
    .button-layout {
       @apply flex w-full items-center justify-center gap-3 rounded-lg px-4 py-2 text-sm text-black dark:text-white whitespace-nowrap;
       box-shadow: 1px 2px 4px theme('colors.shade_5');
@@ -149,34 +171,6 @@ CSSname
       }
       &._danger {
          @apply bg-error hover:bg-secondary text-white;
-      }
-   }
-
-   .input-form {
-      @apply flex w-full flex-col gap-2;
-
-      .form_input {
-         @apply border-b-2 bg-transparent text-sm text-black outline-none dark:text-white;
-      }
-
-      .form_text {
-         @apply text-xs;
-      }
-   }
-
-   /* tooltip 임시보류 */
-   .message {
-      position: relative;
-      &:hover::after {
-         content: attr(data-message);
-         position: absolute;
-         white-space: nowrap;
-         border-radius: 8px;
-         font-size: 12px;
-         padding: 4px 8px;
-         color: theme("colors.white");
-         background-color: theme("colors.shade_5");
-         transform: translate(-50%, -200%);
       }
    }
 }
