@@ -11,6 +11,7 @@ export default defineConfig({
       { find: "@widgets", replacement: "/src/widgets" },      
       { find: "@features", replacement: "/src/features" },      
       { find: "@shared", replacement: "/src/shared" },      
+      { find: "@entities", replacement: "/src/entities" },      
     ]
   },
 })
