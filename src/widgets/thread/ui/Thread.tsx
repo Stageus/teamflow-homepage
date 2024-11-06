@@ -1,24 +1,25 @@
 import { useState } from 'react';
 import { BsFileEarmarkDiff, BsFillPencilFill, BsTrash3 } from 'react-icons/bs';
-import testImg from '@shared/assets/고양이.jpeg';
+import { RoundProfile } from "@shared/ui/RoundProfile";
+import { ToolTip } from "@shared/ui/ToolTip";
 
 export const Thread = () => {
    const [textLine, setTextLine] = useState(false);
    const onClickMoreText = () => setTextLine(!textLine);
    return (
-         <div className="bg-shade_2 flex w-full gap-4 rounded-lg px-5 py-3 shadow-md">
+         <div className="flex w-full gap-4 px-5 py-3 rounded-lg shadow-md bg-shade_2">
             {/* entities area */}
-            <div className="flex grow flex-col gap-3">
+            <div className="flex flex-col gap-3 grow">
                {/* 작성자이미지, 작성자이름, 작성날짜 */}
                <div className="flex items-center gap-3">
                   <div className="h-9 w-9">
-                     <img className="service-img" src={testImg} />
+                     <RoundProfile/>
                   </div>
                   <div>
                      <span className="text-gray">작성자이름</span>
                   </div>
                   <div>
-                     <span className="text-shade_5 text-xs">2024-01-01</span>
+                     <span className="text-xs text-shade_5">2024-01-01</span>
                   </div>
                </div>
                {/* thred 내용 */}
@@ -49,13 +50,13 @@ export const Thread = () => {
                </p>
                {/* 파일목록 */}
                <div className="flex gap-3">
-                  <span className="bg-shade_3 theme-text flex items-center justify-start rounded-lg p-2 text-xs">
+                  <span className="flex items-center justify-start p-2 text-xs rounded-lg bg-shade_3 theme-text">
                      파일이름1
                   </span>
-                  <span className="bg-shade_3 theme-text flex items-center justify-start rounded-lg p-2 text-xs">
+                  <span className="flex items-center justify-start p-2 text-xs rounded-lg bg-shade_3 theme-text">
                      파일이름2
                   </span>
-                  <span className="bg-shade_3 theme-text flex items-center justify-start rounded-lg p-2 text-xs">
+                  <span className="flex items-center justify-start p-2 text-xs rounded-lg bg-shade_3 theme-text">
                      파일이름3
                   </span>
                </div>
@@ -64,18 +65,24 @@ export const Thread = () => {
             {/* features area */}
             {/* 파일다운로드 버튼, 수정버튼, 삭제버튼 */}
             <div className="flex flex-col gap-3">
-               <div className='basis-9 flex items-center gap-4'>
-                  <span className="theme-text theme-hover-text h-4 w-4">
+               <div className='flex items-center gap-4 basis-9'>
+                  <ToolTip toolTipContent='파일다운로드'>
+                  <div className="w-4 h-4 theme-text theme-hover-text">
                      <BsFileEarmarkDiff size={'100%'} />
-                  </span>
-                  <span className="theme-text theme-hover-text h-4 w-4">
+                  </div>
+                  </ToolTip>
+                  <ToolTip toolTipContent='수정'>
+                  <div className="w-4 h-4 theme-text theme-hover-text">
                      <BsFillPencilFill size={'100%'} />
-                  </span>
-                  <span className="theme-text theme-hover-text h-4 w-4">
+                  </div>
+                  </ToolTip>
+                  <ToolTip toolTipContent='삭제'>
+                  <div className="w-4 h-4 theme-text theme-hover-text">
                      <BsTrash3 size={'100%'} />
-                  </span>
+                  </div>
+                  </ToolTip>
                </div>
-               <div className="whitespace-nowrap leading-6">
+               <div className="leading-6 whitespace-nowrap">
                      <span
                         className={`theme-hover-text text-gray self-end font-bold ${textLine ? 'text-primary' : ''}`}
                         onClick={onClickMoreText}>
