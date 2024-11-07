@@ -14,7 +14,7 @@ export const UserInfo = () => {
    // ui
    const { inputRef, isValid, isCheckValidation } = useValidation(nickNameRegExp);
    const { toggleState, changeToggleState } = useToogle(inputRef);
-   const { profileImg, selectFile, cancelFile } = useProfileImg();
+   const { profileImgRef, profileImg, selectFile, cancelFile } = useProfileImg();
    // api
    const { profileInfo } = useGetUsers();
    const { putUsersProfileImg } = usePutUsersProfileImg();
@@ -51,14 +51,14 @@ export const UserInfo = () => {
                            <div className="flex justify-start gap-3 py-2">
                               <div>
                                  <button
-                                    className={`button-layout ${isValid ? '_active' : '_disabled'}`}
+                                    className={`button-layout ${isValid ? '_active' : '_disabled'} p-2 text-xs`}
                                     onClick={() => ''}>
-                                    확인
+                                    닉네임 저장
                                  </button>
                               </div>
                               <div>
                                  <button
-                                    className="button-layout _default"
+                                    className="p-2 text-xs button-layout _default"
                                     onClick={() => changeToggleState('isNickNameInput')}>
                                     취소
                                  </button>
@@ -79,7 +79,7 @@ export const UserInfo = () => {
                         <>
                            <div>
                               <button className="p-2 text-xs button-layout _active" onClick={putUsersProfileImg}>
-                                 확인
+                                 이미지 저장
                               </button>
                            </div>
                            <div>
@@ -92,15 +92,15 @@ export const UserInfo = () => {
                         <>
                            {/* 이미지 변경 버튼 */}
                            <div>
-                              <label htmlFor="user_img" className="px-2 py-1 text-xs button-layout _active">
+                              <label htmlFor="user_img" className="p-2 text-xs button-layout _active">
                                  이미지 변경
                               </label>
-                              <input id="user_img" type="file" className="hidden" onChange={selectFile} />
+                              <input id="user_img" type="file" ref={profileImgRef} className="hidden" onChange={selectFile} />
                            </div>
                            {/* 이름 변경 버튼 */}
                            <div>
                               <button
-                                 className="px-2 py-1 text-xs button-layout _active"
+                                 className="p-2 text-xs button-layout _active"
                                  onClick={() => changeToggleState('isNickNameInput')}>
                                  닉네임 변경
                               </button>
