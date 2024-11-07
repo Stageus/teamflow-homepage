@@ -1,13 +1,13 @@
-import { Profile } from './ui/profile';
+import { UserInfo } from './ui/userInfo';
 import { TeamSpcaeChannel } from './ui/teamSpaceChannel';
 
 export const Aside = () => {
    return (
-      <div className="h-full flex flex-col gap-2 bg-shade_1">
+      <div className="flex flex-col h-full gap-2 bg-shade_1">
          <section>
-            <Profile/>
+            <UserInfo/>
          </section>
-         <section className="grow overflow-hidden">
+         <section className="overflow-hidden grow">
                <TeamSpcaeChannel/>
          </section>
       </div>

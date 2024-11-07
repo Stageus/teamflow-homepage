@@ -9,8 +9,7 @@ import { useCookie } from '@shared/hooks/useCookie';
 
 export const Layout = () => {
    const location = useLocation();
-   const authPath = [`/${PATHS.login}`, `/${PATHS.signup}`];
-   const layoutNone = !authPath.includes(location.pathname.toLocaleLowerCase());
+   const authPath = [`/${PATHS.login}`, `/${PATHS.signup}`].includes(location.pathname.toLocaleLowerCase());
    const { isAside, isToggleAside } = useResponsiveMobile();
    const { cookies } = useCookie('theme');
 
@@ -24,15 +23,19 @@ export const Layout = () => {
    }, [cookies]);
 
    return (
-      <div className="flex bg-shade_1">
-         {layoutNone && (
+      <div className="flex h-full">
+         {/* login, signup 일경우 header, aside 숨김 */}
+         {authPath ? (
+            <main className="grow">
+               <Outlet />
+            </main>
+         ) : (
             <>
-               <aside
-                  className={`sticky top-0 h-screen min-w-[360px] translate-x-0 transition-all mobile:fixed ${isAside ? 'mobile:translate-x-0' : 'mobile:-translate-x-full'} mobile:z-50`}>
+               <aside className={`h-full w-[360px] shrink-0 translate-x-0 transition-all mobile:fixed z-50 ${isAside ? 'mobile:translate-x-0' : 'mobile:-translate-x-full'}`}>
                   <Aside />
                </aside>
                {isAside ? (
-                  <div className="fixed inset-0 z-40 bg-[#00000059]">
+                  <div className="fixed inset-0 bg-[#00000059] z-40">
                      <div
                         className="absolute w-8 h-8 text-white hover:theme-hover-text right-2 top-2"
                         onClick={isToggleAside}>
@@ -40,23 +43,21 @@ export const Layout = () => {
                      </div>
                   </div>
                ) : null}
+               <div className="flex flex-col grow">
+                  <header className="flex items-center justify-start bg-transparent">
+                     <div
+                        className="hidden mx-3 hover:theme-hover-text h-7 w-7 text-gray mobile:block"
+                        onClick={isToggleAside}>
+                        <BsList size={'100%'} />
+                     </div>
+                     <Header />
+                  </header>
+                  <main className="relative z-0 overflow-scroll grow">
+                     <Outlet />
+                  </main>
+               </div>
             </>
          )}
-         <div className="flex min-w-[300px] grow flex-col">
-            {layoutNone && (
-               <header className="sticky top-0 z-30 flex items-center justify-start bg-transparent">
-                  <div
-                     className="hidden mx-3 hover:theme-hover-text h-7 w-7 text-gray mobile:block"
-                     onClick={isToggleAside}>
-                     <BsList size={'100%'} />
-                  </div>
-                  <Header />
-               </header>
-            )}
-            <main className="grow">
-               <Outlet />
-            </main>
-         </div>
       </div>
    );
 };

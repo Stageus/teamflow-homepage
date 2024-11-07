@@ -4,7 +4,7 @@ import { Thread } from '@widgets/thread';
 export const TeamSpace = () => {
 
    return (
-      <div className="flex flex-col gap-4 p-2 ">
+      <div className="flex flex-col h-screen gap-4 p-2">
          <Thread />
          <Thread />
          <Thread />
@@ -14,7 +14,7 @@ export const TeamSpace = () => {
          <Thread />
          <Thread />
          <Thread />
-         <div className="border-primary bg-shade_1 sticky bottom-5 left-0 right-0 flex h-[200px] flex-col gap-3 rounded-lg border-2 p-2">
+         <div className="border-primary bg-shade_1 fixed bottom-20 left-0 right-0 flex h-[200px] flex-col gap-3 rounded-lg border-2 p-2">
             <div className="flex items-center justify-between">
                <div className='flex items-center gap-3 text-gray'>
                     <div><span className='text-sm'>모두에게 멘션</span></div>
