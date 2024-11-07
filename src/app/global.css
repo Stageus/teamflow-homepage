@@ -173,4 +173,8 @@ CSSname
          @apply bg-error hover:bg-secondary text-white;
       }
    }
+
+   .input-layout {
+      @apply w-full text-sm text-black bg-transparent border-b-2 outline-none dark:text-white border-gray;
+   }
 }
