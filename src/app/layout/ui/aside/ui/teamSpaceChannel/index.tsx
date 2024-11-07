@@ -40,13 +40,6 @@ export const TeamSpcaeChannel = () => {
       end: false,
    });
 
-   const _TeamSpaceQucikList = Array.from([
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-   ]).map((_, idx) => ({
-      teamSpaceIdx: idx,
-      teamSpaceName: `TeamspaceName${idx}`,
-   }));
-
    const _PrivateChannelList = Array.from([
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
    ]).map((_, idx) => ({
@@ -55,21 +48,8 @@ export const TeamSpcaeChannel = () => {
    }));
 
    return (
-      <div className="flex h-full gap-3 p-2">
-         <div className="flex flex-col h-full gap-3 p-1 overflow-y-scroll scroll">
-            {_TeamSpaceQucikList.map(item => {
-               return (
-                  <ToolTip key={item.teamSpaceIdx} toolTipContent={item.teamSpaceName} place="right">
-                     <button
-                        className={`${match?.params.teamspace_name === item.teamSpaceName ? 'bg-primary text-white' : 'bg-shade_3 text-gray'} h-12 w-12 truncate rounded-full p-1 text-sm duration-200 hover:bg-secondary hover:text-white`}
-                        onClick={() => teamspaceRoute(item.teamSpaceName)}>
-                        {item.teamSpaceName}
-                     </button>
-                  </ToolTip>
-               );
-            })}
-         </div>
-         <div className="flex min-w-[172px] grow flex-col gap-2 rounded-lg bg-shade_2 p-1 text-shade_5">
+      <div className="grow">
+         <div className="h-full flex min-w-[172px] grow flex-col gap-2 rounded-lg bg-shade_2 p-1 text-shade_5">
             {match?.params.teamspace_name ? (
                <>
                   <div
@@ -121,7 +101,7 @@ export const TeamSpcaeChannel = () => {
                              return (
                                 <li
                                    key={item.channelIdx}
-                                   className="relative flex flex-col gap-1 p-2 rounded-lg cursor-pointer item s-center text-shade_5 hover:bg-shade_3">
+                                   className="flex flex-col gap-1 p-2 rounded-lg cursor-pointer  item s-center text-shade_5 hover:bg-shade_3">
                                    <div className="flex items-start">
                                       <div
                                          className="grow hover:text-primary"

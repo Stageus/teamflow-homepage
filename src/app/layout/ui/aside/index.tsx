@@ -1,5 +1,6 @@
 import { UserInfo } from './ui/userInfo';
 import { TeamSpcaeChannel } from './ui/teamSpaceChannel';
+import { QuickList } from "./ui/quickList";
 
 export const Aside = () => {
    return (
@@ -7,8 +8,9 @@ export const Aside = () => {
          <section>
             <UserInfo/>
          </section>
-         <section className="overflow-hidden grow">
-               <TeamSpcaeChannel/>
+         <section className="flex gap-2 p-2 overflow-hidden">
+            <QuickList/>
+            <TeamSpcaeChannel/>
          </section>
       </div>
    );
