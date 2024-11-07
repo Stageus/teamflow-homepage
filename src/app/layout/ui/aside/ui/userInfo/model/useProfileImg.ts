@@ -17,7 +17,7 @@ interface ProfileImgObject {
  * @returns **cancelFile:** 실행시 preview를 상태를 변경합니다.
  * @example - const { profileImg, selectFile, cancelFile } = useProfileImg();
  * @example - <button onClick={cancelFile}>
- * @example - <input type="file" onChange={selectFile} />
+ * @example - <input ref={profileImgRef} type="file" onChange={selectFile} />
  */
 
 export const useProfileImg = () => {
