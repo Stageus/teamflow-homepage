@@ -5,8 +5,8 @@ export const TextInput = (props: TextInputProps) => {
    const { inputRef, placeholder, nextName, nextCallback, cancellName, cancellCallback, regexText } = props;
    const { isValid, handlerValidation } = useValidation(props);
    return (
-      <div className="w-full flex flex-col items-center gap-4">
-         <div className="w-full flex flex-col gap-2">
+      <div className="flex flex-col items-center w-full gap-4">
+         <div className="flex flex-col w-full gap-2">
             <input
                className={`border-b-2 bg-transparent text-sm text-black outline-none dark:text-white
                     ${isValid !== null ? (isValid ? 'border-success' : 'border-error') : 'border-gray'}`}
