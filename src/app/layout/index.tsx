@@ -31,7 +31,7 @@ export const Layout = () => {
             </main>
          ) : (
             <>
-               <aside className={`h-full w-[360px] shrink-0 translate-x-0 transition-all mobile:fixed mobile:z-50 ${isAside ? 'mobile:translate-x-0' : 'mobile:-translate-x-full'}`}>
+               <aside className={`h-full w-[360px] shrink-0 translate-x-0 transition-all mobile:fixed z-50 ${isAside ? 'mobile:translate-x-0' : 'mobile:-translate-x-full'}`}>
                   <Aside />
                </aside>
                {isAside ? (
@@ -43,8 +43,8 @@ export const Layout = () => {
                      </div>
                   </div>
                ) : null}
-               <div className="overflow-scroll flexflex-col grow">
-                  <header className="sticky top-0 flex items-center justify-start bg-transparent">
+               <div className="flex flex-col grow">
+                  <header className="flex items-center justify-start bg-transparent">
                      <div
                         className="hidden mx-3 hover:theme-hover-text h-7 w-7 text-gray mobile:block"
                         onClick={isToggleAside}>
@@ -52,7 +52,7 @@ export const Layout = () => {
                      </div>
                      <Header />
                   </header>
-                  <main className="grow">
+                  <main className="relative z-0 overflow-scroll grow">
                      <Outlet />
                   </main>
                </div>
