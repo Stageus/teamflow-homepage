@@ -3,7 +3,7 @@ import { ToolTip } from '@shared/ui/ToolTip';
 import { useRoute } from '@shared/hooks/useRoute';
 import { PATHS } from '@shared/consts/paths';
 
-export const QuickList = () => {
+export const TeamSpaceList = () => {
    const { teamspaceRoute } = useRoute();
    const match = useMatch({
       path: `/${PATHS.teamSpace}/:${PATHS.teamSpaceName}`,

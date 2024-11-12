@@ -10,7 +10,7 @@ import { RoundProfile } from '@shared/ui/RoundProfile';
 import { useValidation } from '@shared/hooks/useValidation';
 import { nickNameRegExp } from '@shared/consts/regExp';
 
-export const UserInfo = () => {
+export const UserProfile = () => {
    // ui
    const { inputRef, isValid, isCheckValidation } = useValidation(nickNameRegExp);
    const { toggleState, changeToggleState } = useToogle(inputRef);

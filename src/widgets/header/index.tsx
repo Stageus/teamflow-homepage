@@ -1,4 +1,5 @@
 import { useMatch } from "react-router-dom";
+import { BsList } from 'react-icons/bs';
 
 import { AlarmModal } from './ui/alarmModal';
 import { useChangeTheme } from './model/useChangeTheme';
@@ -20,6 +21,9 @@ export const Header = () => {
    
    return (
       <div className="flex gap-3 px-4 py-2 whitespace-nowrap">
+         <div className="hidden mx-3 hover:theme-hover-text h-7 w-7 text-gray mobile:block">
+            <BsList size={"100%"}></BsList>
+         </div>
          {/* Button list in header */}
          <div>
             <button
@@ -55,7 +59,7 @@ export const Header = () => {
                </button>
             )}
          </div>
-         <FullScreenModal title="Logout" isModal={isLogout} closeModal={onClickOpenLogoutModal}>
+         {/* <FullScreenModal title="Logout" isModal={isLogout} closeModal={onClickOpenLogoutModal}>
             <div className="flex flex-col gap-8">
                <h2 className="text-white">로그아웃 하시겠습니까?</h2>
                <div className="flex gap-5">
@@ -72,7 +76,7 @@ export const Header = () => {
                   </button>
                </div>
             </div>
-         </FullScreenModal>
+         </FullScreenModal> */}
       </div>
    );
 };

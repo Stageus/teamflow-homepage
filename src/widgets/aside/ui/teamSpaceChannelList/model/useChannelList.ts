@@ -1,7 +1,7 @@
 import { useState } from 'react';
 export const useChannelList = () => {
    const [channelList, setChannelList] = useState(false);
-   const onClickShowList = () => setChannelList(!channelList);
+   const toogleChannelList = () => setChannelList(!channelList);
 
-   return { channelList, onClickShowList };
+   return { channelList, toogleChannelList };
 };
