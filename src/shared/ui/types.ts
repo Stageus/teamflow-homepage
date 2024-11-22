@@ -11,6 +11,5 @@ export type TooTipProps = {
 export type FullScreenModalProps = {
     title: string,
     children: ReactNode,
-    isModal: boolean,
     closeModal: () => void,
 }
