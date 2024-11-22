@@ -119,17 +119,9 @@ Radix UI 라이브러리로 접근성과 유연성을 갖춘 UI 컴포넌트에�
 @tanstack/react-query:
 서버 상태 관리를 위한 라이브러리로, API 요청의 캐싱 및 동기화를 지원합니다.
 
-class-variance-authority / clsx:
-조건부로 CSS 클래스를 병합하거나 동적으로 관리할 수 있도록 도와줍니다.
-
-tailwind-merge:
-Tailwind CSS의 클래스를 병합하고 충돌을 방지합니다.
 
 lucide-react:
 다양한 SVG 기반 아이콘을 제공하는 라이브러리입니다.
-
-nuqs:
-유틸리티 기반 React 관련 기능을 제공하는 라이브러리입니다.
 
 react-infinite-scroll-component:
 무한 스크롤을 구현하기 위한 컴포넌트를 제공합니다.
@@ -137,7 +129,27 @@ react-infinite-scroll-component:
 usehooks-ts / @uidotdev/usehooks:
 자주 사용하는 React Hooks를 제공하는 라이브러리입니다.
 
-zod:
+
+# @tanstack/react-query-devtools: 개발시의 편의성?
+
+# @radix-ui/react-slot: 태그를 변경해준다?
+## https://mjsdo.hashnode.dev/radix-slot#heading-slot
+
+
+# nuqs:
+유틸리티 기반 React 관련 기능을 제공하는 라이브러리입니다.
+## url query string을 좀더 단순하게 핸들링할수 있음
+
+# class-variance-authority / clsx or cva:
+조건부로 CSS 클래스를 병합하거나 동적으로 관리할 수 있도록 도와줍니다.
+## 조건부를 좀더 깔금하게 사용할수 있으며, 재사용 컴포넌트에서의 옵션인자와, 추가적인 인자 class를 추가적으로 부여할수가 있음
+
+# tailwind-merge:
+Tailwind CSS의 클래스를 병합하고 충돌을 방지합니다.
+## taillwind를 사용하면서 중복되는 class를 처리할수 있다.
+
+# zod:
 데이터를 검증하고 구조를 정의하기 위한 타입스크립트 기반 라이브러리입니다.
+## 런타임 환경에서 타임체크를 위해 사용예정 동적api, 사용자 입력, 유효성검사등
 
 
