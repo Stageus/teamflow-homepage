@@ -107,14 +107,37 @@
 > | `변수`     | `명사 + 명사(camelCase)` | `useTeamSpace.확장자` |
 > | `function` | `동사 + 명사(camelCase)` | `useTeamSpace.확장자` |
 
-[Router=문제점]
--  현재 상대경로를 기준으로 두가지의 방법이 있다.
-   1. useNavigate의 relative를 사용해서 상대경로 기준 생성하는 방법
-   2. useResolvedPath를 사용해서 상대적 경로를 가져오는 방법
-   3. 위 2가지 방법을 사용했지만 1번째 방법은, 감싸고 있는 부모기준을 root로 인식을하여 감싸는 부모를 찾지못하고,
-      2번째 방법은 인자를 전달하였지만, 이전 경로를 인식하지 못하고 있다. 즉 구조적인 문제로 판단한다
-      확인이 필요
 
-- [stacking-context=문제점]
-  1. FullScreenModal은 body에서 렌더링이 되는데 header가 위에 깔리는 부분을 처리해야함
-  2. 임식로 FullScreenModal에 z-index를 적용했지만 의미적으로 이게 맞는가?(header부분을 다시파악해야함)
+
+[예정package]
+@mdx-js/loader / @mdx-js/react / @next/mdx:
+MDX 파일(마크다운과 JSX의 조합)을 처리하고 React 컴포넌트로 렌더링할 수 있게 합니다.
+
+@radix-ui/react-icons / @radix-ui/react-slot:
+Radix UI 라이브러리로 접근성과 유연성을 갖춘 UI 컴포넌트에서 아이콘과 슬롯 기능을 제공합니다.
+
+@tanstack/react-query:
+서버 상태 관리를 위한 라이브러리로, API 요청의 캐싱 및 동기화를 지원합니다.
+
+class-variance-authority / clsx:
+조건부로 CSS 클래스를 병합하거나 동적으로 관리할 수 있도록 도와줍니다.
+
+tailwind-merge:
+Tailwind CSS의 클래스를 병합하고 충돌을 방지합니다.
+
+lucide-react:
+다양한 SVG 기반 아이콘을 제공하는 라이브러리입니다.
+
+nuqs:
+유틸리티 기반 React 관련 기능을 제공하는 라이브러리입니다.
+
+react-infinite-scroll-component:
+무한 스크롤을 구현하기 위한 컴포넌트를 제공합니다.
+
+usehooks-ts / @uidotdev/usehooks:
+자주 사용하는 React Hooks를 제공하는 라이브러리입니다.
+
+zod:
+데이터를 검증하고 구조를 정의하기 위한 타입스크립트 기반 라이브러리입니다.
+
+
