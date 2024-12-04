@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { produce } from 'immer';
 import { BsBoxArrowInRight, BsGearFill } from 'react-icons/bs';
-import { ToolTip } from '@shared/ui/ToolTip';
-import { useRoute } from '@shared/hooks/useRoute';
-import { FullScreenModal } from '@shared/ui/FullScreenModal';
+import { ToolTip } from '@/shared/ui/ToolTip';
+import { useRoute } from '@/shared/hooks/useRoute';
+import { FullScreenModal } from '@/shared/ui/FullScreenModal';
 
 interface ToogleStateObject {
    outside: boolean;

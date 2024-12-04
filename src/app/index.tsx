@@ -1,25 +1,16 @@
-import { useEffect } from 'react';
-import { RouterProvider } from "react-router-dom";
+// package
+import { RouterProvider } from 'react-router-dom';
+// slice
 import './global.css';
-import { Router } from "./Router";
-import { useCookie } from '@shared/hooks/useCookie';
+import { Router } from './router/Router';
+
 
 function App() {
-  const { cookies } = useCookie('theme');
-
-  useEffect(() => {
-    if (cookies.theme === 'dark') {
-       document.documentElement.classList.add('dark');
-    } else {
-       document.documentElement.classList.remove('dark');
-    }
- }, [cookies]);
- 
-  return (
-    <>
-      <RouterProvider router={Router}/>
-    </>
-  )
+   return (
+      <>
+         <RouterProvider router={Router} />
+      </>
+   );
 }
 
-export default App
+export default App;

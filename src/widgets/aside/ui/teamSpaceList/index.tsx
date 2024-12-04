@@ -1,7 +1,7 @@
 import { useMatch } from 'react-router-dom';
-import { ToolTip } from '@shared/ui/ToolTip';
-import { useRoute } from '@shared/hooks/useRoute';
-import { PATHS } from '@shared/consts/paths';
+import { ToolTip } from '@/shared/ui/ToolTip';
+import { useRoute } from '@/shared/hooks/useRoute';
+import { PATHS } from '@/shared/consts/paths';
 
 export const TeamSpaceList = () => {
    const { teamspaceRoute } = useRoute();

@@ -4,11 +4,11 @@ import { BsGearFill, BsXLg } from 'react-icons/bs';
 import { useToogle } from './model/useToogle';
 import { useProfileImg } from './model/useProfileImg';
 // layer
-import { useGetUsers } from '@entities/useGetUsers';
-import { usePutUsersProfileImg } from '@entities/usePutUsersProfileImg';
-import { RoundProfile } from '@shared/ui/RoundProfile';
-import { useValidation } from '@shared/hooks/useValidation';
-import { nickNameRegExp } from '@shared/consts/regExp';
+import { useGetUsers } from '@/entities/useGetUsers';
+import { usePutUsersProfileImg } from '@/entities/usePutUsersProfileImg';
+import { RoundProfile } from '@/shared/ui/RoundProfile';
+import { useValidation } from '@/shared/hooks/useValidation';
+import { nickNameRegExp } from '@/shared/consts/regExp';
 
 export const UserProfile = () => {
    // ui

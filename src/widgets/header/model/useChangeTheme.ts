@@ -1,4 +1,4 @@
-import { useCookie } from '@shared/hooks/useCookie';
+import { useCookie } from '@/shared/hooks/useCookie';
 
 export const useChangeTheme = () => {
    const { cookies, setCookieName, removeCookieName } = useCookie('theme');

@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import { Aside } from "@widgets/aside";
-import { Header } from "@widgets/header";
+import { Aside } from "@/widgets/aside";
+import { Header } from "@/widgets/header";
 
 export const AuthLayout = () => {
 
