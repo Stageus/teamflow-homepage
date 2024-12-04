@@ -1,5 +1,5 @@
 // slice
-import googleLogo from '../assets/google.svg';
+import googleLogo from './assets/google.svg';
 // layer
 import serviceLogo from '@/shared/assets/logo.svg';
 import { useRoute } from '@/shared/hooks/useRoute';
