@@ -15,15 +15,15 @@ const buttonVariants = cva(
             disabeld: 'bg-shade_5 cursor-not-allowed text-white',
             danger: 'bg-error hover:bg-secondary text-white',
          },
-         size: {
+         sizes: {
+            sm: 'px-3 py-1 text-sm',
             default: 'px-4 py-2 text-sm',
-            sm: 'px-8 py-4 text-lg',
-            lg: 'p-0',
+            lg: 'px-5 py-3 text-base',
          },
       },
       defaultVariants: {
         variant: 'default',
-        size: 'default',
+        sizes: 'default',
      },
    },
 );
@@ -34,9 +34,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, Var
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-   const { className, variant, size, asChild = false, ...defaultOptions } = props;
+   const { className, variant, sizes, asChild = false, ...defaultOptions } = props;
    const Comp = asChild ? Slot : 'button';
-   return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...defaultOptions} />;
+   return <Comp className={cn(buttonVariants({ variant, sizes, className }))} ref={ref} {...defaultOptions} />;
 });
 
 export { Button };
