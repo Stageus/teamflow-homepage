@@ -1,5 +1,5 @@
 // Npm
-import { BsArrowDownCircle, BsFillPlusCircleFill, BsArrowUpCircle } from 'react-icons/bs';
+// import { BsArrowDownCircle, BsFillPlusCircleFill, BsArrowUpCircle } from 'react-icons/bs';
 import { useMatch } from 'react-router-dom';
 // slice
 import { useChannelList } from './model/useChannelList';
@@ -52,7 +52,7 @@ export const TeamSpcaeChannelList = () => {
                      <div className="flex items-center gap-3 grow hover:text-primary" onClick={toogleChannelList}>
                         <span>비공개 채널</span>
                         <span className="w-5 h-5">
-                           {channelList ? <BsArrowUpCircle size={'100%'} /> : <BsArrowDownCircle size={'100%'} />}
+                           {/* {channelList ? <BsArrowUpCircle size={'100%'} /> : <BsArrowDownCircle size={'100%'} />} */}
                         </span>
                      </div>
                      {/* 비공개채널 생성 모달 버튼 */}
@@ -60,7 +60,7 @@ export const TeamSpcaeChannelList = () => {
                         <div
                            className="w-5 h-5 cursor-copy text-shade_5 hover:text-primary"
                            onClick={toogleCreateChannelModal}>
-                           <BsFillPlusCircleFill size={'100%'} />
+                           {/* <BsFillPlusCircleFill size={'100%'} /> */}
                         </div>
                      </ToolTip>
                   </div>

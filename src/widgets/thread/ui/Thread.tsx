@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BsFileEarmarkDiff, BsFillPencilFill, BsTrash3 } from 'react-icons/bs';
+// import { BsFileEarmarkDiff, BsFillPencilFill, BsTrash3 } from 'react-icons/bs';
 import { RoundProfile } from "@/shared/ui/RoundProfile";
 import { ToolTip } from "@/shared/ui/ToolTip";
 
@@ -68,17 +68,17 @@ export const Thread = () => {
                <div className='flex items-center gap-4 basis-9'>
                   <ToolTip toolTipContent='파일다운로드'>
                   <div className="w-4 h-4 theme-text theme-hover-text">
-                     <BsFileEarmarkDiff size={'100%'} />
+                     {/* <BsFileEarmarkDiff size={'100%'} /> */}
                   </div>
                   </ToolTip>
                   <ToolTip toolTipContent='수정'>
                   <div className="w-4 h-4 theme-text theme-hover-text">
-                     <BsFillPencilFill size={'100%'} />
+                     {/* <BsFillPencilFill size={'100%'} /> */}
                   </div>
                   </ToolTip>
                   <ToolTip toolTipContent='삭제'>
                   <div className="w-4 h-4 theme-text theme-hover-text">
-                     <BsTrash3 size={'100%'} />
+                     {/* <BsTrash3 size={'100%'} /> */}
                   </div>
                   </ToolTip>
                </div>
