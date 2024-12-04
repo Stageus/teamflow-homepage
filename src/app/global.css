@@ -148,7 +148,7 @@ CSSname
 
 @layer components {
    /* 기본버튼 레이아웃 및 타입 */
-   .button-layout {
+   /* .button-layout {
       @apply flex w-full items-center justify-center gap-3 rounded-lg px-4 py-2 text-sm text-black dark:text-white whitespace-nowrap;
       box-shadow: 1px 2px 4px theme('colors.shade_5');
 
@@ -167,7 +167,7 @@ CSSname
       &._danger {
          @apply bg-error hover:bg-secondary text-white;
       }
-   }
+   } */
 
    .input-layout {
       @apply w-full text-sm text-black bg-transparent border-b-2 outline-none dark:text-white border-gray;

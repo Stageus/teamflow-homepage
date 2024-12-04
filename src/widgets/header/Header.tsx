@@ -7,9 +7,9 @@ import { useChangeTheme } from './model/useChangeTheme';
 import { useModalEventDetect } from './model/useModalEventDetect';
 import { LogoutModal } from './ui/logoutModal';
 
-import { useRoute } from '@shared/hooks/useRoute';
-import { useCookie } from '@shared/hooks/useCookie';
-import { PATHS } from '@shared/consts/paths';
+import { useRoute } from '@/shared/hooks/useRoute';
+import { useCookie } from '@/shared/hooks/useCookie';
+import { PATHS } from '@/shared/consts/paths';
 
 export const Header = () => {
    const { loginRoute, teamspaceListRoute } = useRoute();

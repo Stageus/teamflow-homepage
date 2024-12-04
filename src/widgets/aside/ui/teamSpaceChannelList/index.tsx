@@ -6,12 +6,12 @@ import { useChannelList } from './model/useChannelList';
 import { useCreateChannel } from './model/useCreateChannel';
 import { PrivateChannel } from './ui/privateChannel';
 // layer
-import { PATHS } from '@shared/consts/paths';
-import { useRoute } from '@shared/hooks/useRoute';
-import { FullScreenModal } from '@shared/ui/FullScreenModal';
-import { ToolTip } from '@shared/ui/ToolTip';
-import { useValidation } from '@shared/hooks/useValidation';
-import { channelRegexp } from '@shared/consts/regExp';
+import { PATHS } from '@/shared/consts/paths';
+import { useRoute } from '@/shared/hooks/useRoute';
+import { FullScreenModal } from '@/shared/ui/FullScreenModal';
+import { ToolTip } from '@/shared/ui/ToolTip';
+import { useValidation } from '@/shared/hooks/useValidation';
+import { channelRegexp } from '@/shared/consts/regExp';
 
 export const TeamSpcaeChannelList = () => {
    const { teamspaceRoute, teamspacePublicRoute } = useRoute();

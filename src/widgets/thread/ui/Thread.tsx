@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BsFileEarmarkDiff, BsFillPencilFill, BsTrash3 } from 'react-icons/bs';
-import { RoundProfile } from "@shared/ui/RoundProfile";
-import { ToolTip } from "@shared/ui/ToolTip";
+import { RoundProfile } from "@/shared/ui/RoundProfile";
+import { ToolTip } from "@/shared/ui/ToolTip";
 
 export const Thread = () => {
    const [textLine, setTextLine] = useState(false);

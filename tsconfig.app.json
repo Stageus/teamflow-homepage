@@ -2,12 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@app/*": ["app/*"],
-      "@pages/*": ["pages/*"],
-      "@widgets/*": ["widgets/*"],
-      "@features/*": ["features/*"],
-      "@shared/*": ["shared/*"],
-      "@entities/*": ["entities/*"],
+      "@/*": ["*"],
     },
     "target": "ES2020",
     "useDefineForClassFields": true,

@@ -8,20 +8,12 @@ export default {
    // 다크모드 적용하는 속성
    darkMode: ['class'],
    theme: {
-      // 반응형
-      screens: {
-         // 정해진 화면 크기에 따라 css 설정을 변경
-         // ex) mobile: text 크기 변경 등등
-         // fid: 일관된 네이밍과 추가적인 브레이크 포인트를 고려해보자
-         // 기본적은 min-width가 적용된다
-         // max를 적용하게 된다면 { max: 1px} 형식을 사용함
-         mobile: {max: "767px"},
-         tablet: '768px',
-         dasktop: '1024px',
-
-      },
       // 기존 유틸 클래스와 사용자 지정 클랙스를 합침
       extend: {
+         container: {
+            center: true,
+            padding: '1rem'
+         },
          // 색상
          colors: {
             primary: 'var(--color-primary)',

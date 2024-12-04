@@ -1,6 +1,6 @@
-import { FullScreenModal } from '@shared/ui/FullScreenModal';
-import { useRoute } from '@shared/hooks/useRoute';
-import { useCookie } from "@shared/hooks/useCookie";
+import { FullScreenModal } from '@/shared/ui/FullScreenModal';
+import { useRoute } from '@/shared/hooks/useRoute';
+import { useCookie } from "@/shared/hooks/useCookie";
 
 interface LogoutModalProps {
     isModal: boolean;

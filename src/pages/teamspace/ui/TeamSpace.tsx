@@ -1,5 +1,5 @@
 import { BsFileEarmarkDiff, BsCheck2Circle, BsXLg } from 'react-icons/bs';
-import { Thread } from '@widgets/thread';
+import { Thread } from '@/widgets/thread';
 
 export const TeamSpace = () => {
 
