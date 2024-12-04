@@ -5,7 +5,7 @@ export const useModalEventDetect = () => {
     const [isModalDetect, setIsModalDetect] = useState<boolean>(false);
     const modalRef = useRef<null | HTMLDivElement>(null);
 
-    const onClickOpenModal = () => {
+    const toggleAlarmModal = () => {
         setIsModalDetect(!isModalDetect);
     }
     const hanlderOutSideDetect = useCallback((event: MouseEvent) => {
@@ -23,5 +23,5 @@ export const useModalEventDetect = () => {
     },[hanlderOutSideDetect])
 
 
-    return { modalRef, isModalDetect, onClickOpenModal };
+    return { modalRef, isModalDetect, toggleAlarmModal };
 }

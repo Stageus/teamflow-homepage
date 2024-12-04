@@ -2,7 +2,8 @@ import { useCookie } from '@/shared/hooks/useCookie';
 
 export const useChangeTheme = () => {
    const { cookies, setCookieName, removeCookieName } = useCookie('theme');
-   const onClickchangeTheme = () => {
+
+   const toggleTheme = () => {
       if (cookies.theme === 'dark') {
          removeCookieName('theme');
       } else {
@@ -10,5 +11,5 @@ export const useChangeTheme = () => {
       }
    };
 
-   return { theme:cookies.theme, onClickchangeTheme };
+   return { theme:cookies.theme, toggleTheme };
 };
