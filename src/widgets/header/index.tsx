@@ -1,22 +1,25 @@
+// package
 import { useState } from 'react';
 import { useMatch } from 'react-router-dom';
-// import { BsList } from 'react-icons/bs';
-
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
+// slice
 import { AlarmModal } from './ui/alarmModal';
 import { useChangeTheme } from './model/useChangeTheme';
 import { useModalEventDetect } from './model/useModalEventDetect';
 import { LogoutModal } from './ui/logoutModal';
-
+// layer
 import { useRoute } from '@/shared/hooks/useRoute';
-import { useCookie } from '@/shared/hooks/useCookie';
 import { PATHS } from '@/shared/consts/paths';
+import { Button } from '@/shared/ui/Button';
 
 export const Header = () => {
-   const { loginRoute, teamspaceListRoute } = useRoute();
-   const { modalRef, isModalDetect, onClickOpenModal } = useModalEventDetect();
-   const { theme, onClickchangeTheme } = useChangeTheme();
-   const { cookies } = useCookie('token');
-   const match = useMatch(`/${PATHS.teamSpaceList}`);
+   const currentUrl = useMatch(`/${PATHS.teamSpaceList}`);
+   const isSameUrl = currentUrl.pathname === `/${PATHS.teamSpaceList}`;
+
+   const { teamspaceListRoute } = useRoute();
+   const { theme, toggleTheme } = useChangeTheme();
+
+   const { modalRef, isModalDetect, toggleAlarmModal } = useModalEventDetect();
 
    const [logoutModal, setIsLogoutModal] = useState(false);
    const toggleLogoutModal = () => setIsLogoutModal(!logoutModal);
@@ -24,47 +27,24 @@ export const Header = () => {
    return (
       <div className="flex gap-3 px-4 py-2 whitespace-nowrap">
          {/* 메뉴 버튼 */}
-         <div className="hidden mx-3 hover:theme-hover-text h-7 w-7 text-gray mobile:block">
-            {/* <BsList size={'100%'}></BsList> */}
+         <div className="flex items-center mx-3 hover:theme-hover-text text-gray">
+            <HamburgerMenuIcon className='h-7 w-7'/>
          </div>
-         {/* TeamSpace 이동 버튼 */}
-         <div>
-            <button
-               className={`button-layout ${match?.pathname.includes(PATHS.teamSpaceList) ? '_active' : '_not-select'} sm:px-2 sm:py-2 sm:text-xs`}
-               onClick={teamspaceListRoute}>
-               TeamSpace
-            </button>
-         </div>
-         {/* 알람모달창 버튼 */}
-         <div ref={modalRef} className="relative">
-            <button
-               className={`button-layout ${isModalDetect ? '_active' : '_not-select'} sm:px-2 sm:py-2 sm:text-xs`}
-               onClick={onClickOpenModal}>
+         <Button variant={isSameUrl ? 'select' : 'default'} onClick={teamspaceListRoute}>
+            TeamSpace
+         </Button>
+         <div ref={modalRef} className='relative'>
+            <Button variant={ isModalDetect ? 'select' : 'default'} onClick={toggleAlarmModal}>
                알람
-            </button>
+            </Button>
             {isModalDetect ? <AlarmModal /> : null}
          </div>
-         {/* 테마변경 버튼 */}
-         <div>
-            <button className="button-layout _not-select sm:px-2 sm:py-2 sm:text-xs" onClick={onClickchangeTheme}>
-               {theme ? '라이트모드' : '다크모드'}
-            </button>
-         </div>
-         {/* 로그인 & 로그아웃 버튼 */}
-         <div>
-            {cookies.token ? (
-               <button
-                  className="button-layout _not-select sm:px-2 sm:py-2 sm:text-xs"
-                  onClick={toggleLogoutModal}>
-                  로그아웃
-               </button>
-            ) : (
-               <button className="button-layout _not-select sm:px-2 sm:py-2 sm:text-xs" onClick={loginRoute}>
-                  로그인
-               </button>
-            )}
-         </div>
-
+         <Button variant="default" onClick={toggleTheme}>
+            {theme ? '라이트모드' : '다크모드'}
+         </Button>
+         <Button variant="default" onClick={toggleLogoutModal}>
+            로그아웃
+         </Button>
          {/* 로그아웃 모달 */}
          <LogoutModal isModal={logoutModal} closeModal={toggleLogoutModal} />
       </div>
