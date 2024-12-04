@@ -10,7 +10,8 @@ import { cn } from '@/shared/lib/cn';
 export const SignUp = () => {
    const { nickNameRef, isNickName, checkNickName } = useNickname();
    const { loginRoute, teamspaceListRoute } = useRoute();
-
+   
+   document.title = "회원가입"
    return (
       <div className="flex items-center justify-center h-screen gradient-light dark:gradient-dark">
          <div className="flex min-h-[300px] min-w-[400px] flex-col items-center justify-center gap-5 rounded-lg bg-transparent px-10 py-5 shadow-xl">
