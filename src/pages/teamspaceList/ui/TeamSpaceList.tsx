@@ -1,4 +1,4 @@
-import { BsFillPlusCircleFill, BsGearFill } from 'react-icons/bs';
+// import { BsFillPlusCircleFill, BsGearFill } from 'react-icons/bs';
 import { useCreateTeamSpace } from "../model/useCreateTeamSpace";
 import { TextInput } from '@/features/textInput';
 import { FullScreenModal } from '@/shared/ui/FullScreenModal';
@@ -20,7 +20,7 @@ export const TeamSpaceList = () => {
             <span className="p-1 text-xs">지금바로 나만의 팀을 만들어 보세요</span>
             <div className="flex items-center justify-end gap-3">
                <span className="duration-300 opacity-0 text-shade_5 group-hover:opacity-100">생성하기</span>
-               <BsFillPlusCircleFill size={40} />
+               {/* <BsFillPlusCircleFill size={40} /> */}
             </div>
          </div>
          {/* TeamSpace create modal */}
@@ -45,13 +45,13 @@ export const TeamSpaceList = () => {
                <div className="flex justify-between cursor-pointer button-layout _active">
                   <span>TeamSpaceList</span>
                   <div className="w-5 h-5 text-shade_5 hover:text-white">
-                     <BsGearFill size={'100%'} />
+                     {/* <BsGearFill size={'100%'} /> */}
                   </div>
                </div>
                <div className="flex justify-between cursor-pointer button-layout _active">
                   <span>TeamSpaceList</span>
                   <div className="w-5 h-5 text-shade_5 hover:text-white">
-                     <BsGearFill size={'100%'} />
+                     {/* <BsGearFill size={'100%'} /> */}
                   </div>
                </div>
             </li>
@@ -59,13 +59,13 @@ export const TeamSpaceList = () => {
                <div className="flex justify-between cursor-pointer button-layout _active">
                   <span>TeamSpaceList</span>
                   <div className="w-5 h-5 text-shade_5 hover:text-white">
-                     <BsGearFill size={'100%'} />
+                     {/* <BsGearFill size={'100%'} /> */}
                   </div>
                </div>
                <div className="flex justify-between cursor-pointer button-layout _active">
                   <span>TeamSpaceList</span>
                   <div className="w-5 h-5 text-shade_5 hover:text-white">
-                     <BsGearFill size={'100%'} />
+                     {/* <BsGearFill size={'100%'} /> */}
                   </div>
                </div>
             </li>

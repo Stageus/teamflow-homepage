@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { produce } from 'immer';
-import { BsBoxArrowInRight, BsGearFill } from 'react-icons/bs';
+// import { BsBoxArrowInRight, BsGearFill } from 'react-icons/bs';
 import { ToolTip } from '@/shared/ui/ToolTip';
 import { useRoute } from '@/shared/hooks/useRoute';
 import { FullScreenModal } from '@/shared/ui/FullScreenModal';
@@ -46,12 +46,12 @@ export const PrivateChannel = (props: PrivateChannelProps) => {
                <div className="flex gap-3 text-black dark:text-white">
                   <ToolTip toolTipContent="채널 나가기">
                      <div className="w-4 h-4 hover:text-primary" onClick={() => channgeToggleState('outside')}>
-                        <BsBoxArrowInRight size={'100%'} />
+                        {/* <BsBoxArrowInRight size={'100%'} /> */}
                      </div>
                   </ToolTip>
                   <ToolTip toolTipContent="채널 설정">
                      <div className="w-4 h-4 hover:text-primary" onClick={() => channgeToggleState('setting')}>
-                        <BsGearFill size={'100%'} />
+                        {/* <BsGearFill size={'100%'} /> */}
                      </div>
                   </ToolTip>
                </div>
@@ -68,7 +68,7 @@ export const PrivateChannel = (props: PrivateChannelProps) => {
          {/* 채널 나가기 모달 */}
          <FullScreenModal
             title="채널나가기"
-            isModal={toogleState.outside}
+            // isModal={toogleState.outside}
             closeModal={() => channgeToggleState('outside')}>
             <div className="flex w-[300px] flex-col items-center gap-6">
                <h2 className="text-white whitespace-nowrap">{'정말 (채널이름) 을 나가겠습니까?'}</h2>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useMatch } from 'react-router-dom';
-import { BsList } from 'react-icons/bs';
+// import { BsList } from 'react-icons/bs';
 
 import { AlarmModal } from './ui/alarmModal';
 import { useChangeTheme } from './model/useChangeTheme';
@@ -25,7 +25,7 @@ export const Header = () => {
       <div className="flex gap-3 px-4 py-2 whitespace-nowrap">
          {/* 메뉴 버튼 */}
          <div className="hidden mx-3 hover:theme-hover-text h-7 w-7 text-gray mobile:block">
-            <BsList size={'100%'}></BsList>
+            {/* <BsList size={'100%'}></BsList> */}
          </div>
          {/* TeamSpace 이동 버튼 */}
          <div>

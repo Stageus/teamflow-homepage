@@ -1,5 +1,5 @@
 // npm
-import { BsGearFill, BsXLg } from 'react-icons/bs';
+// import { BsGearFill, BsXLg } from 'react-icons/bs';
 // slice
 import { useToogle } from './model/useToogle';
 import { useProfileImg } from './model/useProfileImg';
@@ -113,7 +113,7 @@ export const UserProfile = () => {
                <div
                   onClick={() => changeToggleState('isMoreInfo')}
                   className="flex items-center justify-end w-5 h-5 text-black cursor-pointer dark:text-white">
-                  {toggleState.isMoreInfo ? <BsXLg size={'100%'} /> : <BsGearFill size={'100%'} />}
+                  {/* {toggleState.isMoreInfo ? <BsXLg size={'100%'} /> : <BsGearFill size={'100%'} />} */}
                </div>
             </div>
             {/* 유저이미 유효성검사 텍스트 */}

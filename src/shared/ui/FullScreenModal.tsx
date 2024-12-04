@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { BsXLg } from 'react-icons/bs';
+// import { BsXLg } from 'react-icons/bs';
 import { FullScreenModalProps } from "./types";
 
 export const FullScreenModal = (props: FullScreenModalProps) => {
@@ -17,7 +17,7 @@ export const FullScreenModal = (props: FullScreenModalProps) => {
          <div
             onClick={closeModal}
             className="absolute flex items-center justify-end w-6 h-6 text-white cursor-pointer hover:text-secondary right-5 top-5">
-            <BsXLg size={'100%'} />
+            {/* <BsXLg size={'100%'} /> */}
          </div>
          <div className="flex items-center justify-center grow">
          {children ?? null}
