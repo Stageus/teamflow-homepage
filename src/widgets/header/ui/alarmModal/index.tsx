@@ -1,75 +1,23 @@
+import { Button } from '@/shared/ui/Button';
+
 export const AlarmModal = () => {
    return (
-      <div className="absolute w-[300px] md:w-[400px] min-h-[400px] flex left-0 -bottom-2 translate-y-full -translate-x-1/4 flex-col justify-between rounded-lg bg-shade_1 text-black dark:text-white border-shade_5 border z-50">
+      <div className="flex flex-col justify-between gap-3 absolute top-full left-1/2 w-[300px] h-[400px] -translate-x-1/2 translate-y-2 z-50 bg-shade_1 rounded-lg shadow-xl p-1 text-black dark:text-white">
          <ul className="flex flex-col gap-4 px-4 overflow-y-scroll">
             <li className="flex flex-col gap-4 py-4 border-b-2 border-shade_5">
                <div>
-                  <span className="text-shade_5">{'2024-03-01'}</span>
+                  <span className="text-gray">{'2024-03-01'}</span>
                </div>
                <div>
                   <p className="text-base">{'초대받은 TeamSpace 이름'}</p>
                </div>
-               <div className="flex gap-4">
-                  <div>
-                     <button className="button-layout _active" onClick={() => console.log('수락동작')}>
-                        수락
-                     </button>
-                  </div>
-                  <div>
-                     <button className="button-layout _default" onClick={() => console.log('취소동작')}>
-                        취소
-                     </button>
-                  </div>
-               </div>
-            </li>
-            <li className="flex flex-col gap-4 py-4 border-b-2 border-shade_5">
-               <div>
-                  <span className="text-shade_5">{'2024-03-01'}</span>
-               </div>
-               <div>
-                  <p className="text-base">{'초대받은 TeamSpace 이름'}</p>
-               </div>
-               <div className="flex gap-4">
-                  <div>
-                     <button className="button-layout _active" onClick={() => console.log('수락동작')}>
-                        수락
-                     </button>
-                  </div>
-                  <div>
-                     <button className="button-layout _default" onClick={() => console.log('취소동작')}>
-                        취소
-                     </button>
-                  </div>
-               </div>
-            </li>
-            <li className="flex flex-col gap-4 py-4 border-b-2 border-shade_5">
-               <div>
-                  <span className="text-shade_5">{'2024-03-01'}</span>
-               </div>
-               <div>
-                  <p className="text-base">{'초대받은 TeamSpace 이름'}</p>
-               </div>
-               <div className="flex gap-4">
-                  <div>
-                     <button className="button-layout _active" onClick={() => console.log('수락동작')}>
-                        수락
-                     </button>
-                  </div>
-                  <div>
-                     <button className="button-layout _default" onClick={() => console.log('취소동작')}>
-                        취소
-                     </button>
-                  </div>
+               <div className="flex gap-3">
+                  <Button variant='select'>수락</Button>
+                  <Button variant='default'>취소</Button>
                </div>
             </li>
          </ul>
-         <div className="flex justify-center p-2">
-            <div>
-               <button className="button-layout _not-select" onClick={() => console.log('더보기동작')}>
-                  더보기
-               </button>
-            </div>
-         </div>
+         <Button variant='default' className='w-1/2 mx-auto'>더보기</Button>
       </div>
    );
 };
