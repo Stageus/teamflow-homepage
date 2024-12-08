@@ -7,7 +7,7 @@ export const AuthLayout = () => {
    return (
       <div className="flex h-full">
          <aside
-            className={`z-50 h-full w-[360px] transition-all mobile:fixed mobile:-translate-x-full`}>
+            className={`absolute -translate-x-full z-50 h-full w-[360px] md:relative md:translate-x-0 transition-transform`}>
                 <Aside/>
             </aside>
          <div className="flex flex-col grow">
