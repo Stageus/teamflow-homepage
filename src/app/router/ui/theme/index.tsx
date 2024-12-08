@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useCookie } from '@/shared/hooks/useCookie';
 
 export const Theme = () => {
-    const { cookies} = useCookie('token')
+    const { cookies} = useCookie('theme')
 
   useEffect(() => {
     if (cookies.theme === 'dark') {
