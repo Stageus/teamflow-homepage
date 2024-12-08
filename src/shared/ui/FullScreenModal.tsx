@@ -32,8 +32,8 @@ const FullScreenModal = (props: FullScreenModalProps) => {
          <h1 className="absolute flex justify-center p-5 text-[30px] italic text-white">{title}</h1>
          <div
             onClick={closeModal}
-            className="absolute flex items-center justify-end w-6 h-6 text-white cursor-pointer right-5 top-5 hover:text-secondary">
-            <Cross1Icon />
+            className="absolute flex items-center justify-end w-8 h-8 text-white cursor-pointer right-5 top-5 hover:text-secondary">
+            <Cross1Icon className='w-full h-full'/>
          </div>
          <div className="flex items-center justify-center grow">{children}</div>
       </div>,
