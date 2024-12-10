@@ -25,7 +25,7 @@ export const Login = () => {
    document.title = '로그인';
 
    return (
-      <main className="grid w-screen h-screen gradient-light dark:gradient-dark place-items-center">
+      <main className="flex items-center justify-center h-full gradient-light dark:gradient-dark">
          <div className="flex flex-col items-center gap-3 p-10 rounded-lg shadow-xl">
             <div className="w-20 h-20">
                <img src={serviceLogo} />
