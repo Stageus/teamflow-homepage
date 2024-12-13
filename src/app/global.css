@@ -8,7 +8,7 @@
       --color-secondary: hsl(216, 100%, 68%);
       --color-white: hsl(0, 0%, 100%);
       --color-black: hsl(0, 0%, 0%);
-      --color-gray: rgb(6, 6, 6);
+      --color-gray: hsl(240, 9%, 65%);
       --color-success: hsl(146, 91%, 45%);
       --color-error: hsl(1, 94%, 60%);
       --modal-gradient1: hsla(240, 7%, 16%, 0.9) 70%;
