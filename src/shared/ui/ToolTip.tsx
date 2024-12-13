@@ -1,6 +1,13 @@
-import { useId } from 'react';
+import { useId, ReactElement } from 'react';
 import { Tooltip } from 'react-tooltip';
-import {TooTipProps} from "./types";
+
+type PlaceProps = 'top' | 'left' | 'right' | "bottom";
+
+interface TooTipProps {
+    toolTipContent: string,
+    children: ReactElement,
+    place?: PlaceProps,
+}
 
 export const ToolTip = (props : TooTipProps) => {
    const { toolTipContent, children, place} = props;
