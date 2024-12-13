@@ -1,3 +1,4 @@
+// slice
 import { UserProfile } from './ui/userProfile';
 import { TeamSpcaeChannelList } from './ui/teamSpaceChannelList';
 import { TeamSpaceList } from "./ui/teamSpaceList";

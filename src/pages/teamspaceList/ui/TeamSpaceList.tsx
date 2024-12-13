@@ -7,7 +7,8 @@ import { useRoute } from "@/shared/hooks/useRoute";
 export const TeamSpaceList = () => {
    const { createTeamSpaceModal, onClickIsModal, inputRef } = useCreateTeamSpace();
    const { teamspaceRoute } = useRoute();
-   
+
+   console.log("렌더링");
 
    return (
       <div className="h-full p-5">
