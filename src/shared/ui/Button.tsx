@@ -10,7 +10,7 @@ const buttonVariants = cva(
    {
       variants: {
          variant: {
-            default: 'bg-gray hover:bg-shade_3 text-white',
+            default: 'bg-shade_4 hover:bg-shade_3 text-white',
             select: 'bg-primary hover:bg-secondary text-white',
             disabeld: 'bg-shade_5 cursor-not-allowed text-white',
             danger: 'bg-error hover:bg-secondary text-white',
