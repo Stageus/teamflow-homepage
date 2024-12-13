@@ -1,7 +1,11 @@
+// package
 import { useMatch } from 'react-router-dom';
+// layer
 import { ToolTip } from '@/shared/ui/ToolTip';
 import { useRoute } from '@/shared/hooks/useRoute';
 import { PATHS } from '@/shared/consts/paths';
+import { Button } from '@/shared/ui/Button';
+import { cn } from '@/shared/lib/cn';
 
 export const TeamSpaceList = () => {
    const { teamspaceRoute } = useRoute();
@@ -9,6 +13,8 @@ export const TeamSpaceList = () => {
       path: `/${PATHS.teamSpace}/:${PATHS.teamSpaceName}`,
       end: false,
    });
+
+   console.log(match);
 
    const _TeamSpaceQucikList = Array.from([
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
@@ -22,11 +28,12 @@ export const TeamSpaceList = () => {
          {_TeamSpaceQucikList.map(item => {
             return (
                <ToolTip key={item.teamSpaceIdx} toolTipContent={item.teamSpaceName} place="right">
-                  <button
-                     className={`${match?.params.teamspace_name === item.teamSpaceName ? 'bg-primary text-white' : 'bg-shade_3 text-gray'} h-12 w-12 truncate rounded-full p-1 text-sm duration-200 hover:bg-secondary hover:text-white`}
+                  <Button
+                     className={cn('h-12 w-12 rounded-full p-1 text-sm truncate block')}
+                     variant={match?.params.teamspace_name === item.teamSpaceName ? 'select' : 'default'}
                      onClick={() => teamspaceRoute(item.teamSpaceName)}>
                      {item.teamSpaceName}
-                  </button>
+                  </Button>
                </ToolTip>
             );
          })}
