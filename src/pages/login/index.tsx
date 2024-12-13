@@ -11,21 +11,13 @@ export const Login = () => {
    const { signupRoute, teamspaceListRoute } = useRoute();
    const { cookies } = useCookie('token');
 
-   /*
-      token에 따른 페이지 전환
-      login 페이지에 들어올때마다 token의 유무를 판단하고, 해당 token을 서버에 응답으로
-      정상적인 token인지 판단하여 리다이렉트를 해준다.
-      *로그인 유지가 없는데 판단할 필요가 있을까? 
-   */
-   useEffect(()=>{
+   useEffect(() => {
       if (cookies.token) return teamspaceListRoute();
-   },[])
+   }, []);
 
-   // title
    document.title = '로그인';
-
    return (
-      <main className="flex items-center justify-center h-full gradient-light dark:gradient-dark">
+      <main className="flex items-center justify-center h-screen gradient-background">
          <div className="flex flex-col items-center gap-3 p-10 rounded-lg shadow-xl">
             <div className="w-20 h-20">
                <img src={serviceLogo} />
