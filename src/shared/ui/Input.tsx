@@ -6,7 +6,7 @@ import { Slot } from '@radix-ui/react-slot';
 // layer
 import { cn } from '@/shared/lib/cn';
 
-const inputVariants = cva('w-full outline-none p-1 text-sm', {
+const inputVariants = cva('w-full outline-none p-1 text-sm text-black dark:text-white', {
    variants: {
       variant: {
          textInput: 'bg-transparent border-b-2 border-gray',
