@@ -1,55 +1,57 @@
-/* @tailwind: Tailwind의 기본, 컴포넌트, 유틸리티 클래스를 불러옴.
-@layer: 기본 스타일, 컴포넌트 스타일, 유틸리티 클래스를 추가.
-@apply: 여러 Tailwind 유틸리티 클래스를 하나의 CSS 클래스에 적용.
-@variants: 새로운 변형을 정의.
-@responsive: 반응형 스타일을 지정.
-@screen: 특정 미디어 쿼리에서만 적용되는 스타일을 지정.
-@theme: Tailwind 테마 설정 값을 CSS에서 사용할 때.
-
-CSSname
-- Container: 레이아웃을 잡는 가장큰 컨테이너
-- Section: 페이지에서의 논리적 구역을 표현(연관이 없는)
-- Area: 특정 기능을 가진 작은 영역
-- Item/Element: 각요소에 대한 네이밍
-*/
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
    :root {
-      --color-primary: rgb(53, 120, 255);
-      --color-secondary: rgb(91, 157, 255);
-      --color-white: rgb(255 255 255);
-      --color-black: rgb(0, 0, 0);
-      --color-gray: rgb(156, 163, 175);
-      --color-success: rgb(10, 221, 102);
-      --color-error: rgb(249, 58, 55);
+      --color-primary: hsl(220, 100%, 60%);
+      --color-secondary: hsl(216, 100%, 68%);
+      --color-white: hsl(0, 0%, 100%);
+      --color-black: hsl(0, 0%, 0%);
+      --color-gray: rgb(6, 6, 6);
+      --color-success: hsl(146, 91%, 45%);
+      --color-error: hsl(1, 94%, 60%);
+      --modal-gradient1: hsla(240, 7%, 16%, 0.9) 70%;
+      --modal-gradient2: hsla(220, 100%, 60%, 0.7) 70%;
+      --modal-gradient3: hsl(220, 100%, 60%) 90%;
+      --modal-gradient4: hsl(240, 7%, 16%) 90%;
+      --modal-gradient5: hsl(240, 7%, 16%) 100%;
 
-      --color-shade_1: rgb(249 250 251);
-      --color-shade_2: rgb(243 244 246);
-      --color-shade_3: rgb(229 231 235);
-      --color-shade_4: rgb(209 213 219);
-      --color-shade_5: rgb(156 163 175);
+
+      --color-shade_1: hsl(210, 20%, 98%);
+      --color-shade_2: hsl(220, 14%, 96%);
+      --color-shade_3: hsl(220, 13%, 91%);
+      --color-shade_4: hsl(216, 12%, 84%);
+      --color-shade_5: hsl(218, 11%, 65%);
+      --bg-gradient1: hsl(216, 100%, 68%) 2.441656942823804%;
+      --bg-gradient2: hsl(215, 94%, 80%) 20.771100739012056%;
+      --bg-gradient3: hsl(0, 0%, 98%) 46.432322053675605%;
+      --card-graduent1: hsla(240, 9%, 65%, 0.259) 7%;
+      --card-graduent2: hsla(220, 100%, 60%, 0.369) 7%;
+      --card-graduent3: hsla(220, 100%, 60%, 0.369) 20%;
+      --card-graduent4: hsla(240, 9%, 65%, 0.259) 20%;
+      --card-graduent5: hsla(240, 9%, 65%, 0.259) 100%;
    }
 
-   /* dark모드시의 shade색상 변경 */
    html.dark {
-      --color-shade_1: rgb(3 7 18);
-      --color-shade_2: rgb(17 24 39);
-      --color-shade_3: rgb(31 41 55);
-      --color-shade_4: rgb(55 65 81);
-      --color-shade_5: rgb(75 85 99);
+      --color-shade_1: hsl(224, 71%, 4%);
+      --color-shade_2: hsl(221, 39%, 11%);
+      --color-shade_3: hsl(240, 33%, 1%);
+      --color-shade_4: hsl(217, 19%, 27%);
+      --color-shade_5: hsl(215, 14%, 34%);
+      --bg-gradient1: hsl(216, 100%, 68%) 2.441656942823804%;
+      --bg-gradient2: hsl(216, 46%, 41%) 20.771100739012056%;
+      --bg-gradient3: hsl(240, 20%, 4%) 46.432322053675605%;
+      --card-graduent1: hsl(240, 7%, 16%) 7%;
+      --card-graduent2: hsla(220, 100%, 60%, 0.369) 7%;
+      --card-graduent3: hsla(220, 100%, 60%, 0.369) 20%;
+      --card-graduent4: hsl(240, 7%, 16%) 20%;
+      --card-graduent5: hsl(240, 7%, 16%) 100%;
    }
 
    html,
    body {
-      @apply bg-shade_1 h-full font-service;
-   }
-
-   #root{
-      @apply h-full;
+      @apply bg-shade_1 font-service;
    }
 
    h1 {
@@ -58,85 +60,27 @@ CSSname
    h2 {
       @apply text-title_sub;
    }
-   p {
-      @apply text-base;
-   }
-   span {
-      @apply text-base;
-   }
-   button {
-      @apply text-base;
-   }
 }
 
 
 @layer utilities {
-   /* login, signup 배경색  - darkMode*/
-   .gradient-dark {
-      background: linear-gradient(
-         160.4065214033883deg,
-         rgba(91, 157, 255, 1) 2.441656942823804%,
-         rgba(56, 94, 152, 1) 20.771100739012056%,
-         rgba(8, 8, 12, 1) 46.432322053675605%
-      );
-   }
-   /* login, signup 배경색  - lightMode*/
-   .gradient-light {
-      background: linear-gradient(
-         160.4065214033883deg,
-         rgba(91, 157, 255, 1) 2.441656942823804%,
-         rgba(157, 196, 252, 1) 20.771100739012056%,
-         rgba(250, 250, 250, 1) 46.432322053675605%
-      );
+   
+   .gradient-background{
+      background: linear-gradient(160.4065214033883deg, theme('colors.backGroundGradient.1'),theme('colors.backGroundGradient.2'),theme('colors.backGroundGradient.3'));
    }
 
-   /* modal 배경색 */
-   .modal-gradient {
-      background: linear-gradient(140deg, rgb(38, 38, 44, 0.9) 70%, rgba(53, 120, 255, 0.7) 70%, rgba(53, 120, 255, 1) 90%, rgb(38, 38, 44, 1) 90%, rgb(38, 38, 44, 1) 100%);
+   .gradient-modal{
+      background: linear-gradient(140deg, theme('colors.modalGradient.1'),theme('colors.modalGradient.2'),theme('colors.modalGradient.3'),theme('colors.modalGradient.4'),theme('colors.modalGradient.5'));
    }
 
-   /* cardbox 배경색 - darkMode*/
-   .card-gradient-dark {
-      background: linear-gradient(140deg, #26262c 7%, #3578ff5e 7%, #3578ff5e 20%, #26262c 20%, #26262c 100%);
-   }
-   /* cardbox 배경색 - lightMode*/
-   .card-gradient-light {
-      background: linear-gradient(130deg, #9d9dae42 7%, #3578ff5e 7%, #3578ff5e 20%, #9d9dae42 20%, #9d9dae42 100%);
-   }
-
-
-   /* mode text color */
-   .theme-text {
-      @apply text-black dark:text-white;
-   }
-
-   /* mode hoverText color*/
-   .theme-hover-text {
-      @apply hover:text-secondary hover:dark:text-secondary cursor-pointer;
-   }
-
-   /* mode hoverBackground color */
-   .theme-hover-bg {
-      @apply hover:bg-secondary dark:hover:bg-secondary cursor-pointer;
-   }
-
-   /* img size */
-   .service-img{
-      @apply w-full h-full rounded-full;
-   }
-
-   /* tooptip */
-   .tooltip{
-      .item {
-         @apply bg-gray text-xs;
-      }
+   .gradient-card{
+      background: linear-gradient(140deg, theme('colors.cardGradient.1'),theme('colors.cardGradient.2'),theme('colors.cardGradient.3'),theme('colors.cardGradient.4'),theme('colors.cardGradient.5'));
    }
 
    /* scrollbar*/
    .scroll{
       /* Firefox */
       scrollbar-width: none;
-      
    }
 
    /* Chrome, Safari */
@@ -146,30 +90,3 @@ CSSname
    
 }
 
-@layer components {
-   /* 기본버튼 레이아웃 및 타입 */
-   /* .button-layout {
-      @apply flex w-full items-center justify-center gap-3 rounded-lg px-4 py-2 text-sm text-black dark:text-white whitespace-nowrap;
-      box-shadow: 1px 2px 4px theme('colors.shade_5');
-
-      &._active {
-         @apply bg-primary hover:bg-secondary text-white;
-      }
-      &._default {
-         @apply hover:bg-secondary bg-white text-black hover:text-white;
-      }
-      &._not-select {
-         @apply bg-shade_4 hover:bg-secondary text-white;
-      }
-      &._disabled {
-         @apply bg-shade_5 cursor-not-allowed text-white;
-      }
-      &._danger {
-         @apply bg-error hover:bg-secondary text-white;
-      }
-   } */
-
-   .input-layout {
-      @apply w-full text-sm text-black bg-transparent border-b-2 outline-none dark:text-white border-gray;
-   }
-}
