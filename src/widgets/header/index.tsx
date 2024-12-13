@@ -15,7 +15,6 @@ import { FullScreenModal } from '@/shared/ui/FullScreenModal';
 export const Header = ( props: {toggleTestAside: () => void} ) => {
    const {toggleTestAside} = props;
    const currentUrl = useMatch(`/${PATHS.teamSpaceList}`);
-   const isSameUrl = currentUrl.pathname === `/${PATHS.teamSpaceList}`;
 
    const { teamspaceListRoute } = useRoute();
    const { theme, toggleTheme } = useChangeTheme();
@@ -34,7 +33,7 @@ export const Header = ( props: {toggleTestAside: () => void} ) => {
             <HamburgerMenuIcon className="h-7 w-7" />
          </div>
          {/* Teamspace 이동 버튼 */}
-         <Button variant={isSameUrl ? 'select' : 'default'} onClick={teamspaceListRoute}>
+         <Button variant={currentUrl ? 'select' : 'default'} onClick={teamspaceListRoute}>
             TeamSpace
          </Button>
          {/* ____ 알람버튼 및 모달*/}
