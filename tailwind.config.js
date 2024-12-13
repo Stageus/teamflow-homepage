@@ -3,18 +3,14 @@
 
 const plugin = require('tailwindcss/plugin');
 export default {
-   // taillwind가 필요한 곳을 지정함
    content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-   // 다크모드 적용하는 속성
    darkMode: ['class'],
    theme: {
-      // 기존 유틸 클래스와 사용자 지정 클랙스를 합침
       extend: {
          container: {
             center: true,
             padding: '1rem'
          },
-         // 색상
          colors: {
             primary: 'var(--color-primary)',
             secondary: 'var(--color-secondary)',
@@ -28,10 +24,26 @@ export default {
             shade_3: 'var(--color-shade_3)',
             shade_4: 'var(--color-shade_4)',
             shade_5: 'var(--color-shade_5)',
+            backGroundGradient: {
+               1: 'var(--bg-gradient1)',
+               2: 'var(--bg-gradient2)',
+               3: 'var(--bg-gradient3)',
+            },
+            modalGradient: {
+               1: 'var(--modal-gradient1)',
+               2: 'var(--modal-gradient2)',
+               3: 'var(--modal-gradient3)',
+               4: 'var(--modal-gradient4)',
+               5: 'var(--modal-gradient5)',
+            },
+            cardGradient: {
+               1: 'var(--card-graduent1)',
+               2: 'var(--card-graduent2)',
+               3: 'var(--card-graduent3)',
+               4: 'var(--card-graduent4)',
+               5: 'var(--card-graduent5)',
+            }
          },
-         // 지원하는 크기가 없을경우 추가하여 사용가능
-         spacing: {},
-         // font의 묶음 처리
          fontSize: {
             title: ['clamp(28px, 2vw, 32px)', { lineHeight: '1.2', fontWeight: 'bold' }],
             title_sub: ['clamp(20px, 2vw, 24px)', { lineHeight: '1.2', fontWeight: 'bold' }],
@@ -42,11 +54,9 @@ export default {
             xs: ['clamp(10px, 2vw, 12px)', { lineHeight: '1.2', fontWeight: 'normal' }],
          },
       },
-      // 폰트
       fontFamily: {
          service: ['Noto Sans KR', 'sans-serif'],
       },
    },
-   // 좋은 플러그인도 많으음
    plugins: [],
 };
