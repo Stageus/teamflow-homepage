@@ -20,7 +20,7 @@ export const useGetUsers = () => {
    useEffect(()=>{
       setProfileInfo({
          userIdx: 1,
-         nickname: '테스트유저 닉네임',
+         nickname: '테스트유저닉네임',
          email: 'userEmail@gmail.com',
          profileImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZR6Gs7vDfFNNMsCAc2pNG0LaG3xAgnZDapQ&s',
          teamSpaceOwnCount: 250, // 내가 생성한 teamspace 개수
