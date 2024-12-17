@@ -6,7 +6,7 @@ import { Cross1Icon } from '@radix-ui/react-icons';
 // layer
 import { cn } from '@/shared/lib/cn';
 
-const fullScreenVariants = cva('modal-gradient fixed inset-0 flex transition-transform z-50', {
+const fullScreenVariants = cva('gradient-modal fixed inset-0 flex transition-transform z-50', {
    variants: {
       variant: {
          show: 'visible translate-x-0 opacity-100',
