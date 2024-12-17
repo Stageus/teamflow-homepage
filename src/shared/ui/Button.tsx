@@ -10,10 +10,11 @@ const buttonVariants = cva(
    {
       variants: {
          variant: {
-            default: 'bg-shade_4 hover:bg-shade_3 text-white',
+            default: 'bg-shade_4 hover:bg-shade_5 text-white',
             select: 'bg-primary hover:bg-secondary text-white',
             disabeld: 'bg-shade_5 cursor-not-allowed text-white',
             danger: 'bg-error hover:bg-secondary text-white',
+            ghost: 'bg-transparent text-gray hover:bg-shade_3'
          },
          sizes: {
             sm: 'px-3 py-1 text-sm',
