@@ -1,24 +1,38 @@
 import { useState, useRef } from 'react';
 
+type ReturnMapper<T> = {
+   [K in keyof T]: T[K];
+ } & {};
+
+interface ValidationType {
+   inputRef: React.RefObject<HTMLInputElement | null>;
+   validationResult: boolean | null;
+   isCheckValidation: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
 /**
- * @param props - 사용할 정규표현식입니다.
- * @returns**inputRef:** 참고할 input의 Ref 입니다.
- * @returns**isValid:** 정규표현식의 통과 여부를 반환하는 boolean입니다.
- * @returns**isCheckValidation:** input value가 정규표현식여부를 통과를 체크하는 함수입니다.
- * @example - { inputRef, validationResult, isCheckValidation } = useValidation(RegExp)
- * @example - <input ref={inputRef} onEvent={isCheckValidation}/>..
+ * useValidation 훅은 주어진 정규 표현식을 사용하여 input 값의 유효성을 검사하는 기능을 제공합니다.
+ * @param validationPattern 검사할 정규표현식 입니다.
+ * @property inputRef: 해당 `input` 태그에 대한 참조를 반환합니다.
+ * @property validationResult: 유효성 검사 결과입니다. `true`이면 유효하고, `false`이면 유효하지 않으며, 초기값은 `null`입니다.
+ * @property isCheckValidation: 유효성 검사를 수행하는 함수입니다. 해당 이벤트에서 입력값을 가져와 검사합니다.
+ * @example
+ * const { inputRef, validationResult, isCheckValidation } = useValidation(/^[a-zA-Z0-9]{3,10}$/);
  */
 
-export const useValidation = (props: RegExp) => {
-   const RegExp = props;
-   const inputRef = useRef<HTMLInputElement>(null);
-   const [validationResult, setValidationResult] = useState<null | boolean>(null);
+export const useValidation = (validationPattern: RegExp): ReturnMapper<ValidationType>=> {
+   const inputRef = useRef(null);
+   const [validationResult, setValidationResult] = useState(null);
 
    const isCheckValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
       const target = event.target.value;
-      const isValidation = RegExp.test(target);
+      const isValidation = validationPattern.test(target);
       setValidationResult(isValidation);
    };
 
-   return { inputRef, validationResult, isCheckValidation };
+   return { 
+      inputRef,
+      validationResult, 
+      isCheckValidation 
+   };
 };
