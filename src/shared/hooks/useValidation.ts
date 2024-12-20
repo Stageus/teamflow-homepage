@@ -1,14 +1,10 @@
 import { useState, useRef } from 'react';
 
-type ReturnMapper<T> = {
-   [K in keyof T]: T[K];
- } & {};
-
-interface ValidationType {
+type ValidationType = {
    inputRef: React.RefObject<HTMLInputElement | null>;
    validationResult: boolean | null;
    isCheckValidation: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
+} & {};
 
 /**
  * useValidation 훅은 주어진 정규 표현식을 사용하여 input 값의 유효성을 검사하는 기능을 제공합니다.
@@ -20,7 +16,7 @@ interface ValidationType {
  * const { inputRef, validationResult, isCheckValidation } = useValidation(/^[a-zA-Z0-9]{3,10}$/);
  */
 
-export const useValidation = (validationPattern: RegExp): ReturnMapper<ValidationType>=> {
+export const useValidation = (validationPattern: RegExp): ValidationType=> {
    const inputRef = useRef(null);
    const [validationResult, setValidationResult] = useState(null);
 
