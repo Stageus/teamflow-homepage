@@ -1,5 +1,5 @@
 // package
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Cross1Icon } from '@radix-ui/react-icons';
 import { useMediaQuery } from 'react-responsive';
@@ -7,14 +7,14 @@ import { useMediaQuery } from 'react-responsive';
 import { Aside } from '@/widgets/aside';
 import { Header } from '@/widgets/header';
 import { cn } from '@/shared/lib/cn';
+import { useToggle } from '@/shared/hooks/useToggle';
 
 export const AuthLayout = () => {
-   const [ aside, setAside ] = useState(false);
-   const toggleTestAside = () => setAside(!aside);
+   const [isAside, setIsAside] = useToggle();
    const closeAside = useMediaQuery({query: '(min-width: 768px)'})
 
    useEffect(()=>{
-      if(closeAside) setAside(false);
+      if(closeAside && isAside) setIsAside();
    },[closeAside])
 
    return (
@@ -22,17 +22,17 @@ export const AuthLayout = () => {
          <aside
             className={cn(
                `md:relative md:translate-x-0 md:w-fit gradient-modal absolute z-50 w-full transition-transform`,
-               { '-translate-x-full': !aside },
-               { '-translate-x-0': aside },
+               { '-translate-x-full': !isAside },
+               { '-translate-x-0': isAside },
             )}>
-            { aside && <div className='absolute cursor-pointer right-3 top-3 w-7 h-7' onClick={toggleTestAside}><Cross1Icon className='w-full h-full text-white'/></div>}
-            <div className="h-full w-[360px]">
+            { isAside && <div className='absolute cursor-pointer right-3 top-3 w-7 h-7' onClick={setIsAside}><Cross1Icon className='w-full h-full text-white'/></div>}
+            <div className="h-screen w-[360px]">
                <Aside />
             </div>
          </aside>
          <div className="flex flex-col grow">
             <header className="flex items-center justify-start bg-transparent">
-               <Header toggleTestAside={toggleTestAside}/>
+               <Header toggleTestAside={setIsAside}/>
             </header>
             <main className="relative left-0 z-0 overflow-scroll grow">
                <Outlet />
