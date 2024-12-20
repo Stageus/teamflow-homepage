@@ -30,5 +30,5 @@ export const useValidation = (validationPattern: RegExp): ValidationType=> {
       inputRef,
       validationResult, 
       isCheckValidation 
-   };
+   } as const;
 };
