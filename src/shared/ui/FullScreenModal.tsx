@@ -18,17 +18,13 @@ const fullScreenVariants = cva('gradient-modal fixed inset-0 flex transition-tra
    },
 });
 
-interface FullScreenModalProps extends VariantProps<typeof fullScreenVariants> {
-   title: string;
-   children: React.ReactElement;
-   closeModal: () => void;
-}
-
 const FullScreenModal = (props: FullScreenModalProps) => {
    const { title, children, closeModal, variant } = props;
+   // const FullScreenModal = ({ title, children, closeModal, variant }: FullScreenModalProps) => {
 
    return ReactDOM.createPortal(
       <div className={cn(fullScreenVariants({ variant }))}>
+      {/* // <div> */}
          <h1 className="absolute flex justify-center p-5 text-[30px] italic text-white">{title}</h1>
          <div
             onClick={closeModal}
@@ -42,3 +38,11 @@ const FullScreenModal = (props: FullScreenModalProps) => {
 };
 
 export { FullScreenModal };
+
+
+type FullScreenModalProps = {
+   title: string;
+   children: React.ReactElement;
+   closeModal: () => void;
+   variant: VariantProps<typeof fullScreenVariants>['variant'];
+} & {};
