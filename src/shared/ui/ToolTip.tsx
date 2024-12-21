@@ -1,22 +1,24 @@
-import { useId, ReactElement } from 'react';
+import * as React from 'react';
 import { Tooltip } from 'react-tooltip';
 
-type PlaceProps = 'top' | 'left' | 'right' | "bottom";
-
-interface TooTipProps {
-    toolTipContent: string,
-    children: ReactElement,
-    place?: PlaceProps,
-}
-
-export const ToolTip = (props : TooTipProps) => {
-   const { toolTipContent, children, place} = props;
-   const uniqueId = useId();
+const ToolTip = (props: TooTipProps) => {
+   const { toolTipContent, children, place } = props;
+   const uniqueId = React.useId();
 
    return (
-        <div data-tooltip-id={uniqueId} className='tooltip'>
-            {children}
-            <Tooltip id={uniqueId} content={toolTipContent} place={place ?? "top"} className='item'/>
-        </div>
+      <div data-tooltip-id={uniqueId} className="tooltip">
+         {children}
+         <Tooltip id={uniqueId} content={toolTipContent} place={place ?? 'top'} className="item" />
+      </div>
    );
 };
+
+export { ToolTip };
+
+type TooTipProps = {
+    toolTipContent: string;
+    children: React.ReactElement;
+    place?: 'top' | 'left' | 'right' | 'bottom';
+} & {};
+
+
