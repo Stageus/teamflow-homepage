@@ -17,7 +17,7 @@ interface PrivateChannelProps {
    channelName: string;
 }
 
-export const PrivateChannel = (props: PrivateChannelProps) => {
+export const PrivateChannelItem = (props: PrivateChannelProps) => {
    const { channelIdx, channelName } = props;
    const { teamspacePrivateRoute } = useRoute();
 

@@ -2,7 +2,7 @@
 import { useMatch } from 'react-router-dom';
 import { PlusIcon, CaretDownIcon, CaretUpIcon } from '@radix-ui/react-icons';
 // slice
-import { PrivateChannel } from './ui/privateChannel';
+import { PrivateChannelItem } from './ui/privateChannelItem';
 import { CreatePrivateChannelModal } from './ui/createPrivateChannelModal';
 // layer
 import { PATHS } from '@/shared/consts/paths';
@@ -69,7 +69,7 @@ export const TeamSpcaeChannelList = () => {
             <ul className="flex flex-col gap-3 px-1 overflow-y-scroll scroll grow">
                {isPrivateChannelList
                   ? _PrivateChannelList.map(item => {
-                       return <PrivateChannel key={item.channelIdx} {...item} />;
+                       return <PrivateChannelItem key={item.channelIdx} {...item} />;
                     })
                   : null}
             </ul>
