@@ -17,20 +17,18 @@ const inputVariants = cva('w-full outline-none p-1 text-sm text-black dark:text-
    },
    defaultVariants: { variant: 'textInput'},
 });
-
-interface InputProps
-   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
-      VariantProps<typeof inputVariants> {
-        asChild?: boolean;
-      }
-
+ 
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-   const { className, variant, sizes, type, asChild = false, ...defaultOptions } = props;
+   const { className, variant, sizes, asChild = false, ...defaultOptions } = props;
    const Comp = asChild ? Slot : 'input'
 
    return (
-         <Comp className={cn(inputVariants({ variant, sizes, className }))} ref={ref} {...defaultOptions} type={type} />
+         <Comp className={cn(inputVariants({ variant, sizes, className }))} ref={ref} {...defaultOptions}/>
    );
 });
 
 export { Input };
+
+type InputProps = {
+   asChild? : boolean;
+} & React.InputHTMLAttributes<HTMLInputElement> & VariantProps<typeof inputVariants>
