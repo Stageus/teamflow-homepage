@@ -1,6 +1,6 @@
 // package
 import * as React from 'react';
-import { ExitIcon, GearIcon } from '@radix-ui/react-icons';
+import { ExitIcon, GearIcon, CrossCircledIcon } from '@radix-ui/react-icons';
 // slice
 import { ExitModal } from './ui/exitModal';
 // Layer
@@ -13,46 +13,50 @@ import { PrivatechannelContext } from '@/shared/context/privateChannelContext';
 export const PrivateChannelItem = (props: PrivateChannelProps) => {
    const { teamspacePrivateRoute } = useRoute();
    const [isOpenExitModal, setIsOpenExitModal] = useToggle(false);
-   const [isOpenSettingModal, setIsOpenSettingModal] = useToggle(false);
-   const { privateChannelKey, savePrivateChannelKey } = React.useContext(PrivatechannelContext);
-
+   const { privateChannel, savePrivateChannel, removePrivateChannel } = React.useContext(PrivatechannelContext);
    return (
       <>
          <li
             key={props.channelIdx}
             className={cn('flex cursor-pointer flex-col gap-2 rounded-lg p-2 text-shade_5 hover:bg-shade_3', {
-               'bg-shade_3': privateChannelKey === props.channelIdx && isOpenSettingModal,
+               'bg-shade_3': privateChannel?.key === props.channelIdx,
             })}>
             <div className="flex items-start">
-               <div className="grow hover:text-primary" onClick={() => teamspacePrivateRoute(props.channelName)}>
-                  <p className="max-w-[178px] truncate text-sm">{props.channelName}</p>
+               <div className="text-sm grow" onClick={() => teamspacePrivateRoute(props.channelName)}>
+                  {privateChannel?.key === props.channelIdx ? (
+                     <div className={`flex gap-3`}>
+                        <span className="hover:text-primary">이름변경</span>
+                        <span className="hover:text-primary">추방</span>
+                        <span className="hover:text-primary">초대</span>
+                        <span className="hover:text-primary">삭제</span>
+                     </div>
+                  ) : (
+                     <p className="max-w-[178px] truncate hover:text-primary">{props.channelName}</p>
+                  )}
                </div>
                <div className="flex gap-3 text-black dark:text-white">
-                  <ToolTip toolTipContent="채널 나가기" place="right">
-                     <div className="w-4 h-4 hover:text-primary" onClick={setIsOpenExitModal}>
-                        <ExitIcon className="w-full h-full" />
+                  {privateChannel?.key === props.channelIdx ? (
+                     <div onClick={removePrivateChannel} className="w-4 h-4 hover:text-primary">
+                        <CrossCircledIcon className="w-full h-full" />
                      </div>
-                  </ToolTip>
-                  <ToolTip toolTipContent="채널 설정" place="right">
-                     <div
-                        className="w-4 h-4 hover:text-primary"
-                        onClick={() => {
-                           savePrivateChannelKey(props.channelIdx);
-                           setIsOpenSettingModal();
-                        }}>
-                        <GearIcon className="w-full h-full" />
-                     </div>
-                  </ToolTip>
+                  ) : (
+                     <>
+                        <ToolTip toolTipContent="채널 나가기" place="right">
+                           <div className="w-4 h-4 hover:text-primary" onClick={setIsOpenExitModal}>
+                              <ExitIcon className="w-full h-full" />
+                           </div>
+                        </ToolTip>
+                        <ToolTip toolTipContent="채널 설정" place="right">
+                           <div
+                              className="w-4 h-4 hover:text-primary"
+                              onClick={() => savePrivateChannel(props.channelIdx, props.channelName)}>
+                              <GearIcon className="w-full h-full" />
+                           </div>
+                        </ToolTip>
+                     </>
+                  )}
                </div>
             </div>
-            {privateChannelKey === props.channelIdx && isOpenSettingModal && (
-               <div className={`flex justify-around`}>
-                  <span className="hover:text-primary">이름변경</span>
-                  <span className="hover:text-primary">추방</span>
-                  <span className="hover:text-primary">초대</span>
-                  <span className="hover:text-primary">삭제</span>
-               </div>
-            )}
          </li>
          {/* 채널 나가기 모달 */}
          <ExitModal isOpenExitModal={isOpenExitModal} setIsOpenExitModal={setIsOpenExitModal} />
