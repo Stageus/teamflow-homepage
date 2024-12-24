@@ -3,11 +3,12 @@ import * as React from 'react';
 const PrivatechannelContext = React.createContext<PrivatechannelContextType | null>(null);
 
 const PrivateChannelProvider = (props: PrivateChannelProviderProps) => {
-   const [privateChannelKey, setPrivateChannelKey] = React.useState(null);
-   const savePrivateChannelKey = (channelKey: number) => setPrivateChannelKey(channelKey);
+   const [privateChannel, setPrivateChannel] = React.useState(null);
+   const savePrivateChannel = (channelKey: number, channelName: string) => setPrivateChannel({key: channelKey, name:channelName});
+   const removePrivateChannel = () => setPrivateChannel(null)
 
    return (
-      <PrivatechannelContext.Provider value={{ privateChannelKey, savePrivateChannelKey }}>
+      <PrivatechannelContext.Provider value={{ privateChannel, savePrivateChannel, removePrivateChannel }}>
          {props.children}
       </PrivatechannelContext.Provider>
    );
@@ -15,9 +16,15 @@ const PrivateChannelProvider = (props: PrivateChannelProviderProps) => {
 
 export { PrivatechannelContext, PrivateChannelProvider };
 
+type PrivateChannel = {
+   key: number;
+   name: string
+} & {};
+
 type PrivatechannelContextType = {
-   privateChannelKey: number;
-   savePrivateChannelKey: (value: number) => void;
+   privateChannel: PrivateChannel | null;
+   savePrivateChannel: (channelKey: number, channelName:string) => void;
+   removePrivateChannel: () => void;
 };
 
 type PrivateChannelProviderProps = {
