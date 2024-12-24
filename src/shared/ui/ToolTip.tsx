@@ -6,9 +6,9 @@ const ToolTip = (props: TooTipProps) => {
    const uniqueId = React.useId();
 
    return (
-      <div data-tooltip-id={uniqueId} className="tooltip">
+      <div data-tooltip-id={uniqueId}>
+         <Tooltip id={uniqueId} content={toolTipContent} place={place ?? 'top'}/>
          {children}
-         <Tooltip id={uniqueId} content={toolTipContent} place={place ?? 'top'} className="item" />
       </div>
    );
 };
