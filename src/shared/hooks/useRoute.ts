@@ -19,10 +19,10 @@ export const useRoute = () => {
         navigate(`/${PATHS.teamSpace}/${teamspaceName}`);
     };
     const teamspacePublicRoute = ()=>{
-        navigate(`${PATHS.teamSpace}/${urlTeamspaceName}/public`);
+        navigate(`${PATHS.teamSpace}/${urlTeamspaceName}/${PATHS.publicChannel}`);
     };
     const teamspacePrivateRoute = (channelName: string)=>{
-        navigate(`${PATHS.teamSpace}/${urlTeamspaceName}/${PATHS.private}/${channelName}`);
+        navigate(`${PATHS.teamSpace}/${urlTeamspaceName}/${PATHS.privateChannel}/${channelName}`);
     };
 
     return{
