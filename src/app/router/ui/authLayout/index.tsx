@@ -34,7 +34,7 @@ export const AuthLayout = () => {
             <header className="flex items-center justify-start bg-transparent">
                <Header toggleTestAside={setIsAside}/>
             </header>
-            <main className="relative left-0 z-0 overflow-scroll grow">
+            <main className="relative left-0 z-0 overflow-hidden grow">
                <Outlet />
             </main>
          </div>
