@@ -19,9 +19,9 @@ export const Router = createBrowserRouter(
                <Route path={PATHS.teamSpaceList} element={<TeamSpaceList />} />
                <Route path={`${PATHS.teamSpace}/:${PATHS.teamSpaceName}`}>
                   <Route index element={<TeamSpace />} />
-                  <Route path={PATHS.public} element={<div>특정 TeamSpace 공개 채널페이지</div>} />
+                  <Route path={`:${PATHS.publicChannel}`} element={<div>특정 TeamSpace 공개 채널페이지</div>} />
                   <Route
-                     path={`${PATHS.private}/:${PATHS.channelName}`}
+                     path={`:${PATHS.privateChannel}/:${PATHS.channelName}`}
                      element={<div>특정 TeamSpace 비공개 채널페이지</div>}
                   />
                </Route>
