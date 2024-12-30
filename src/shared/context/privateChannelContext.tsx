@@ -4,8 +4,9 @@ const PrivatechannelContext = React.createContext<PrivatechannelContextType | nu
 
 const PrivateChannelProvider = (props: PrivateChannelProviderProps) => {
    const [privateChannel, setPrivateChannel] = React.useState(null);
-   const savePrivateChannel = (channelKey: number, channelName: string) => setPrivateChannel({key: channelKey, name:channelName});
-   const removePrivateChannel = () => setPrivateChannel(null)
+   const savePrivateChannel = (channelIdx: number, channelName: string) =>
+      setPrivateChannel({ channelIdx, channelName });
+   const removePrivateChannel = () => setPrivateChannel(null);
 
    return (
       <PrivatechannelContext.Provider value={{ privateChannel, savePrivateChannel, removePrivateChannel }}>
@@ -17,15 +18,15 @@ const PrivateChannelProvider = (props: PrivateChannelProviderProps) => {
 export { PrivatechannelContext, PrivateChannelProvider };
 
 type PrivateChannel = {
-   key: number;
-   name: string
+   channelIdx: number;
+   channelName: string;
 } & {};
 
 type PrivatechannelContextType = {
-   privateChannel: PrivateChannel | null;
-   savePrivateChannel: (channelKey: number, channelName:string) => void;
+   privateChannel: PrivateChannel;
+   savePrivateChannel: (channelIdx: number, channelName: string) => void;
    removePrivateChannel: () => void;
-};
+} & {};
 
 type PrivateChannelProviderProps = {
    children: React.ReactNode;
