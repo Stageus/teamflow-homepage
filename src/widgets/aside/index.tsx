@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 // slice
 import { UserProfile } from './ui/userProfile';
 import { TeamSpaceList } from './ui/TeamSpaceList';
-import { ChannelInfo } from './ui/channelInfo';
+import { ChannelList } from './ui/channelList';
+import { CreatePrivateChannelModal } from './ui/CreatePrivateChannelModal';
 
 export const Aside = () => {
    const { teamSpaceName } = useParams();
@@ -15,10 +16,9 @@ export const Aside = () => {
          </section>
          <section className="flex gap-2 p-2 overflow-hidden">
             <TeamSpaceList teamSpaceName={teamSpaceName} />
-            <div className="flex h-full min-w-[172px] grow flex-col gap-2 rounded-lg bg-shade_2 p-1 text-shade_5">
-            <ChannelInfo teamSpaceName={teamSpaceName}/>
-            </div>
+            <ChannelList teamSpaceName={teamSpaceName} />
          </section>
+         <CreatePrivateChannelModal/>
       </div>
    );
 };
