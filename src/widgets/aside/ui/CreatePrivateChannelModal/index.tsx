@@ -1,3 +1,4 @@
+import * as React from 'react';
 // Layer
 import { useValidation } from '@/shared/hooks/useValidation';
 import { Input } from '@/shared/ui/Input';
@@ -5,15 +6,16 @@ import { channelRegexp } from '@/shared/consts/regExp';
 import { cn } from '@/shared/lib/cn';
 import { Button } from '@/shared/ui/Button';
 import { FullScreenModal } from '@/shared/ui/FullScreenModal';
-
-const CreatePrivateChannelModal = (props: CreatePrivateChannelModalProps) => {
+import { ModalContext } from '@/shared/context/modalContext';
+const CreatePrivateChannelModal = () => {
    const { inputRef: privateChannelRef, validationResult, isCheckValidation } = useValidation(channelRegexp);
+   const { modalType, resetSelectModal } = React.useContext(ModalContext);
    return (
       <FullScreenModal
          title="비공개 채널생성"
-         closeModal={props.closeModal}
-         variant={props.isOpenModal ? 'show' : 'hide'}>
-         {props.isOpenModal ? (
+         closeModal={resetSelectModal}
+         variant={modalType === 'CREATE' ? 'show' : 'hide'}>
+         {modalType === 'CREATE' ? (
             <div className="flex w-[300px] flex-col gap-3">
                <h2 className="text-white">어떤 그룹을 만들생각인가요?</h2>
                <Input
@@ -36,7 +38,7 @@ const CreatePrivateChannelModal = (props: CreatePrivateChannelModalProps) => {
                      onClick={() => validationResult && console.log(privateChannelRef.current?.value)}>
                      채널생성
                   </Button>
-                  <Button variant="default" onClick={props.closeModal}>
+                  <Button variant="default" onClick={resetSelectModal}>
                      취소
                   </Button>
                </div>
@@ -47,8 +49,3 @@ const CreatePrivateChannelModal = (props: CreatePrivateChannelModalProps) => {
 };
 
 export { CreatePrivateChannelModal };
-
-type CreatePrivateChannelModalProps = {
-   isOpenModal: boolean;
-   closeModal: () => void;
-};
