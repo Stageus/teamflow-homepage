@@ -7,7 +7,7 @@ import { cn } from '@/shared/lib/cn';
 import { useValidation } from '@/shared/hooks/useValidation';
 import { nickNameRegExp } from '@/shared/consts/regExp';
 
-export const SignUp = () => {
+const SignUp = () => {
    const { inputRef: nickNameRef, validationResult, isCheckValidation } = useValidation(nickNameRegExp);
    const { loginRoute, teamspaceListRoute } = useRoute();
 
@@ -52,3 +52,5 @@ export const SignUp = () => {
       </div>
    );
 };
+
+export default SignUp;

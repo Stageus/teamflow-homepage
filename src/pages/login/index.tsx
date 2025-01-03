@@ -7,7 +7,7 @@ import { Button } from '@/shared/ui/Button';
 import { useCookie } from '@/shared/hooks/useCookie';
 import { useEffect } from 'react';
 
-export const Login = () => {
+const Login = () => {
    const { signupRoute, teamspaceListRoute } = useRoute();
    const { cookies } = useCookie('token');
 
@@ -32,3 +32,7 @@ export const Login = () => {
       </main>
    );
 };
+
+export default Login;
+
+
