@@ -5,11 +5,11 @@
   "include": [],
   // 컴파일러 옵션
   "compilerOptions": {
-    // "target": "", // JS코드의 버전 
+    "target": "esnext", // JS코드의 버전 
     // "lib": [], // 타입 정의 라이브러리 (JS환경에서 사용할수 있는 내장 객체 및 메서드의 타입정의를 제공)
-    "module": "ESNext", // 모듈시스템을 지정
+    "module": "esnext", // 모듈시스템을 지정
     "skipLibCheck": true,//.d.ts의 타입검사를 생략
-    // "moduleResolution": "bundler", // 모듈 해석 방식을 지정 (Vite, Webpack 같은 번들러와 함께 사용할때 번들러에 맞는 규칙을 따름) 
+    "moduleResolution": "bundler", // 모듈 해석 방식을 지정 (Vite, Webpack 같은 번들러와 함께 사용할때 번들러에 맞는 규칙을 따름) 
     "allowImportingTsExtensions": true, // .ts파일을 가져올때 파일확장자를 포함할수 있도록 허용함 ( 기본적으로 생략해도 가져와진다)
     "noEmit": true, //컴파일후 결과물을 생성하지 않도록 설정 (컴파일된 JS파일을 생성하지않음)
     "isolatedModules": true, // 각파일을 독립적인 모듈로 취급 (번들러와 통합된 환경에서 주로 사용)
