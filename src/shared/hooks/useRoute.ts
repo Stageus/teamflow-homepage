@@ -1,28 +1,31 @@
+import { useCookies } from 'react-cookie';
 import { useNavigate, useParams } from "react-router-dom"
 import { PATHS } from "../consts/paths";
 
 export const useRoute = () => {
     const navigate = useNavigate();
     const params = useParams();
-    const urlTeamspaceName = params[PATHS.teamSpaceName];
+    const [cookies, setCookie_, removeCookie] = useCookies(['token']);
+    const getTeamspaceName = params[PATHS.TEAMSPACENAME];
     
     const loginRoute = () => {
-        navigate(`/${PATHS.login}`);
+        if(cookies.token) removeCookie('token', { path: '/' });
+        navigate(`/${PATHS.LOGIN}`);
     };
     const signupRoute = () => {
-        navigate(`/${PATHS.signup}`);
+        navigate(`/${PATHS.SIGNUP}`);
     };
     const teamspaceListRoute = ()=>{
-        navigate(`/${PATHS.teamSpaceList}`);
+        navigate(`/${PATHS.TEAMSPACELIST}`);
     };
-    const teamspaceRoute = (teamspaceName: string)=>{
-        navigate(`/${PATHS.teamSpace}/${teamspaceName}`);
+    const teamspaceRoute = (teamSpaceName: string)=>{
+        navigate(`/${teamSpaceName}/${PATHS.NOTICE}`);
     };
     const teamspacePublicRoute = ()=>{
-        navigate(`${PATHS.teamSpace}/${urlTeamspaceName}/${PATHS.publicChannel}`);
+        navigate(`${getTeamspaceName}/${PATHS.PUBLIC}`);
     };
     const teamspacePrivateRoute = (channelIdx: number, channelName: string)=>{
-        navigate(`${PATHS.teamSpace}/${urlTeamspaceName}/${PATHS.privateChannel}/${channelName}`, {state: channelIdx});
+        navigate(`${getTeamspaceName}/${PATHS.PRIVATE}?channel=${channelName}`, {state: channelIdx});
     };
 
     return{
