@@ -19,11 +19,13 @@ const SignUp = () => {
                <img src={serviceLogo} />
             </div>
             <h1>닉네임 생성</h1>
-            {/* data  binding*/}
             <h2 className="text-shade_5">{'useEmail@gmail.com'}</h2>
             <div className="w-full">
                <Input
-                  className={cn({ 'border-error': validationResult === false }, { 'border-success': validationResult === true })}
+                  className={cn(
+                     { 'border-error': validationResult === false },
+                     { 'border-success': validationResult === true },
+                  )}
                   variant="textInput"
                   type="text"
                   ref={nickNameRef}
