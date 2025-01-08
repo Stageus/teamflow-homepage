@@ -1,3 +1,5 @@
+// package
+import { useEffect } from 'react';
 // slice
 import googleLogo from './assets/google.svg';
 // layer
@@ -5,7 +7,6 @@ import serviceLogo from '@/shared/assets/logo.svg';
 import { useRoute } from '@/shared/hooks/useRoute';
 import { Button } from '@/shared/ui/Button';
 import { useCookie } from '@/shared/hooks/useCookie';
-import { useEffect } from 'react';
 
 const Login = () => {
    const { signupRoute, teamspaceListRoute } = useRoute();
